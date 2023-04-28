@@ -1,0 +1,22 @@
+In every single package we install, there is a mysterious file called package.json.
+> This is very important. It contains metadata about the package/project
+> description, license, version, name
+
+> The most important is "dependencies". It has a list of all the packages, with their versions, the package further depends on.
+> Some have very specific versions of their dependencies
+eg exactly 1.4.0, around (~)1.4.0, greater than (^)2.5
+
+- To create your own package.json, run npm init and follow the steps (write npm init -y to skip the questionnaire)
+
+- Earlier, when we installed a package it gave us an warning that package.json not found
+- Now that we've created our own package.json, it won't give us that warning.
+
+** If we share our code, we only need to share the package.json file, because the user can simply install the dependencies themselves.
+DO NOT PUSH THE NODE_MODULES FOLDER TO YOUR REMOTE REPO
+
+                            INSTALLING DEPENDENCIES 
+
+When you have the package.json file, how do you install the dependencies?
+1. manually install everything -> (correct version, there could be a lot of files etc..)
+
+2. just run npm install

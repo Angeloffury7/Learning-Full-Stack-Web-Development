@@ -1,0 +1,84 @@
+** HTML IS NOT A PROGRAMMING LANGUAGE, IT'S JUST A MARKUP LANGUAGE
+   eg: make this BOLD, make this italicised, add an image here etc.
+   (imagine you wrote an essay, and your teacher is suggesting these things)
+
+   you don't NEED to write the boiler-plate code, your broswer will recognise it as HTML
+   but that is fundamentally wrong.
+
+1. <title> shows what will be displayed in the browser tab.
+
+2. h1, h2, h3, h4 - heading tags (decreasing order of size)
+   - <b> is bold tag or "bring attention to" tag
+
+3. <ul> is unordered list (bullet points)
+   - <ol> is ordered list (1,2,3,4...)
+   - <li> is list item
+   - you can have nested lists
+
+4. <a> is link tab
+   - href="google.com" (if you click on the link it will go to the href)
+   - add link text between opening and closing tag
+
+
+5. <p> and heading tags are block elements, img and <a> are inline elements
+
+6. <img src="" alt=""> 
+   - no closing tag 
+   - src is the source of the image, alt is the text that will appear if 
+     picture gets deleted/unavailable or if someone is using a screenreader
+
+
+7. <sup> superscript
+   <sub> subscript
+
+8. <html> should only have head and body tags inside
+   - all the content goes inside the body tag.
+   - CSS, JS, information about the website goes in the head tag
+
+9. A WEB PAGE SHOULD ONLY HAVE ONE <h1> TAG !!!
+
+10. Sometimes you want to put in elements which are not available on your keyword
+   eg. certain symbols, so for them we use entity codes
+
+   eg &#9824; this is the entity code for spades from a deck of cards
+      or &spades;
+
+   -they are used in place of characters which may be invalid
+   eg. &, <
+
+   - start with an ampersand(&) and end with a semicolon (;)
+   - the broswer interprets them and renders them to show the characters
+
+
+11. <div> is a container which groups elements together
+
+12. A div is just a generic container, it doesn't express any meaning. To
+    help in SEO, screen readers, improving accessibility etc, use semantic elements like
+    <nav>
+    <header>
+    <footer>
+    <section>
+    <article>
+    they are exactly like divs but their name tells us what elements
+    they contain. This will help when you want to change something
+    in your website (if you want to change the footer, look 
+    for <footer> etc...). You can use them interchangeably, because after
+    *they are all just divs*, but some names might be more meaningful 
+    depending on the situation.
+
+13. <nav> used for navigation links
+   <section> just represents a section
+   <article> they should have a heading, represent sections etc
+   <aside> tangential and non-essential stuff (sidebars, notes, etc.)
+   <header> introductory content, sometimes have links for logins etc
+   <footer> it is present at the end of the page
+   both headers and footers have nested <nav> elements
+   <time> contains date and time (duh)
+   <figure> usually a diagram/figure with a caption
+   <data> .....
+
+14. Emmet is a built-in support in VS Code which helps you write snippets
+   for HTML
+
+15. <br> is line break (goes to the next line)
+   <hr> is horizontal rule (line which goes across the screen), no closing tag for <hr>

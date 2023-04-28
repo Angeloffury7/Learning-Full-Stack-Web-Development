@@ -1,0 +1,54 @@
+We're going to learn how to make requests to a server using JavaScript.
+> AJAX
+    Asynchronous Javascript And Xml
+    
+> Refreshing, submitting a form, infinite scroll -> All of them are requests.
+> Dynamic search (website that shows new results when you type in the search bar without submitting)
+
+> Sometimes, when we make an app, we just want information back, not a full webpage.
+> What the server then responds with, is not HTML CSS or JS. Info is returned as a string, which is a format called JSON.
+
+
+                            APIs
+
+Application Programming Interface
+
+An interface where one piece of software interacts with another software.
+
+> eg. Some websites create an endpoint for people to use, and when we use these endpoints
+    they respond with data for other softwares to use (a portal to a company's data)
+
+> We're primarily referring to WebAPIs
+> We make these requests using HTTP 
+> EXPLORE APIs ON YOUR OWN
+
+> https://cryptonator.com/api/
+
+    The reason we may want raw information, is that we don't need the styles etc
+
+> For example, using Twitter's API, we can find out who mentioned us in a tweet, tweet without opening the app etc 
+
+
+                            JSON 
+
+> There are 2 common formats, XML (not used anymore) and JSON 
+
+>    AJAJ but people still say AJAX (because it sounds cooler lol)
+
+                JavaScript Object Notation
+
+1. data is represented as key-value pairs
+BUT
+
+> Every key must be in double quotes
+> undefined doesn't exist in JSON 
+If you try to assign undefined to a value, it will treat it as "undefined"
+
+To convert JSON data to Javascript object ->
+
+    const data = JSON.parse(variable)
+
+2. To convert an object to json -> JSON.stringify(value)
+
+3. JSON is used with other languages as well, like Python, Ruby and they have their own methods
+    of parsing through JSON files

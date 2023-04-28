@@ -1,0 +1,14 @@
+1. When you trigger an event, an 'Event object' is automatically created and passed into our callback.
+    That event object has all the information about the event that was fired.
+
+2. When we are dealing with keyboard events and we want to know what key was pressed, that 
+    information in the keyboardEvent object.
+
+    keydown, keyup -> event is fired if ANY key is pressed
+
+    evt.key = gives pressed key
+    evt.code = gives its code
+
+    > If you care about the POSITION of the keys, use code because it stays the same across 
+        different languages
+    > If you care about the key, use key

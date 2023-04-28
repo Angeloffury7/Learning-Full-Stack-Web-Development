@@ -1,0 +1,18 @@
+                        TRANSITIONS
+
+1. Using this, we can animate the changing of properties
+
+2. transition: 1s;
+    will take 1 second to switch properties
+
+3. property name | duration | timing function | delay
+    declared in this order
+
+4. property
+5. delay
+
+6. Timing function:
+    It can change HOW the property changes (fast, slow, evenly etc)
+    ease-in, ease-out, linear
+
+    https://easings.net

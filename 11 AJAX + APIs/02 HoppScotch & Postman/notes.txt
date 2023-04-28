@@ -1,0 +1,52 @@
+> Hoppscotch and Postman are free tools to test your APIs and send requests. They are pretty much the same, only difference is in UI.
+> You can make requests to other apis using these tools as well!
+
+
+HTTP Request Verbs (type of requests) 
+
+> Get, Post, Put, Patch, etc 
+
+> Almost all of the free APIs are "get" request based.
+> If you try to make a post request, you'll get a 404 error.
+
+Get requests -> get/retrieve information
+Post requests -> trying to send data somewhere(database, server etc)
+
+
+
+                        HTTPS STATUS CODES 
+
+404, 500 etc.
+> HTTP response codes when we make a response
+
+> 2__ successful responses
+> 201 - created, 202 - accepted etc 
+
+Client error responses (for eg, asking for an endpoint that does not exist)
+4__
+404, 403; 405 - Method not allowed etc
+
+5__ Server-side errors
+
+
+                        HTTP QUERIES
+
+1.We can include some information in an HTTP request
+2. https://swapi.dev/api/people returns a JSON file of all the people
+    https://swapi.dev/api/people/1/ would return a specific character
+
+3. https://swapi.dev/api/people/<id> also valid syntax, given in many documentations.
+
+4. QUERY STRING 
+    etc. https://amazon.com?k=bucatini&crid=3idtufdws0da5&sprefix=bucat%2caps%2c317&ref=nb_sb_noss_2
+
+    These consist of key-value pairs, separated by '&'
+    eg ?sort=desc&color=blue
+
+5. Unless an API is specifically looking for some query strings, it will just ignore them.
+
+6. You don't have to type these queries yourself, you can add it in "Parameters" in Hoppscotch. You can toggle them as well.
+
+7. Headers are basically key-value pairs that come with requests that tell us meta data -> type of data, time etc
+
+8. Some APIs require us to specify custom headers.

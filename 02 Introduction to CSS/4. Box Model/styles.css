@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+}
+div {
+    width: 200px;
+    height: 200px;
+}
+
+h1 {
+    background-color: pink;
+    width: 200px;
+    padding-left: 100px;
+    padding-top: 50px;
+    margin: 0;
+}
+
+/* span {
+    margin-left: 60px;
+} */
+
+#one {
+    background-color: #d15985;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    box-sizing: border-box; /* it makes the border fit in*/
+    margin-left: 50px;
+    margin-bottom: 100px;
+}
+
+#two {
+    background-color: #883a56;
+    border-color: #eecede;
+    border-width: 3px;
+    border-style: dashed;
+    border-left-width: 8px;
+    padding-right: 50px;
+    margin: 200px;
+}
+
+#three {
+    background-color: #413539;
+    border: 4px solid black;
+    /* border-left-style: dotted; */
+    /* border-radius: 52% 48% 79% 21% / 37% 67% 33% 63% ; */
+    border-radius: 15%;
+}
+
+button {
+    padding: 10px 20px 30px 40mm;
+}

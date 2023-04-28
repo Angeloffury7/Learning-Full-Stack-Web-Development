@@ -1,0 +1,19 @@
+                    DISPLAY
+
+1. Inline
+    Block
+    Inline-Block
+
+    display: inline - it can make block level elements behave like inline elements
+
+    - inline elements -> width, height are ignored
+                      -> padding is respected, but it does not displace the rest 
+                            of the content, it just lies on top of it.
+                      -> margin is respected only in the same line
+            
+    - block elements -> everything is respected
+
+    To solve this, we use inline-block for inline elements
+        -> They behave like inline elements, but everything is respected (like with block-level elements)
+
+    - set display: none; to hide an element from the page (it's not deleted, it's there in the doc)

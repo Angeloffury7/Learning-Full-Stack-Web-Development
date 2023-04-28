@@ -1,0 +1,45 @@
+# How we interact with our machine using text
+
+Why should we learn about the terminal?
+REASONS ->
+
+1. SPEED
+2. For Node and Express, databases etc. They can only be operated from the terminal
+3. Gives us access to everything in our computer (IMPORTANT)
+
+TERMINAL? SHELL? COMMAND LINE? BASH? CONSOLE?
+They are similar, but not exactly the same
+
+Terminal -> A text-based interface to interact with your computer.
+Shell ->    The program running on the terminal. eg, Bash, Powershell, .zsh
+Bash ->     One of the most popular shells
+
+1. ~ refers to your home directory
+2. pwd (present working directory)
+3. Absolute path is the complete address of a file, and you can run it from anywhere
+    Relative path is ki pwd mein kahan hai 
+4. You can cd ../../Pets -> go back 2 levels and go into 'Pets'
+5. mkdir ABC DEF
+
+6. 'man' command 
+    It's like a help command
+    But doesn't work in Bash. Use ls --help instead
+7. ls -a or ls -l 
+    Here, -a and -l are "flags" (think of them as arguments)
+
+8. 'touch' creates new files
+    Why is it called 'touch'?
+
+    touch --help -> change file access and modification times
+                    The official purpose of touch is to set modification and access times of files.
+                    But if you call touch on a file that doesn't exist, it will create it with default permissions
+
+9. Deleting files and folders (BE VERY CAREFUL, YOU CANNOT RESTORE THEM, THEY DON'T GO INTO RECYCLE BIN)
+    rm purple.txt
+    rm app.js index.html
+
+    To remove folders -> 
+
+    rmdir Folder (only works on empty folders)
+    rm -rf Folder (use this)    
+                            (recursive force)

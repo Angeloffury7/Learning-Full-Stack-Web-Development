@@ -1,0 +1,30 @@
+                        POSITION
+
+It determines how an element is positioned in a document. The 
+top, bottom, left, & right properties determine the final position.
+
+1. position: static;
+    default
+    top, right, bottom, left and z-index have no effect.
+
+2. position: relative;
+    keeps the element in the flow of the document, but we can offset it 
+    relative to itself.
+    we can use negative values to offset in the other direction
+    It's not used a lot, you use it on a parent container to absolutely position a child element.
+
+3. position: absolute;
+    the element is removed from the flow of the document and no space is given 
+    to it. Everything else in the document renders as if that element doesn't exist.
+
+    Absolute position absolutely positions an element inside a parent container that it can reference.
+    The parent it refers must have positioning != static.
+    If it doesn't find a suitable parent, it will lie relative to the html element.
+
+4. position: fixed;
+    It's very similar to absolute. Fixed positioned elements lie relative to the html element.
+    They stay in the same place, even if we scroll through our page (USED IN NAVBARS)
+
+
+5. position: sticky;
+    it starts out in its position, but if we scroll and it hits the top and then it gets fixed 

@@ -1,0 +1,14 @@
+                                PROCESS
+
+It's a global object, contains information about the version of node, methods, memory usage, 
+current working directory etc..
+> process.argv
+    - returns an array containing the path of node executable, and the second element will be path 
+        to the file that was run.
+    - Anything after that, will be command line arguments 
+
+> You can pass arguments to a script as well!
+node args.js puppies chickens hello
+
+Node is not just used for web dev, this is one of the purposes. 
+You won't really use this though.

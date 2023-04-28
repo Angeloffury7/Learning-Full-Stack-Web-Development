@@ -1,0 +1,8 @@
+                            FONTS
+
+1. Web-safe fonts 
+    - Google offers them for free
+
+2.  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
+    or 
+    in your CSS, at the top, write @import url(above url) and use the font as normal.

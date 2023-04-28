@@ -1,0 +1,29 @@
+3 ways to listen for events
+
+1. Inline events (don't do this!)
+
+    <button onclick="alert('you clicked me!')">
+
+    > It complicates our markup
+    > It's annoying
+    > Difficult to write multiple lines
+    > If we want similar behaviour for another button, we have to copy-paste 
+        the entire markup.
+        - changing the message (ugh)
+
+
+2. Get the button element using querySelector and change the 'onclick' property 
+    to a function. Better, but not as optimal.
+
+
+3. BEST METHOD -> addEventListener()
+    Go to MDN and check out different types of events.
+    btn3.addEventListener('event', callback function)
+
+    Why is it better?
+
+    > In second method, it's treated as a property. Only one value, we can't have > 1 
+        callback functions. We can do that using addEventListener()
+    
+    > You can add 'options' 
+        {once: true} sirf ek baar chalega, after that it removes the eventListener

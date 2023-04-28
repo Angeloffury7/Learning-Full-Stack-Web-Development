@@ -1,0 +1,49 @@
+                        JS OBJECTS
+
+1. Collections of properties
+2. Properties are a key-value pairs
+
+const fitBitData = {
+    totalSteps: 308727,
+    totalMiles: 211.7,
+    avgCalorieBurn: 5755,
+    workoutsThisWeek: '5 of 7',
+    avgGoodSleep: '2:13'
+};
+
+3. Accessing data 
+    - fitBitData["totalSteps"] -> 308727
+    better syntax - fitBitData.totalSteps
+
+    *All keys are converted to strings, (except symbols)
+    const years = {1999: 'good', 2020: 'bad'};
+    years["1999"] works, years[1999] also works 
+
+4. Difference between . and []
+    - You can put an expression in the brackets
+        fitBitData['total' + 'Miles'] => 211.7
+
+    const years = {1999: 'good', 2020: 'bad'};
+    let birthYear = 1999;
+
+    years.birthYear //error
+    years[birthYear] => 2020
+
+5. You can add new key-value pairs using
+    object.key = value
+
+6. You can make an array of objects, or an object with an object inside of it
+    or an object with arrays inside.
+
+    const shoppingCart = [
+        {
+            product: 'Jenga Classic',
+            price: 6.88,
+            quantity: 3
+        }, 
+        {
+            ...
+        }
+    ]
+
+    

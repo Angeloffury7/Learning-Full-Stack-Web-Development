@@ -1,0 +1,6 @@
+Responding to user's actions
+
+clicks, drags, drops, hovers, scroll etc
+
+We 'listen' for these actions
+

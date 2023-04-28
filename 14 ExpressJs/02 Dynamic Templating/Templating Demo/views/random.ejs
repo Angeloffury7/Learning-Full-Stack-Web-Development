@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+</head>
+<body>
+
+    <h1>Your random number is <%= bubbles %>!</h1>
+
+    <% if(bubbles % 2 == 0) { %>
+        <h2>That is an even number!</h2>
+    <% } else {%>
+        <h2>That is an odd number!</h2>
+    <% } %> 
+    <!-- Every line of JAVASCRIPT needs to be surrounded with < %> -->
+
+    <h3> That number is <%= bubbles % 2 == 0 ? "EVEN" : "ODD"%>!</h3>
+
+</body>
+</html>
+<!-- 
+if(x) {
+
+} else if(y) {} --> 

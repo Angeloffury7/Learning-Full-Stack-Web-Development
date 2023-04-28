@@ -1,0 +1,13 @@
+If you add an eventListener to some li's that were existing on your page
+and you add some li's using javascript, the eventListener won't be added to the new lis.
+
+Solved using Event Delegation
+
+Attach the eventListener to the parent. But we still need to find out WHICH li was clicked.
+const ul = document.querySelector('ul');
+
+ul.addEventListener('click', (evt) => {
+    evt.target.remove();
+})
+
+evt.target shows which element was clicked before the event was fired.

@@ -1,0 +1,80 @@
+                        FLEXBOX
+
+0. FOCUS ON CONCEPTS, NOT MEMORIZING THE PROPERTIES
+
+1. display: flex;
+    -> This turns on flexbox 
+
+
+            ^
+            |
+            |
+    <--------------------------MAIN AXIS----->
+            |
+            |   CROSS AXIS
+            |
+            
+    -> By default, the main axis is LEFT TO RIGHT
+
+2. flex-direction;
+    -> Changes the direction of MAIN AXIS 
+    -> by default it is 'row'
+    -> 'row-reverse' makes it go RIGHT TO LEFT 
+
+    -> 'column' main axis goes from TOP TO BOTTOM
+    -> 'column-reverse'
+
+*** FLEXBOX MAKES THE ELEMENTS FIT IN
+
+
+3. JUSTIFY-CONTENT
+    -> determines how content is distributed in the main axis
+    -> by default, set to flex-start.
+    -> flex-end, moves it to the end.
+    -> center
+    -> space-between, space-around, space-evenly
+
+
+4. FLEX-WRAP
+    -> determines if our content is going to wrap on our main axis 
+        onto a new column/row 
+    -> l->r or r->l is decided by direction of cross axis 
+    -> 'nowrap'
+
+
+5. ALIGN-ITEMS
+    -> distributes spaces on the cross axis.
+    -> flex-end, flex-start, center...
+    -> 'baseline' aligns the text 
+
+
+6. ALIGN-CONTENT 
+    -> distributes space along the cross axis ONLY when we have multiple
+        rows/columns.
+    
+
+7. ALIGN-SELF
+    -> applies to a single element (start, center, end etc)
+
+
+8. FLEX-BASIS, GROW & SHRINK
+
+    ->FLEX-BASIS
+        determines initial size of an element
+        depends on main axis direction 
+    
+    ->FLEX-GROW
+        controls how much space an element takes if there is extra space
+        -> if one element has flex-grow: 2 and another has 1, the first one will grow twice as fast.
+        flex-grow: 0; means it won't grow if screen size increases.
+
+    ->FLEX-SHRINK 
+        controls how elements shrink. Similar to flex-grow.
+        flex-shrink: 0; means the element won't shrink.
+
+9. FLEX shorthand
+    3 values: flex-grow | flex-shrink | flex-basis
+    2 values: flex-grow | flex-shrink 
+    2 values(one with units): flex-grow | flex-basis
+    1 value: unitless: flex-grow
+             unit:      flex-basis

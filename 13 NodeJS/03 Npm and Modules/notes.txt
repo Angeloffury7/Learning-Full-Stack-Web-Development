@@ -1,0 +1,13 @@
+                                NODE PACKAGE MANAGER
+
+> It's a huge library of a ton of modules/packages, that other people wrote that we can use for free.
+> A package is just code that someone else wrote
+> eg, React, Express, rainbow text.
+
+> You can use the CLI to install and use the packages.
+
+                            INSTALLING PACKAGES 
+
+npm install <name of package> or npm i <package>
+- It will install some dependencies for the desired package in a folder called node_modules.
+- Don't really touch node_modules and package-lock.json

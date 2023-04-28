@@ -1,0 +1,13 @@
+                                LOOPS
+
+1. for loop, while loop, for...of loop, for...in loop
+    for(let i=1; i<=10; i++) {
+    console.log(i);
+}
+
+2. Looping over array is just like c++
+
+
+3. for...of loop
+    just like for-each loop
+    for(let x of array)

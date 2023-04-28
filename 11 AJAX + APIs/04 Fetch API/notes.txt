@@ -1,0 +1,13 @@
+> Fetch is a newer way of making requests via JS
+> It supports promises
+
+fetch("https://swapi.dev/api/people/4/");
+
+ - returns a promise
+ 
+But the response body doesn't have our required content??
+
+That's because our promise is resolved as soon as Fetch receives any headers.
+i.e. it may not have our JSON data before it's resolved.
+
+solution - response.json() -> It also returns a promise

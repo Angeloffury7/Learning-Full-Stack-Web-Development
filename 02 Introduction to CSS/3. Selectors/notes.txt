@@ -1,0 +1,117 @@
+                    SELECTORS IN CSS
+
+selector {
+    property: value;
+}
+
+1. UNIVERSAL SELECTOR
+    * {
+        selects EVERYTHING in the document
+    }
+
+2. element selector 
+    h1 {}
+
+3. SELECTOR list 
+    h1, h2 { selects all h1s and all h2s}
+
+4. ID Selector
+    to single out an element using its id
+
+    #id_name {
+        property: value;
+    }
+    it acts as a hook
+    - keep ids to a minimum, there are better strategies
+
+5. CLASS SELECTOR
+    .class {
+        property: value;
+    }
+    - class is like an id, but class can be applied to a group of objects
+    - it can be applied to elements which are different, like <a> and <h1>
+
+6. DESCENDANT SELECTOR 
+    li a {
+        color: teal;
+    }
+    selects all the <a> that are nested inside an <li>
+
+7. ADJACENT SELECTOR
+    h1 + p {
+        paragraphs that come immediately after an h1 on the same level (adjacent)
+    }
+
+8. DIRECT CHILD SELECTOR
+    div > li {
+        selects lis which are direct descendants of a div
+    }
+
+9. ATTRIBUTE selector
+    select elements based on some ATTRIBUTE
+    input[type="text"] {
+        
+    }
+
+10. PSEUDO CLASSES 
+    specify a state of that selector    
+
+    :hover - it gives a different state when you hover your mouse over it
+    :active - it gives a different state when you click or click and hold
+    :checked 
+    :nth-of-type() - every other one, every 5th
+
+11. PSEUDO ELEMENTS
+    select a specific part of the selected element
+    ::first-letter
+    ::first-line
+    ::selection - works on that part of the element that we have highlighted
+    ::after, ::before
+
+            CASCADE
+
+1. The order our styles our declared in matters
+    h1 {
+        color: red;
+    }
+    h1 {
+        color: purple;
+    }
+
+    hence, "cascading" priority
+
+    Also matters across different style-sheets - the one which is declared later in the HTML doc will be given more priority
+
+
+            SPECIFICITY
+
+1. What happens when different selectors target the same element
+
+    The more specific a selector is, it will win
+    This is determined by the browser
+
+    id > class,attribute,pseudo-class > element,pseudo-element
+
+    - This will only take place in the attributes which are conflicting
+    - The reason your signup button isn't changing color on hover is 
+    because you are using an id
+
+    1000 element selectors < 1 class selector
+    0 0 1000                0 1 0
+
+    specificity.keegan.st
+
+- You can mess around with dev tools to debug why something isn't getting 
+    applying
+
+
+INLINE STYLES
+
+They have maximum specificity and are extremely specific, this is why no one recommends them
+<button style="color:coral">
+
+IMPORTANT EXCEPTION
+
+h2 {
+    color: red !important, tells the broswer that this should override every other declaration, no matter how specific it is
+}

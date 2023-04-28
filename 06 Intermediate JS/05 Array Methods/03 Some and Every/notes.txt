@@ -1,0 +1,9 @@
+                            SOME
+
+Returns true if ANY element in the array satisfies a property
+
+
+
+                            EVERY 
+    
+Returns true if EVERY element in the array satisifes a property.

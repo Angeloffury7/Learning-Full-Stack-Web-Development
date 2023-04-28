@@ -1,0 +1,61 @@
+                            STRINGS 
+    -> indexing
+    -> inbuilt properties
+        - str.length
+        - "str"[0]
+        - "lol" + "lol" - concatenation
+        * We can't update one character at a time, we must reassign the variable.
+
+        - 1 + "hi" = "1hi" (WTF)
+
+
+    -> methods (built-in actions) 
+        searching, replacing, upper/lower to lower/upper 
+        string.method();
+        non-destructive => the original string isn't changed.
+        - str.toUpperCase() non-destructive
+        - str.trim() [removes whitespaces in the beginning and end]
+        
+        - you can chain methods together 
+            str.trim().toUpperCase() [L->R execution]
+        
+        - str.indexOf("substring"), returns first occurence, -1 if not found
+        - str.slice(beginIndex, endIndex(optional)); //non-destructive
+        - str.replace(what we want to replace, what we want to replace it with)
+
+        - str.repeat(10)
+            it will print the string 10 times
+
+1. TEMPLATE LITERALS
+    eg. "You bought " + qty + " " + product + ". Total is " + price*qty;
+        very time-consuming.
+
+    Solve this using template literals.
+
+    `I counted ${3+4} sheep`; //"I counted 7 sheep"
+
+    *THEY ONLY WORK WITH BACK-TICK CHARACTERS.
+
+    `You bought ${qty} ${product}s. Total is $${price*qty}`; //to get a dollar sign 
+    -> You can even call string methods inside these curly brackets.
+
+2. NULL 
+    -> intentional absence of any value
+    -> must be explicitly assigned
+
+    UNDEFINED 
+    variables that are not assigned are by default set to undefined
+
+3. Math Object
+    Math.PI //3.14159265
+    Math.round(4.9) //5
+    Math.abs(-4) // 4
+    Math.pow(2,5) //32
+    Math.floor(3.999) //3
+
+    Math.random() -> generates random number (0,1)
+
+    Math.floor(Math.random()*m) -> to generate INTEGERS from 0 to m-1
+
+4. -> to convert a nummber string to a number 
+    parseInt(str);

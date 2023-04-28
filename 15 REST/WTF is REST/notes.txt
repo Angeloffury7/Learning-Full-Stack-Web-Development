@@ -1,0 +1,22 @@
+                            REST
+
+REpresentational State Transfer
+> It's a set of guidelines/principles how clients and servers should interact.
+
+> Soon we will create APIs and routes which will be RESTful
+
+> Create content, Read content, Update content, Delete content 
+    CRUD
+
+> Uniform interface i.e. a consistent URL pattern matched with different HTTP methods to enable CRUD operations.
+
+username - text
+
+GET /comments -> shows comments
+POST /comments -> new comment
+PATCH /comments/{ id } -> update existing comment
+DELETE /comments/{ id } -> delete a comment
+
+This pattern is not "REST", it's RESTful
+
+

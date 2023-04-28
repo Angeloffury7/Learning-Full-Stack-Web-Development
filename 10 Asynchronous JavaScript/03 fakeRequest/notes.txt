@@ -1,0 +1,26 @@
+> Promises are objects that represent eventual completion/failure of an operation.
+
+> A common pattern for making requests was
+    makeRequest(() => {
+        //success
+    }, () => {
+        //failure 
+    })
+
+    callback hell
+
+> Solution: promises 
+
+> Imagine you are a child and you want to eat candy. Your parents will tell you,
+    "if you eat all your vegetables, THEN you will get candy" i.e. hopefull resolution/failure
+    of a promise.
+
+> We return a Promise object, ya to wo reject hoga ya to wo fullfill hoga
+> We don't need to pass in callbacks, you can attack callbacks to a promise object.
+
+.then() and .catch()
+If the promise is resolved, run the .then() block, if it was rejected run the catch block.
+
+> You can chain promises
+
+> Promises can be resolved/rejected with values.

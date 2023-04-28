@@ -1,0 +1,19 @@
+                    RESPONSIVE WEBSITES + MEDIA QUERIES
+
+-> We create one website and design it to work on screens of different sizes.
+-> Done using media queries
+-> They allow us to modify our styles depending on screen-size, device type etc
+
+@media(max-width: A px) {
+    styles....
+}
+
+@media(min-width: 30em) and (orientation: landscape) {
+    styles...
+}
+
+1. max/min-width
+    refers to size of viewport
+    -> a rectangular area in your screen that is being viewed
+
+2. orientation -> portrait, landscape

@@ -1,0 +1,32 @@
+                        FUNCTIONS 2.0
+
+1. Scope -> variable scope etc
+
+2. Block scope 
+
+3. 'var' variables do have function scope, but not block scope.
+
+4. lexical scope
+    function bankRobbery() {
+        const heroes = ['Spiderman', 'Wolverine', 'Black Panther', 'Batwoman']
+        function cryForHelp() {
+            for(let hero of heros) {
+                console.log(`Please help us, ${hero.toUpperCase()}`);
+            }
+        }
+        cryForHelp();
+    }
+
+    A child/nested function has access to the variables defined in the parent function.
+
+
+5. Function expressions
+
+    You can treat a function as a value, including storing it in a variable!
+    const add = function(x,y) {
+        return x + y;
+    }
+
+    add(2,3);
+
+*FUNCTIONS ARE VALUES IN JAVASCRIPT, WE CAN STORE IT, PASS IT AROUND ETC

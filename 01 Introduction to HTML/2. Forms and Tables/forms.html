@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Demo</title>
+</head>
+
+<body>
+    <h1>Forms Demo</h1>
+    <button>hey there</button>
+
+    <form action="/tacos">
+        <!-- - file:///C:/tacos?usernameeee=lol -->
+
+        <button type="button">this won't submit</button>
+
+        <label for="user">enter your username</label>
+        <input type="text" placeholder="username" id="user" name="usernameeee">
+
+        <label for="pswd">enter your password</label>
+        <!-- this won't work -->
+        <input type="password" placeholder="password" name="password">
+
+        <input type="color" name="col">
+
+        <label for="num">enter a number</label>
+        <input type="number" placeholder="number" id="num" name="num" min="1" max="1000">
+
+        <label for="userr">
+            enter your username
+            <input type="text" placeholder="username" id="userr">
+        </label>
+        <!-- nested input, but this is less common -->
+
+        <button>Submit</button>
+
+        <input type="submit" value="Made using input tag">
+        <!-- very bad practice!!!! -->
+
+    </form>
+
+    <h2>More Inputs!</h2>
+
+    <form action="/tacos">
+        <input type="checkbox" name="agree_tos" id="agree" checked>
+        <label for="agree">I agree to everything</label>
+
+        <p>
+            <input type="radio" name="size" id="small" value="S">
+            <label for="small">Small</label>
+            <input type="radio" name="size" id="med" value="M">
+            <label for="med">Medium</label>
+            <input type="radio" name="size" id="large" value="L">
+            <label for="large">Large</label>
+        </p>
+
+        <p>
+            <label for="meal">Please Select an entree</label>
+            <select name="meal" id="meal">
+                <option value="fish">Fish</option>
+                <option value="veg" selected>Vegetarian</option>
+                <option value="Steak">Steak</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="cheese">Please select amount of cheese</label>
+            <input type="range" id="cheese" max="10" min="0" name="cheese_level" step="4" value="5">
+        </p>
+
+        <p>
+            <label for="requests">Any Special Requests?</label>
+            <br>
+            <textarea name="req" id="requests" cols="20" rows="10" placeholder="type something here idk"></textarea>
+        </p>
+
+        <button>Submit</button>
+    </form>
+
+    <h2>Form Validation</h2>
+
+    <form action="/dummy">
+
+        <label for="first">Enter your name</label>
+        <input type="text" name="first" id="first" required>
+        <p>
+            <label for="username">username</label>
+            <input type="text" name="username" id="username" minlength="5" maxlength="20" required>
+        </p>
+
+        <button>Submit</button>
+    </form>
+
+</body>
+
+</html>

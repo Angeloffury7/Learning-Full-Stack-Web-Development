@@ -1,0 +1,9 @@
+Bootstrap offers a lot of free icons
+
+1. HTML has an <svg> tag
+    Scalable Vector Graphics -> Explore them on your own! 
+
+2. input-groups
+    When we group together inputs 
+
+3. Font Awesome -> Use this, it has way more icons, and a lot more features

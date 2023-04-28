@@ -1,0 +1,22 @@
+Old way -> XMLHttpRequest
+
+-> Doesn't support promises, so lots of callbacks
+
+-> Very clunky syntax
+
+
+
+1. Create an XMLHttpRequest object and store it in a variable
+
+2. req.open("method(GET/POST)", "url")
+3. req.send()
+
+req.onload = function() {
+    runs when successful
+}
+
+req.onerror = function() {
+    runs when error
+}
+
+USE FETCH -> newer, fancier way of making requests

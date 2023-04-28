@@ -1,0 +1,12 @@
+1. Purpose of 'action' in forms
+    > It moves the data to that location
+    > We move to a new page
+
+    What if we want to stay on that same page? On all websites, when you submit some data, the page doesn't refresh 
+    or go to another address. How do we do that?
+
+    event.preventDefault(); prevents the default behaviour of a given event.
+
+2. input.value
+    At any time, we can ask what is currently in the input
+    > can set it to ''

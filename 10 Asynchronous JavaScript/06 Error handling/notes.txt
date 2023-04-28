@@ -1,0 +1,3 @@
+If we encounter a rejection from our async function, we'll get an error and the code after the function call won't run.
+
+> To work around this, we can use try-catch

@@ -1,0 +1,21 @@
+Integrating Bootstrap in our EJS.
+> First, download the compiled CSS and JS files from bootstrap's website
+> Create a /css and /js directory in your public folder, move bootstrap.min.css to /css,
+    bootstrap.min.js to /js
+
+> In your ejs file, instead of styles.css, write /css/bootstrap.min.css 
+                    instead of script.js, write /js/bootstrap.min.js 
+
+> In your console, it may say that we need jQuery to run bootstrap.js 
+> Go to jQuery's website, download the compiled production version, and place it in /js
+> in your ejs file, <script src = /js/jquery.js>
+
+Now you can start using Bootstrap as normal :D 
+
+
+                                PARTIALS 
+
+> Including templates in our ejs files, to reuse code.
+for eg, the <!DOCTYPE html> etc 
+
+> <%- include('partials/template_name') %>

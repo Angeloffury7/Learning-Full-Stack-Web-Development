@@ -1,0 +1,28 @@
+                                Async functions
+
+> They help us write clean async code, nothing new
+> A new coat of paint on our code
+
+Async and Await are pretty much only used together.
+
+> Async functions return a new Promise
+async function() {
+    //code
+}
+
+> If our function returns a value, our promise is resolved with that value.
+
+> To reject a promise, 
+    throw new Error("")
+    or throw (string)
+
+> AWAIT 
+    Helps us to write asynchronous code.
+    - It will pause execution of our async function and waits for promise to be resolved
+
+    async function rainbow() {
+    delayedColorChange("red", 1000)
+    delayedColorChange("orange", 1000) //it will instantly turn to orange
+}
+
+To prevent this, we use "await"

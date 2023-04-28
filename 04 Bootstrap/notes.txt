@@ -1,0 +1,10 @@
+                            BOOTSTRAP
+
+1. CSS that someone else wrote, that we can use in our own code.
+
+eg. Bulma, Foundation, Semantic UI are like Bootstrap 
+
+2. It helps us quickly create modern and responsive websites, without writing much code.
+
+3. Components -> pre-made stuff we can use into our code.
+    Grid System -> a layout

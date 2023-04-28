@@ -1,0 +1,27 @@
+> Sharing code among multiple JS files so that we can use their functions and variables in other files.
+> With node, you can be very particular about what a file shares and doesn't share.
+
+> If you need data from another file, you need to 'require' it, like how we require code from File System module etc
+> Express is just JS written by other people, that is used by thousands by people by 'requiring' those files.
+
+> By default, an empty object is received by the requiring file, because we need to explicitly
+    define what we want to export from the required file.
+
+    module.exports.function = function
+    module.exports.variable = variable
+    ...
+    you could literally export module.exports = "HELLOO!"
+
+> module.exports is an OBJECT, so you can directly pass an object as well
+
+> In the requiring file, this data is imported as an object.
+
+> Shorthand, use exports.function = function 
+    ** It's a quick reference to module.exports, but if you assign a value to exports like a variable, 
+    it won't be referencing module.exports anymore.
+
+
+                        REQUIRING DIRECTORIES
+
+> When you require a directory from outside the directory, you must have a single index.js.
+> It's the main file for the directory, node is going to look for index. Whatever that file exports is what the directory exports.

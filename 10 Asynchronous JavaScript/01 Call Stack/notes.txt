@@ -1,0 +1,12 @@
+1. JavaScript is single threaded (can only run one line of code at a time)
+2. If something takes 5 seconds to happen, does that mean our code pauses for 5 seconds and nothing
+    happens?
+
+    No
+
+3. The browser does the task. Browsers are typically written in C++. JavaScript hands the task to the browser.
+    Browsers have WebAPIs whic are built for these tasks.
+
+4. JavaScript call stack recognizes these WebAPI functions and passes them off to the browser.
+    Once the browser finishes those tasks, they are returned to JS.
+

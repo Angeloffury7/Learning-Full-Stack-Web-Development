@@ -1,0 +1,122 @@
+                                 TABLE
+                                                 
+1.    header, sub-headers, etc...
+    They have a lot of elements inside them, but don't be intimidated
+    <td> - table data cell (basically the cells in a table)
+         - inline elements
+         - to get in different rows, use <tr>
+
+   <tr> - table row element
+         - groups info in different rows
+   
+   to align elements of the same column, you can add an empty <td>
+   
+   <th> - puts column headings (table header)
+
+2. <thead> contains the column headings
+   <tbody> contains the body of the table
+   <tfoot> functions as a footer
+
+3. row and col span - when a heading spans multiple rows or columns
+   eg. <th rowspan="2"> this will make a heading take up 2 rows
+   similarly, <th colspan="2">
+
+
+                                   FORMS
+
+   -<form>
+   -collection of inputs, checkboxes, buttons etc
+   -"action" attribute specifies where the form data should be sent
+
+1.   <input>
+   - inline element
+   - doesn't have closing tag, no content in between
+   very versatile, can be used to make 20+ possible types of inputs
+   -"type" attribute dramatically alters the input's behaviour and
+   appearance
+
+   <input type="text">
+   <input type="password">
+   <input type="color">
+   <input type="number">...
+
+
+2. When we submit a form, an HTTP request is sent to the server and
+   we control where that request goes to using action attribute and 
+   we also control which type of HTTP method using the "method" 
+   attribute
+
+3. "placeholder" attribute specifies placeholder text for an input field.
+
+4. <label> 
+   - inline element
+   - it associates a piece of text with its corresponding checkbox while using
+     screenreaders. 
+   - makes the label(text) clickable to select the corresponding check-boxes
+
+   - to associate ->
+                     in input field, give it an "id" (anything)
+                     use that exact id in the "for" attribute of the <label>
+
+   - to place them in separate lines, use <div>, <p> etc..
+
+5. <button>Submit</button>
+   - by default, buttons will submit unless they're outside the form.
+   - we have an attribute for that as well
+
+   <button type="button">lol</button>
+   or type="submit"
+
+6. we could also write <input type="submit"> but it's a very bad practice
+   - to change the name of this button, use value attribute
+
+7. - when we submit a form/search something, we get something like www.reddit.com/search/q=lol
+      here, 'q' is the NAME/alias of the input.
+   - The server looks for this <name>
+   - name is an attribute of the input field
+
+8. checkboxes
+   - type="checkbox"
+   - checked (by default it will be checked)
+   - very important to set a label
+
+9. Radio buttons
+   type= "radio"
+   - in a group of radio buttons, we can only select one
+   to do that we need to associate them, by giving all of them the same NAME
+   - to give distinction in options, use value attribute (all of them will have
+      the same name, so it will just say size=on, but we need it to say
+      size=med)
+   
+   - value can be distinct
+
+10. <select> 
+   -dropbox
+   it has option elements inside it with value attribute
+   - add "selected" in option tag so that, that option is 
+      pre-selected
+
+11. range input
+   -slider
+
+12. we can add step, min, max in range and number inputs, but 
+   also default value in range input
+
+13. <textarea>
+   - multiline text
+   not an input, an independent tag
+   gives a writing area, we can give inital height and width
+
+14. VALIDATIONS
+   adding constraints or validating user input eg. rules on password etc
+   - usually done using javascript (client-side validation)
+   - for now we will use in-built validation
+
+15. "required" attribute
+   validation for min-length and maxlength
+   - min and max for numeric values
+
+16. pattern attribute is something the server uses to validate a user input
+   eg. emails must have an '@', URLs must have .com etc
+
+

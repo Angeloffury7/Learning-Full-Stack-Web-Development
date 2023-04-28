@@ -1,0 +1,4 @@
+                        DESTRUCTURING
+
+1. Unpack values from arrays, properties from objects into variables
+2. parameter destructuring 

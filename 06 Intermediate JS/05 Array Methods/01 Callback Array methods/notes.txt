@@ -1,0 +1,31 @@
+Callback funtions accept functions as arguments
+
+                        FOR-EACH
+
+Calls the function once per element in the array.
+- It doesn't return anything.
+- Not used a lot, because we have for...of
+
+
+                        MAP
+
+Creates a new array with results of calling a callback on every element in the array.
+
+
+                        ARROW FUNCTIONS 
+
+Newer alternative to writing functions, we don't have to write 'function'.
+Used to create function expressions
+
+const add = (x, y) => {
+    return x+y;
+}
+
+-> if there is no argument, () is necessary.
+-> if there is only a single parameter, () are optional
+
+Implicit return (only with arrow functions)
+
+    - You don't need to write 'return'
+    - use normal brackets instead of curly braces.
+    - if the function body is really simple, you can skip the brackets as well (use your judgement.)

@@ -1,0 +1,13 @@
+1) .removeChild() 
+
+    > We must select the parent of the element we want to delete, then
+        we delete the child.
+
+    > const firstLi = document.querySelector('li');
+        firstLi.parentElement.removeChild(firstLi);
+
+
+2) .remove()   <- USE THIS
+
+    const img = document.querySelector('img');
+    img.remove();

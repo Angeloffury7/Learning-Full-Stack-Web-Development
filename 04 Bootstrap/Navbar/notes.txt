@@ -1,0 +1,18 @@
+                            NAVBAR
+
+1. You need a div/nav of class "navbar"
+2. navbar-light -> dark text
+    navbar-dark -> light text
+
+3. To add links
+    1. ul > li
+    2. div("navbar-nav") with anchor tags inside of it. class="nav-item nav-link"
+        Wrap this in ."collapse navbar-collapse"
+
+4. navbar-expand-lg decides at what screen size the navbar will expand
+
+5. navbar toggler creates that hamburger icon
+
+6. YOU NEED TO HAVE BOOTSTRAP JS SCRIPTS FOR THIS.
+
+7. use fixed-top, fixed-bottom, sticky-top to make sure your navbar doesn't go away when you scroll.

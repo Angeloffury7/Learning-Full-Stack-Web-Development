@@ -1,0 +1,13 @@
+Change and Input events
+> When we want something to happen live, not on submit etc.
+> keydown, but that excludes other stuff (copy paste etc)
+
+-> CHANGE event fires when we *click away* after changing the value in an input.
+    (blur the input)
+
+-> INPUT event fires whenever what's in the input changes.
+
+JUST PRESSING ARROW KEYS/SHIFT/CONTROL OR ANYTHING ELSE WHICH DOESN'T CHANGE THE INPUT WON'T TRIGGER THESE EVENTS.
+
+-> If you console.log(evt) in the input event,
+    evt.data will tell you what new key was pressed.

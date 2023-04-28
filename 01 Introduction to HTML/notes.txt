@@ -1,0 +1,32 @@
+                        INTRO TO THE WEB
+
+
+1. We request and view web resources in the World Wide web, and
+    those resources are identified using URLs.
+
+2. The information is transferred using an HTTP protocol
+    It is the foundation of how the web works.
+    other protocols - TCP/IP
+
+3. Whenever we do something on a web page, we send a request to the website's servers
+    asking for a particular resource, and then the broswer displays it for using
+
+4. A web server is just a giant computer which satisfies requests on the Web.
+
+5. Client - the computer that accesses a server.
+
+
+                        REQUEST/RESPONSE CYCLE
+                
+
+1.  When we generate a request, the server responds with "code" or "instructions", that the browswer
+    can understand and it renders that for us.
+
+2.  Our browser can only understand and render HTML, CSS and JS and every web page is made of at most these 3 tools.
+
+
+
+
+** SLOW DOWN, DON'T BE IN A HURRY TO COMPLETE SECTIONS, TAKE TIME AND FULLY UNDERSTAND EVERYTHING BEFORE MOVING ON TO
+    THE NEXT VIDEO.
+         

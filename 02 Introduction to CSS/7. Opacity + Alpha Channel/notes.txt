@@ -1,0 +1,20 @@
+                    OPACITY + ALPHA CHANNEL
+
+1. Alpha channel 
+
+    rgba(r,g,b,a)
+        red green blue alpha (0-1)
+                             1 => opaque
+                             0 => transparent
+    - rgba only affects the property it's called for
+
+    - opacity => governs entire element's transparency including text
+                and descendants.
+                (0-1) same as alpha channel
+    
+    - we can use alpha channel with hex colors as well
+        #ffeedd00
+                last 2 digits
+                00 - transparent
+                FF - opaque
+

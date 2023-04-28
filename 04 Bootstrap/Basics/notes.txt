@@ -1,0 +1,19 @@
+                    BASICS
+
+1. We can use Bootstrap remotely. It is a CDN (Content Distribution Network)
+    Just link to the opening link.
+
+2. Always link Bootstrap before your stylesheet, so that Bootstrap doesn't override your custom styles.
+
+3. Boostrap has some JS components as well.
+
+4. Bootstrap is used using classes.
+
+5. Our code must be in a div with class "container."
+6. responsive versions -> container-sm, container-md
+
+7. YOU DON'T HAVE TO MEMORISE THIS, REFER TO THE DOCS. Just learn how to use it.
+
+8. If you use button-groups, give the container a role="group" for screen readers
+
+9. You need Bootstrap scripts to make dismissable alerts!

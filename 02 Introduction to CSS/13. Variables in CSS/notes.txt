@@ -1,0 +1,20 @@
+CSS has variables that can be resued so that we don't have to remember the properties to use them later.
+
+SYNTAX ->
+:root {                 or              :html {
+    --div-background-color: red;
+    --text-color: black;
+    --div-padding: 10px;
+    --div-margin: 10px;
+}                                        }
+
+.class {
+    background-color: var(--div-background-color);
+}
+
+You can override the variables for specific conditions
+
+> You can have a fallback value for when your variable is not declared.
+    (see styles.css)
+
+> The best thing about these variables is that you can interact with them through JS

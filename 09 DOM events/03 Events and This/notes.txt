@@ -1,0 +1,5 @@
+1. How do we make sure that jis button pe click kiya, usi ka color change ho?
+    > call makeRandColor for each button.
+        But if you have multiple elements/properties, you will have to repeat a lot of code
+
+    > create a generic function and use 'THIS'

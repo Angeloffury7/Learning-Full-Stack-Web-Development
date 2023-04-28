@@ -1,0 +1,58 @@
+                    UNITS
+
+Absolute units: px, cm, in, mm
+Relative units: %, em, rem
+
+1. PERCENTAGE
+    - width: 50% -> half the width of parent element
+
+    - sometimes, it's a percentage of the element, not the parent
+        eg. line-height: 50% -> it's 50% of the font-size of the element
+                                not the parent
+
+
+2. EMs
+    - font-size: 1em -> same font-size as parent
+                2em -> twice the font-size of parent
+
+    - with padding & margin, 1em equals the font-size of the ELEMENT
+
+    - with pixels, we can't scale an element, because it's an absolute 
+        unit. That's why we use relative units, so that they maintain their
+        proportions.
+    
+
+3. REMs
+    - shortcoming of em
+        -> if we have nested lists for example, and we use ems, if you change
+            the size of the outermost list, the units will stack and increase/decrease
+            the size of everything nested inside it.
+    
+    - solution-> REMs
+    
+    Root-EMs
+    Relative to root html element size
+    - if root font-size is 20px, 1rem is ALWAYS 20px
+
+    html {              /* changing the root font-size
+    font-size: 10px;
+}
+
+
+4. EMs are useful when you want to scale properties eg, border radius
+
+5. vh and vw
+    width: 50vw;
+    height: 70vh;
+    Width is 50% of viewport width/screen
+    Height is now 70% of viewport height/screen
+
+    vmax/vmin
+    height: 50vmax;
+    width: 50vmax;
+    in this case, if vh > vw, then height = 50vh, width = 50vh 
+                if vw > vh, then height = 50vw, width = 50vw 
+
+    similarly, for vmin...
+
+    The size of the element can change if the screen size changes

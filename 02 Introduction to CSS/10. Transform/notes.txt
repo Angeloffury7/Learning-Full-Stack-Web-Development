@@ -1,0 +1,37 @@
+                                TRANSFORMS
+
+- rotate things, scale, stretch them, move them etc
+
+*** margin: 0 auto
+    with a block level element, if left and right margins are auto
+    they are centered in their container.
+
+1. Rotate 
+    - angles -> deg, rad (most common), turns
+
+    transform-origin -> control the point about which it rotates
+    rotateX() -> rotates about X axis
+    rotateY()
+    rotateZ()
+
+2. Scale 
+    changes size of element
+    scaleX() 
+    scaleY()
+
+3. Translate 
+    move around an element
+    translateX()
+    translateY()
+    length or some percentage (rems, ems, px)
+    negative values work as well
+
+4. Skew
+    skewX()
+    skewY()
+
+
+- You can apply all of them at the same time by separating them by spaces.
+- Everything inside an element is affected by the transforms.
+
+    DON'T FEEL GUILTY ABOUT REFERRING TO THE DOCS

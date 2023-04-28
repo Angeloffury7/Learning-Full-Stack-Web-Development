@@ -1,0 +1,15 @@
+                        DOM
+
+Document Object Model
+
+-> A javascript representation of a webpage, plus tons of useful methods and properties.
+-> It's a bunch of objects you can interact with via JS
+
+DOCUMENT object 
+
+- Every HTML and CSS element gets a JS object.
+- hierarchial relationship depending on how they're declared (like a tree)
+- At the top, there is 'Document.' It's an object which contains all the content on a page + properties
+
+console.dir(document)
+    -> this allows you to see the element as a javascript object (shows properties of everything.)

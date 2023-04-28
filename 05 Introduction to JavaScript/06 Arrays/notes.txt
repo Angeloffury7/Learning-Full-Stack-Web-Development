@@ -1,0 +1,54 @@
+                                ARRAYS 
+
+let arr = [1,2,3];
+
+-> If we have arr = [1,2,3,4] and we do arr[10] = 10;
+    the array will become [1,2,3,4, empty*5, 10].
+    'empty' will be undefined
+
+-> push => add to end
+    pop => remove from end 
+    shift => remove from start
+    unshift => add to start
+
+1. concat -> merge arrays 
+    array3 = array1.concat(array2);
+    original arrays aren't modified
+
+2. array.includes() -> if an array includes a particular value
+3. array.indexOf()
+4. array.reverse() -> destructive method (changes the original)
+
+5. array.slice() -> gets a copy of the slice of the array
+6. array.splice() -> changes the contents of the array by removing or replacing
+                    existing elements in place.
+
+                    splice(start, delete count, value to be inserted);
+
+7. array.sort() -> lol
+                    - converts everything to strings and then compares their UTF-16 code.        
+                    - doesn't really work
+                    - create your own sorting function. 
+
+8. == and ===
+    [1,2,3] === [1,2,3] (false) ??
+    [1,2,3] == [1,2,3] (false) ??
+    ['hi'] === ['hi'] (false) ??
+    ['hi'] == ['hi'] (false) ??
+
+    -> Javascript doesn't compare content, it compares the references in memory (address).
+    [1,2,3] === [1,2,3] 
+    even though their content is same, they are completely different arrays.
+
+    nums = [1,2,3]; numsCopy = nums;
+    changes in nums will reflect in numsCopy too, and vice versa!! (dono ka reference same hai)
+    nums === numsCopy (true)
+
+9. You can use const nums = [1,2,3], and you can still update it, but you can't reassign the variable.
+    We can completely change the interior, but nums must always point to the same address (NO REASSIGNMENT!)
+
+10. Nested arrays 
+    const colors = [['red', 'crimson'], ['orange', 'dark orange']];
+
+
+11. You can have arrays of mixed data types!

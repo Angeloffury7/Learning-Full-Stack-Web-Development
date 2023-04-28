@@ -1,0 +1,24 @@
+It's a library for making HTTP requests
+> built on-top of JS
+
+> Easier to make requests 
+> Include it using the URL in its GitHub repo
+
+axios.get(url) -> returns a promise
+
+> Using axios, you can skip the res.json() step
+
+
+                        CONFIGURING HEADERS
+
+In the DadJokes API, we have to specify Accept: application/json header, 
+so how do we do that?
+
+0. READ THE DOCS FOR EVERY API 
+
+> const config = {headers: {Accept: "application/json"}}
+    axios.get(url, config)
+
+
+    **DON'T MAKE A LOT OF REQUESTS, THEY MAY BAN YOUR IP ADDRESS AS THEY HAVE RATE LIMITS!!
+    pls dont do that to free apis ;-;

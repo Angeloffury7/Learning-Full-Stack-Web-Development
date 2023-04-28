@@ -1,0 +1,10 @@
+
+1. All JS values have an inherent truth-yness and false-yness 
+    Falsy ->
+        false
+        0
+        ""
+        null
+        undefined
+        NaN
+    Everything else is truthy

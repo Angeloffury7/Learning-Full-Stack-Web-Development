@@ -1,0 +1,44 @@
+                    SELECTING ELEMENTS [select -> manipulate]
+
+getElementById(), getElementsByTagName()
+    getElementsByClassName()
+
+    > We pass a string, and if an element corresponding to that is found, its object is created
+        and then returned. Otherwise it's null. Javascript objects hi return hote hain. Collection of 
+        {key:value} pairs.
+
+    > We can store them in variables.
+
+1. getElementById()
+   > document.getElementById('banner')
+        We aren't asking for the HTML, we are asking for the DOM object (the actual element object.)
+
+2. getElementsByTagName() and getElementsByClassName()
+    > They select multiple elements.
+    > getElementsByTagName('p')
+    > return an HTML collection - it looks like an array, but it is not. But you can use indices,
+        length, for...of etc
+
+
+    HTML COLLECTION 
+    > It has Javascript elements 
+
+3. getElementsByClassName()
+
+
+                    querySelector()
+
+    >It's much more popular and used much more
+
+1. Newer, all-in-one method to select a single method.
+    document.querySelector('h1')
+    document.querySelector('#red')
+    document.querySelector('.big')
+
+    > gives us the first match
+
+    > You can use every type of CSS selector here
+        document.querySelector('img:nth-of-type()');
+
+    document.querySelectorAll
+    returns HTML collection of all matching elements.

@@ -1,0 +1,90 @@
+                            TEMPLATING
+
+On Reddit, all subreddits follow a pattern -> Name of subreddit - join
+                                                Card showing members vs active members
+Even though colors, themes sizes might be different, they are fundamentally similar. We don't need to create separate files for each subreddit, 
+we can create a template.
+
+1. They are like madlibs (look them up)
+2. Instead of writing static HTML code, we can embed information and logic (conditionally show/hide something)
+    eg, If user is not logged in, show sign up and log in button
+    but if they are, don't show us these buttons.
+
+3. We can use many tools/templating engines for this (handlebars, jade etc), but we will use EJS (embedded javascript) because it is very popular, and importantly
+    it uses Javascript syntax, unlike other engines.
+
+4. How do we tell our app to use EJS?
+    app.set(property, value)
+    app.set("view engine", "ejs");
+    npm install ejs
+
+5. By default, express is going to assume that our templates are in a folder called 'views'. We need to make that folder.
+    You can change it tho. 
+
+6. In views folder, your template needs to end in .ejs 
+7. EJS is just standard HTML, but it has extra features
+
+8. in your app.get(), use res.render('file') , don't need to write .ejs 
+
+9. EJS takes our template and runs all the logic and spits out HTML.
+
+10. *** EJS will look for the views folder from where we run the script, not where the script is located.
+
+11. If you want to be able the code from anywhere, you should change the views directory. Right now, views directory is process.cwd()
+    We want whereourfileislocated/views 
+
+12. path -> built-in module in express
+
+
+                                EJS Syntax 
+1. Tags -> <%= Evaluates and outputs the value into the HTML %>
+2. Use EJS syntax to just display stuff, don't write logic in the tags
+    You can pass a second argument to res.render to use variables, it must be an object { variable: value }
+    If you just want to pass the value, just write { value }
+
+
+                                Conditionals in EJS 
+<% %> 
+ <% if(bubbles % 2 == 0) { %>
+        <h2>That is an even number!</h2>
+    <% } else {%>
+        <h2>That is an odd number!</h2>
+    <% } %> 
+Every line of javascript must have the <%> around it, no need for that in lines where HTML is present.
+
+
+                                Looping in EJS 
+
+We use templates for looking, to create very similar content. 
+for eg, similar looking posts in a subreddit 
+
+
+                                
+                                Creating subreddit web pages (advanced) 
+
+We have a json file with data of 3 subreddits, and if we go to /soccer, we want to render the soccer subreddit etc. 
+How do we do this?
+
+> require the file
+> Take the subreddit name that you grabbed from the request and match it against data.json.
+> const data = redditData[subreddit];   //returns the object of that subreddit.
+> Since data is an object, we could pass the entire object and use it as data.name, data.subsribers 
+    Instead, use the spread operator!
+    { ...data } -> { name: idk, subscribers: lol, ...}
+    If you recall, this is exactly how you pass variables to an ejs file! So now you can use name, subscribers etc as VARIABLES!
+
+> If you have a list of posts, use a for...of loop 
+
+
+                                SERVING STATIC FILES 
+
+It refers to serving CSS and JS files, that we want to include in the response to the owner. We need to use express.static() -> it's a middleware
+middleware ? It doesn't care about the route/request, it's going to run during every single request. We pass in the folder, that we want to serve our assets from.
+
+> The folder name doesn't have to be public, it's just the naming convention.
+
+app.use(express.static('public'));
+> Make the directory inside the parent folder.
+> In your EJS, make a regular link tag for styles. You don't have to write /public/styles.css, because the folder isn't served, the contents are!
+
+> To be able to serve your assets from anywhere, as like in views, write app.use(express.static(path.join(__dirname, 'public')));

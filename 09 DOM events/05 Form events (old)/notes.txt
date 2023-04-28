@@ -1,0 +1,10 @@
+1. console.dir(tweetForm)
+
+    property - elements (HTML collection)
+                > input
+                > input
+                > button
+            
+                Order matters here
+                But since they have names, you can do tweetForm.elements.username
+

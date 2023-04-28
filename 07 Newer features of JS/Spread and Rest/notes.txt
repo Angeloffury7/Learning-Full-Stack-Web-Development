@@ -1,0 +1,49 @@
+                            SPREAD
+
+eg. Math.max(1,2,3,4) = 4
+    Math.min(1,2,3,4) = 1
+    const arr = [1,2,3,4]
+
+    Math.max/min(arr) = undefined (expects list of arguments)
+
+    Spread syntax "spreads" the array out where it is expected
+
+    Math.min(...arr) = 1 
+
+    -> can do this with strings as well
+
+
+1. Spread with Array literals
+    const cats = ["Blue", "Scout", "Rocket"]
+    const dogs = ["Rusty", "Wyatt"]
+
+    const allPets = [...cats, ...dogs, "Speedy"]
+
+2. Just like with arrays
+    const feline = {legs: 4, family: "Felidae"}
+    const canine = {isFurry: true, family: "Caninae"}
+
+    const catDog = {...feline, ...canine}
+    When there is a conflict of properties, the one declared later will win
+
+    const obj = {...[2,4,6,8]}
+    obj = {0: 2, 1: 4, 2: 6: 3: 8}
+
+
+                        ARGUMENT OBJECT
+
+- Available inside every function
+- it's an array-like object.
+    has a length property, does not have array methods like push, pop
+
+- stores all the arguments passed to a function
+- not available in arrow functions
+
+eg, Math.min() accepts any number of arguments
+
+
+solution:               REST
+
+Collects all remaining arguments and puts them in an actual array
+
+    

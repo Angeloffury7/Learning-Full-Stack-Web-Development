@@ -1,0 +1,18 @@
+<, >, <=, >=, ==, !=
+=== -> strict equality
+!== -> strict inequality
+
+1. You can compare strings, but it can get dicey. They are compared on the basis of Unicode.
+
+2. == vs ===
+    == checks for equality of value, but not equality of type.
+        It coerces both values to the same type & and then compares them.
+        1 == "1" ? true (wtf)
+    
+    === checks for equality of value AND type.
+
+    *ALWAYS USE ===
+
+-> console is an object, console.clear(), .time(), .warn(), .dir()
+
+-> alert("ge4asd"), prompt("dfasd") => asks for input

@@ -1,0 +1,7 @@
+                        EVENT BUBBLING
+
+If you do something that fires an event, then the events of parent elements will also be fired in reverse chronological
+order, starting from the original element. (original -> parent -> grandparent)
+
+To prevent that, do evt.stopPropagation()
+

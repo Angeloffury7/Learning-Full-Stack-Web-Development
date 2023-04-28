@@ -1,0 +1,43 @@
+1. IMPORTING STYLES
+
+    - we could write <h1 style="color: purple"> Hello</h1>
+        but this is a bad practice, as we cannot share them without 
+        writing the same code again
+
+    - style element
+        <style> 
+            h2 {
+                color: pink;
+            }
+        </style>
+
+        again, we can't share the styles among different files
+
+    - best approach
+        write your styles in an external style sheet
+
+        to connect your HTML and CSS files -> <link rel="stylesheet" href="styles.css"> 
+
+2. SOME ATTRIBUTES
+
+    color: changes text color
+    background-color: duh
+    background: is a generalised form of background-color, it can do a lot more
+    
+
+3. COLOURS---
+
+    a) RGB
+       - each value is between 0 & 255 
+       - eg, rgb(255,0,0)
+    
+    b) HEXA
+        - 16-based codes
+            1 2 3 4 5 6 7 8 9 A B C D E F
+
+            eg, #ff ff 00
+                red green blue
+                ff = 255
+
+        - if we have #000000, we can also short-hand it as #000
+                    #CC55EE; we can write c5e;

@@ -1,0 +1,6 @@
+1. Add <script src="app.js"></script> in HTML
+2. Add it in the last line of the <body>, it is better.
+
+3. to print, write console.log() statements in the JS file.
+4. You can create variables and use them in the console.
+

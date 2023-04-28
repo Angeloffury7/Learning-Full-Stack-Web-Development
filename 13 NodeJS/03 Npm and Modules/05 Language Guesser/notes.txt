@@ -1,0 +1,13 @@
+1. to uninstall a package, npm uninstall <pkg>
+2. write multiple commands like this -> npm install langs ; npm install franc
+
+3. In this project, we need to import franc and require langs, how do we do that?
+
+in package.json, write "type": "module"
+
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
+import { franc } from "franc";
+const langs = require("langs");
+const colors = require("colors");

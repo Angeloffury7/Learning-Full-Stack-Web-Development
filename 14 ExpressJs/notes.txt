@@ -1,0 +1,18 @@
+                            
+> DON'T BE SCARED TO REFER THE DOCS OR REWATCH THE CODE because we are working with code someone else has written!
+    FOCUS ON UNDERSTANDING THE CONCEPTS
+
+                            EXPRESS.js
+
+It's a framework and a node package.
+> Helps us create servers using Node.js
+> Parse incoming HTTP requests
+> Match those requests to particular routes
+> Craft our http response and associated response
+
+What is a framework? 
+A library is something you can integrate in your code, and it gives you some functions and methods, and you decide
+where to use them in your own code. eg. Axios, ASCII art library
+
+With a framework, the framework controls how the code works, and we just follow the rules. Libraries do smaller things
+frameworks have broader ambitions, like making web apps

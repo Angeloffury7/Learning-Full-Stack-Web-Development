@@ -1,0 +1,4 @@
+'new' - Add a task
+'list' - List all Tasks
+'delete' - remove specific Tasks
+'quit' - quit app

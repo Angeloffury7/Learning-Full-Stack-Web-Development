@@ -1,0 +1,18 @@
+                        REDUCE
+
+1. Reduces an array to a single value, how it does that is upto us.
+    
+    [3,5,7,9, 11].reduce((accumulator, currentValue) => {
+        return accumulator + currentValue
+    })
+
+    //35
+
+    -> Accumulator function
+
+2. Specify a starting point as another argument in function.
+
+
+                        ARROW FUNCTIONS AND 'THIS'
+
+'this' behaves differently in arrow functions (bas rat lo abhi ke liye)

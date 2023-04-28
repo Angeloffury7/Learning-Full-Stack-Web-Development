@@ -1,0 +1,5 @@
+1. Normally, with subsequent setTimeouts, we would have to be careful with the delays
+    if we want them at intervals of 1s, we would have to write 1000, 2000, 3000 ...
+
+Method #1 > Nest setTimeouts 
+

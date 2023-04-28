@@ -1,0 +1,17 @@
+                                GET vs POST
+
+Get requests are used to retrieve information/a resource.
+> Get -> getting info 
+    Post -> sending info
+    These are just conventions, but you could reverse it, for eg. use a get request to send some data, but it's not a good idea lol.
+
+> Get requests send data through query strings, but query strings have a cap of 2048 characters, which limits the amount of data we can send.
+> Post requests send data through req.body, and we can send a javascript object, HTML, JSON etc. You can have a query string with POST
+    requests as well.
+
+                                PARSING REQUEST BODY 
+req.body()
+> By default, it's undefined
+> You need body parsing middleware (something which runs on every request). Basically, we need to tell express what type of data to expect, JSON, html etc.
+    app.use(express.urlencoded({ extended: true }));
+    app.use(express.JSON);

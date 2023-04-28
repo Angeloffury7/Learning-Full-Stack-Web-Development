@@ -1,0 +1,36 @@
+Accessing relatives of an element. Sibling, parent, children elements.
+
+1. bold.parentElement
+    bold.parentElement.parentElement...
+
+2. Every element has only 1 direct parent.
+
+3. paragraph.children
+    Gives HTML collection of children, access them using []
+
+4. nextSibling, previousSibling
+    They are going to give us the corresponding DOM node. Counts whitespaces as siblings as well.
+
+5. nextElementSibling, previousElementSibling
+    > gives us the HTML element and ignores whitespaces.
+
+
+
+                    CREATING NEW NODES
+
+1. document.createElement() then
+
+2. appendChild()
+    document.body.appendChild(newImg);
+
+3. append() New feature
+    > we can append more than 1 nodes at a time
+    > you can even append strings in paragraphs etc
+
+4. prepend() New feature
+
+5. insertAdjacentElement() 
+    To insert sibling.
+    > Kinda crazy how it works, refer to MDN
+
+    You can use before and after, but not all browsers use them.

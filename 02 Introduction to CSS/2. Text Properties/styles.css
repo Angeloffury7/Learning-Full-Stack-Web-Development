@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+    font-weight: normal;
+    text-decoration: #f71820 underline wavy;
+    letter-spacing: 15px;
+    font-size: 80px;
+    /* font-family: Arial Black; */
+    font-family: fantasy;
+}
+
+/* p {
+    text-align: right;
+} */
+
+p {
+    font-weight: 400;
+    line-height: 2;
+}
+
+a {
+    text-decoration: none;
+}

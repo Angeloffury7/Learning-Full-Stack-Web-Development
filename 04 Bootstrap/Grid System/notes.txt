@@ -1,0 +1,20 @@
+                        GRID SYSTEM
+
+Helps us layout our content and create responsive websites.
+
+1. It only works inside a container.
+
+2. Every row in bootstrap has 12 units of space to divvy up
+
+3. To make columns, every class starts with "col-..."
+
+4. If you are lazy and want columns to share equal space, just write class="col"
+
+5. img-fluid for responsive images
+
+6. gutters are padding between elements. Remove them using "g-0"
+
+7. align-items-start, end, center to align items vertically.
+8. justify-content etc...
+
+9. justify-conten variants also exist for different screen sizes

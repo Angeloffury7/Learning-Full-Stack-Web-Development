@@ -1,0 +1,41 @@
+                    INTRO TO JAVASCRIPT
+
+#DON'T GET FRUSTRATED, JUST BE PATIENT
+
+1. PRIMITIVE TYPES 
+    -> Number
+    -> String
+    -> Boolean
+    -> Null
+    -> undefined
+    * symbol
+    * BigInt
+
+2. At first we will write our code in Chrome dev tools
+            The console is REPL
+                    Read Evaluate Print Loop
+
+3. JS has one 'number' type.
+    - positive, negative, whole numbers, decimal numbers 
+    - operations 
+    - PEMDAS parentheses, expo, mul, div, add, sub
+    - exponentiation 2**3 = 8
+
+4. Not a Number (NaN)
+    -> represents a number that is undefined
+        eg. 0/0, 1 + NaN = NaN
+    
+    -> typeof 
+
+5. Variables
+
+    -> let variableName = value;
+    
+6. const & var 
+    -> constant variable, you can't change it later on in the code. 
+
+    -> VAR 
+        It is the old way to declare variables, but there's no reason 
+        to use it now.
+
+** IN JAVASCRIPT, VARIABLES CAN CHANGE TYPES.

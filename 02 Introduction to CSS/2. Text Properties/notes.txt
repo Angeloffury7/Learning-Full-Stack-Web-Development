@@ -1,0 +1,39 @@
+1. TEXT PROPERTIES
+
+    a) text-align -> horizontal alignment with an element
+                    - controls how the text is aligned within an element (inline/block)
+                    - width: 50% (the block element will now take up 50% of the web page)
+                            
+
+
+    b) font-weight -> controls the boldness/lightness of text
+                        normal, bold, lighter
+                        100, 200,...900
+                        400 = normal, 700 = bold
+
+                    if a font-weight doesn't exist for a font, 
+                    the browser will choose the closest one
+    
+    c) text-decoration -> - controls the appearance of lines on a text (underline, overline, strike-through)
+                        - we can specify the colour as well
+                        - dotted, solid, dashed, wavy
+                        - we can also remove the default underlines under links
+                            by setting text-decoration to "none"
+    
+    d) line-height -> controls vertical line spacing
+
+    e) letter-spacing -> duh
+                        
+    f) font-size -> we have a lot of units
+                    small medium large, %ages, pixels etc.
+
+                    px -> most commonly used absolute unit
+                        - 1px is not necessarily equal the width of exactly 1 pixel!
+                        - not recommended for responsive websites
+
+2. FONT FAMILY
+
+    font-family - a list of fonts we would like to use in order 
+                Gill Sans Extrabold, sans-serif
+                                    if GSE not available, use   
+                                    any other font from this family

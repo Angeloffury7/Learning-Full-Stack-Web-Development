@@ -1,0 +1,52 @@
+1. HIGHER-ORDER FUNCTIONS 
+    They can accept other functions as arguments
+            return a function
+
+
+    function callTwice(func) {
+    func();
+    func();
+}
+
+function rollDie() {
+    const roll = Math.floor(Math.random() * 6) + 1;
+    console.log(roll);
+}
+
+callTwice(rollDie); DO NOT PUT rollDie() otherwise it will run it.
+
+                            METHODS
+
+-> A method is just a function that has been placed as a property of an object.
+-> dot syntax
+
+    every method is a function, but not vice versa
+
+const math = {
+    multiply: function(x,y) {
+        return x*y;
+    },
+    divide: function(x,y) {
+        return x/y;
+    }
+}
+
+-> SHORTHAND
+    const math = {
+        blah: "HI!",
+        add(num, nums) {
+            return num + nums;
+        },
+
+        square(num) {
+            return num*num;
+        }
+    }
+
+-> "THIS" KEYWORD
+
+    works just like 'this' in OOPS.
+    Its value depends on how the function is called.
+    i.e. cat.meow(), meow will be called in the context of cat object
+        const meow2 = cat.meow
+        meow2() -> will be called in reference to Window object (top-most object);

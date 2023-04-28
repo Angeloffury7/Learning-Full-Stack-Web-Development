@@ -1,0 +1,29 @@
+:root {
+    --div-background-color: red;
+    --text-color: black;
+    --div-padding: 20px;
+    --div-margin: 10px;
+}
+
+body {
+    background-color: var(--background-color, pink); /*If --background-color is undefined, use pink*/ 
+}
+
+.child {
+    background-color: var(--div-background-color);
+    color: var(--text-color);
+}
+
+.one {
+    --div-background-color: blue;       /*Overriding the variable for the 'one' div*/
+    --text-color: white;       /*Overriding the variable for the 'one' div*/
+}
+
+.one-one {
+    margin: var(--div-margin);
+    padding: var(--div-padding);
+}
+.one-two {
+    margin: var(--div-margin);
+    padding: var(--div-padding);
+}

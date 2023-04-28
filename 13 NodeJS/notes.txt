@@ -1,0 +1,28 @@
+                                Node.js
+
+> It's a JavaScript runtime
+> Node helps us write server-side JavaScript 
+
+    - Until recently, we could only run JS in browsers.
+    - Node helps us execute code outside of the browser
+
+> We can't deal with DOM, user inputs, etc, but we get access to other functionalities.
+
+Reasons to use Node.js
+
+1. Creating Web servers and writing server-side logic
+2. Used to make command line tools
+3. Making Native apps (VS CODE IS A NODE APP!, Slack etc.)
+4. You can make video games using Node.js 
+
+
+                            The Node REPL
+
+> This is a world of javascript, you can treat it as a console
+> We don't have 'document' and 'window' here.
+> We have a global scope called 'global'
+    includes, setTimeout, setInterval etc
+
+> We have built-in modules to help us interact with files, the OS etc which we don't have in the browser
+> To run, type node script.js (you should be in the same directory)
+            or node (type relative path to file)
