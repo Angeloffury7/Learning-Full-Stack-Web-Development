@@ -19,4 +19,25 @@ DELETE /comments/{ id } -> delete a comment
 
 This pattern is not "REST", it's RESTful
 
+Create ✅
 
+> There is a big problem with our /comments/new route. If you refresh the page to send a get request to /comments,
+    we will get a 'confirm form resubmission' error, which will result in pushing the comment to the array multiple times.
+> So, we need to automatically send a get request i.e., redirect the user to /comments. To do that, we use res.redirect() status code - 302.
+    When the browswer intercepts a 302 status code, it sends a second GET request to the specified location.
+
+Read ✅
+
+/comments/:id
+
+> We need to create distinct ids, otherwise there can be ID conflicts
+    NPM package - UUID (unique id something something)
+    Calling that function generates a new id
+
+Update ✅
+
+PATCH /comments/:id
+PUT and PATCH are similar, but PUT completely changes the content, PATCH can also just slightly modify the content.
+
+but res.patch() doesn't exist directly
+PATCH requests can have payloads (it can have a req.body)
