@@ -15,5 +15,9 @@
 
     <a href="/comments">Go back to Home</a>
     <a href="/comments/<%= comment.id %>/edit">Edit Comment</a>
+
+    <form method="post" action="/comments/<%= comment.id%>?_method=DELETE">
+        <button>Delete Comment</button>
+    </form>
 </body>
 </html>

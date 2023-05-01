@@ -10,7 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 
-const comments = [
+/* const */
+let comments = [
     {
         username: 'Todd',
         comment: 'lol this is so funny',
@@ -69,6 +70,12 @@ app.get('/comments/:id/edit', (req, res) => {
     const c = comments.find(c => c.id === id);
     console.log('Editing a comment');
     res.render('edit', { c });
+})
+
+app.delete('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    comments = comments.filter(c => c.id !== id);
+    res.redirect('/comments');
 })
 
 app.listen(3000, () => console.log('Listening on port 3000'));

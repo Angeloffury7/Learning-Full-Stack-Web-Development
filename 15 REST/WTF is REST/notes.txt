@@ -41,7 +41,8 @@ PUT and PATCH are similar, but PUT completely changes the content, PATCH can als
 
 but res.patch() doesn't exist directly
 PATCH requests can have payloads (it can have a req.body)
-> There is a problem. We are looking to update our comments using a form. But, the thing is, HTML forms can only send get or post requests, not patch,put etc.
+> There is a problem. We are looking to update our comments using a form. But, the thing is, HTML forms can
+ only send get or post requests, not patch,put etc.
 How to fake it?
 There's a package called method-override. We can HTTP verbs where the client doesn't support them.
 
@@ -50,3 +51,12 @@ There's a package called method-override. We can HTTP verbs where the client doe
     Use a query string value app.use(methodOverride('_method'))
     method='post' action = '/resource?_method="DELETE"'
     Even though it's a post request, express will treat it as a request
+
+Delete ✅
+
+> We need to use methodOverride again
+> change 'comments' array to "let"  Why? It's a good practice to not mutate an array. 
+    Eg, In React, we don't change the original array, we make a new one
+
+
+                        REVISE & MAKE 1-2 CRUD APPS YOURSELF (POSTS, AIRBNB LISTINGS, TWEETS)
