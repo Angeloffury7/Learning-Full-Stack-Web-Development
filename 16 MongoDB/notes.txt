@@ -1,0 +1,36 @@
+MongoDB is used with Node
+
+Why use a database instead of just saving to a file?
+- Data persistence
+- They can handle large amounts of data
+- They provide tools for easy CRUD
+- Security features and control access to data
+- They scale well
+
+MySQL vs SQL
+
+SQL------------------
+eg, mysql, postgres, oracle
+Relational databases, consist of a pre-defined table/schema.
+
+NoSQL----------------
+eg, MongoDB, Cassandra, CouchDB
+Newer, very diverse group, not much can be generalised about them.
+
+Document Oriented Database (NoSQL db)-> They store information in JSON, XML, YAML etc
+You don't have to follow some pre-defined schema, you can just take the information 
+and store it.
+
+                        BUT WHY MONGO??
+
+Commonly used with Node and Express (MERN and MEAN)
+It's easy to get started with (though it's difficult to truly master)
+It plays really well with JavaScript
+Strong community of developers.
+
+
+
+
+
+
+*LEARN MYSQL OR POSTGRES IN THE FUTURE!!

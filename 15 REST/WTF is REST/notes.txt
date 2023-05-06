@@ -44,13 +44,13 @@ PATCH requests can have payloads (it can have a req.body)
 > There is a problem. We are looking to update our comments using a form. But, the thing is, HTML forms can
  only send get or post requests, not patch,put etc.
 How to fake it?
-There's a package called method-override. We can HTTP verbs where the client doesn't support them.
+There's a package called method-override. We can use HTTP verbs where the client doesn't support them.
 
 1. send a http header, specifying the type of request
 2. (best) 
     Use a query string value app.use(methodOverride('_method'))
-    method='post' action = '/resource?_method="DELETE"'
-    Even though it's a post request, express will treat it as a request
+    method='post' action = '/resource?_method="PATCH"'
+    Even though it's a post request, express will treat it as a PATCH request
 
 Delete ✅
 

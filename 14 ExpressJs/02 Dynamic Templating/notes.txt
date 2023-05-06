@@ -38,8 +38,7 @@ we can create a template.
 
                                 EJS Syntax 
 1. Tags -> <%= Evaluates and outputs the value into the HTML %>
-2. Use EJS syntax to just display stuff, don't write logic in the tags
-    You can pass a second argument to res.render to use variables, it must be an object { variable: value }
+2. You can pass a second argument to res.render to use variables, it must be an object { variable: value }
     If you just want to pass the value, just write { value }
 
 
