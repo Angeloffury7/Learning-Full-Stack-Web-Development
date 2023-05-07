@@ -19,9 +19,7 @@ app.get('/r/:subreddit', (req, res) => {
     const subData = redditData[subreddit]
     console.log(subData)
     if(subData) {
-    res.render('subreddit', { ...subData }) //we are spreading it into an object so that we can use them as variables!!!
-    //our res.render() object now looks like { name: 'lol', subscribers: 800000}
-        //we can use name and subscribers as variables! Think of them as variables, not objects
+        res.render('subreddit', { ...subData }) //our res.render() object now looks like { name: 'lol', subscribers: 800000}
     } else {
         res.render('notfound', { subreddit })
     }
