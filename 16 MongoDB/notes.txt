@@ -83,3 +83,28 @@ $currentDate -> sets a value to the current date.
     $currentDate: {lastModified: true}
 
 replaceOne -> completely changes everything about a value, while keeping the _id same.
+
+DELETING DATA
+db.collectiondeleteOne({}) -> pass some criteria
+
+db.collection.deleteMany({}) -> clears the collection if you don't pass anything.
+
+*** ADDITIONAL MONGO OPERATORS
+
+> If we have a property which is an object as well, to access the nested property, use
+db.dogs.find({'personality.childFriendly': true})
+
+> There are a lot of operators, read the docs
+
+1. qty: {$gt: 20} -> qty greater than 20
+            $gte -> greater than or equal to
+            $lt -> less than
+            $in -> {value1, value2, value3} -> where value is a part of an array
+            $nin -> not in
+            $ne -> not equal to
+            $and, $not, $or
+
+            db.inventory.find({$or: [ { quantity: {$lt: 20}}, {price: 10}]})
+                            where quantity is less than 20 or price is 10
+
+    db.dogs.find({ $or: [{ 'personality.catFriendly': true}, { age: {$lte: 2}}]})
