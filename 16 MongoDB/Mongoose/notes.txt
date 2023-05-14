@@ -1,0 +1,25 @@
+                                MONGOOSE
+
+Till now, we interact with our database by writing code in the Mongo shell. How do we connect a Node app to MongoDB?
+There are drivers which connect mongo to programming languages, like C++, JS, Rust
+
+We will use Mongoose! Object Data/Document Mapper (ODM) -> It maps documents coming from a database into usable Javascript objects.
+Mongoose helps us model our applciation and define a schema. We can build complex queries as well.
+
+For SQL databases, we use Object Relational Model (ORM)
+
+https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/36442260#content
+
+> INSTALLING MONGOOSE
+It's an NPM package. KEEP THE DOCS OPEN
+
+useNewUrlParser, useUnified -> enables the new mongodb url parser logic
+
+> mongoose.connect() statement returns a promise, so we can chain .then() and .catch()
+
+* If you do .load script.js, it will print a statement infinitely, this is a bug!
+For now, use node -i -e "$(< script.js)"
+
+                            MODELS
+
+Learn OOPS before this
