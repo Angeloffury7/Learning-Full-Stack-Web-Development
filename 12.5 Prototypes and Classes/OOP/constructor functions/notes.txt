@@ -1,0 +1,1 @@
+We create a function with name in Capital, it's just to indicate that it's a constructor function.

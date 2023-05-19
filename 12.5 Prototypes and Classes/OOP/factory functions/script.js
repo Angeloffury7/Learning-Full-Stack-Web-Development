@@ -32,3 +32,13 @@ console.log(firstColor.hex());
 
 firstColor.r = 100;
 console.log(firstColor.rgb());
+
+/* SHORTCOMING
+
+    Each color is going to have its own unique copy of the rgb() and hex() function.
+    The value may be different, but the overall function is same. firstColor.hex === black.hex is false, because
+    the reference is different.
+    But "hi".slice === "bye".slice is true, because they're referring to the same function.
+
+    To do this, we use constructor functions.
+*/
