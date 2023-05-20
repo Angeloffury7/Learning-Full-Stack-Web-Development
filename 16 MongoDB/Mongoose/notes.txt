@@ -1,25 +1,19 @@
-                                MONGOOSE
+Till now, we've been typing our Mongo commands in the shell. We need to connect a Node app to Mongo.
+Drivers -> These are ways to connect MongoDB to languages like C++, Rust
 
-Till now, we interact with our database by writing code in the Mongo shell. How do we connect a Node app to MongoDB?
-There are drivers which connect mongo to programming languages, like C++, JS, Rust
+For Javascript, it's a tool called Mongoose
+It's an ODM -> Object Document Mapper (it converts data coming from database into usable JavaScript objects)
+We can define a pre-set schema and enforce it.
 
-We will use Mongoose! Object Data/Document Mapper (ODM) -> It maps documents coming from a database into usable Javascript objects.
-Mongoose helps us model our applciation and define a schema. We can build complex queries as well.
+For SQL databases, we have ORM -> Object Relation Mapper (takes SQL data and maps it for programming languages)
 
-For SQL databases, we use Object Relational Model (ORM)
+> Keep the docs open, because we only do it once per project
 
-https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/36442260#content
+Don't use .load script.js
+Use node -i -e "$(< index.js)" in Bash
 
-> INSTALLING MONGOOSE
-It's an NPM package. KEEP THE DOCS OPEN
 
-useNewUrlParser, useUnified -> enables the new mongodb url parser logic
+                        FIRST MODEL IN MONGOOSE
 
-> mongoose.connect() statement returns a promise, so we can chain .then() and .catch()
-
-* If you do .load script.js, it will print a statement infinitely, this is a bug!
-For now, use node -i -e "$(< script.js)"
-
-                            MODELS
-
-Learn OOPS before this
+They are just javascript classes, that represent information in a collection
+Schema -> A blueprint of the data, hidden: data, name: String

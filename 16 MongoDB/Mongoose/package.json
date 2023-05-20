@@ -2,14 +2,15 @@
   "name": "mongoose",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devStart": "nodemon server.js"
+    "devStart": "node script.js"
   },
-  "author": "gurdittcancode",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^7.1.1"
+    "mongoose": "^7.2.0"
   }
 }
