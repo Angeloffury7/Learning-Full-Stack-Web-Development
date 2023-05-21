@@ -17,3 +17,20 @@ Use node -i -e "$(< index.js)" in Bash
 
 They are just javascript classes, that represent information in a collection
 Schema -> A blueprint of the data, hidden: data, name: String
+
+const Movie = mongoose.model("Model", moviesSchema) -> creates a Mongo collection called models (lowercases and pluralizes automatically)
+and creates a Movie class. The name of the connection MUST have first letter capitalized and singular
+
+> insertMany
+
+It returns a promise, so we can use .then and .catch. It's a model method
+
+> find(), findById(), findOne()
+    These operations take time. Treat it like a promise (even though they're not), so we can use .then()
+
+    Movie.find({ condition }).then(...)
+
+> findById() - VERY commonly used in an express app.
+            app.get('/resourse/:id')
+
+For this, just write Movie.findById(id).then()
