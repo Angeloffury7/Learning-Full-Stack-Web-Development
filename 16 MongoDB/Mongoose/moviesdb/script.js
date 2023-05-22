@@ -49,3 +49,10 @@ async function test() {
 }
 
 Movie.findById("646914553127abf36458f087").then(m => console.log(m));
+/* 
+Movie.updateOne({title: "Amadeus"}, {year: 1984}).then(res => console.log(res))
+Movie.findOneAndUpdate({title: "The Iron Giant"}, {score: 7.8}, {new: true}).then(m => console.log(m)) 
+
+Movie.findOneAndDelete({title: "Alien"}).then(msg => console.log(msg))
+Movie.deleteMany({year: {$gte: 1999}}).then(msg => console.log(msg))
+*/

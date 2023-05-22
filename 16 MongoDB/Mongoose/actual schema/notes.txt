@@ -1,0 +1,9 @@
+Schema validations
+
+You can define a schema the normal way, but it's more common to pass an object
+
+1) make a field required by {requried: true}
+2) Also, if you try to add a field
+
+More validations:
+default, 

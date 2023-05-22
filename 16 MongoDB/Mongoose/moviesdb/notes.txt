@@ -27,6 +27,7 @@ It returns a promise, so we can use .then and .catch. It's a model method
 
 > find(), findById(), findOne()
     These operations take time. Treat it like a promise (even though they're not), so we can use .then()
+    It is a 'then-able' object (you can put .then())
 
     Movie.find({ condition }).then(...)
 
@@ -34,3 +35,25 @@ It returns a promise, so we can use .then and .catch. It's a model method
             app.get('/resourse/:id')
 
 For this, just write Movie.findById(id).then()
+
+                    UPDATING
+
+update, updateOne, updateMany() -> They don't resolve, they don't return the updated object.
+They will just tell you that ok we have updated this
+updateOne() updates the first thing that matches the query
+
+*** ALL THESE COMMANDS ARE SUPPOSED TO BE WRITTEN IN THE NODE REPL, NOT MONGOSH
+AFTER RUNNING A COMMAND, CONFIRM BY LOOKING AT THE MOVIE IN MONGOSH
+
+findOneAndUpdate() -> it will give us the object with the updated information
+                      But it has a bug, it will return the old version. To get the option one, you have to pass
+                      an option {new: true}
+
+You may get a deprecation warning
+
+    DELETING
+
+.delete({}) -> doesn't give us anything back, only the deleted count.
+.remove() doesn't exist anymore
+.findOneAndRemove(), .findByIdAndRemove()...
+
