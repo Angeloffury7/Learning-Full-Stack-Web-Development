@@ -10,3 +10,16 @@ Using Mongoose
     Don't write localhost instead of the home address, it has been deprecated or something
     But if you run your file, the terminal will kind of hang.
 3. .connect() returns a promise, so use then-catch
+
+
+        MODELS
+1. Models are JS classes that represent data in a collection in our db
+2. A model is derived from a schema -> a mapping of keys from Mongo to different data types in JavaScript, eg. title: String, id: Number, hidden: boolean
+3. We make a model because a schema on its own is not related to mongodb, it's just JavaScript. A model is what 
+
+*** RUN THE MONGOOSE COMMANDS IN THE NODE REPL, NOT MONGOSH
+
+movies.insertMany() -> async function, returns a promise, with this we don't have to do .save()
+
+FINDING 
+find() -> it's not really a promise, they are then-able objects (use then/catch)
