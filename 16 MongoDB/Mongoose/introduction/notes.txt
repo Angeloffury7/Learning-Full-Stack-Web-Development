@@ -1,0 +1,12 @@
+            WHAT IS MONGOOSE??
+We have an application that interacts with our database and our Node app.
+
+Object Data Mapper (ODM) -> makes data coming from Mongo into useful JS objects.
+
+
+Using Mongoose
+1. require it
+2. run mongoose.connect("mongodb://127.0.0.1:27017/dbName", {useNewUrlParse: true, useUnifiedTopology: true})
+    Don't write localhost instead of the home address, it has been deprecated or something
+    But if you run your file, the terminal will kind of hang.
+3. .connect() returns a promise, so use then-catch

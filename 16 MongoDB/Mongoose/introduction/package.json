@@ -1,12 +1,11 @@
 {
-  "name": "actual-schema",
+  "name": "introduction",
   "version": "1.0.0",
   "description": "",
-  "main": "product.js",
+  "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC"
 }
