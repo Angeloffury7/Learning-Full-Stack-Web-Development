@@ -1,0 +1,15 @@
+To add complicated validations, set property to an object, and we can add built-in validations
+eg, required
+
+If you find a field which isn't in the schema, it will just ignore that filed and add the fields that 
+ARE in the schema
+
+> There are options for your schema. required, default, immutable.
+> Things you can apply to strings -> lowercase, uppercase, trim, minLength, maxLength, enum
+ match = set patterns for your strings
+> Number -> min, max, enum
+> Date -> min, max
+
+Maybe we want our products to have an array of categories ["Outdoors" , "Cycling"]
+
+BUT OUR SCHEMA WON'T VALIDATE UPDATES, we need to explicitly tell mongoose to validate it, {runValidators: true}
