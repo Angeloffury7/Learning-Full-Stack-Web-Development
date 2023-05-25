@@ -1,0 +1,1 @@
+Make a separate directory for your models, as you will usually have a lot of models in your app.
