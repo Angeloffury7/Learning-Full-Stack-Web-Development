@@ -2,10 +2,10 @@
   "name": "mongoose-with-express",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon script.js"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",

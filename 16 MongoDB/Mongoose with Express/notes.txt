@@ -1,1 +1,21 @@
-Make a separate directory for your models, as you will usually have a lot of models in your app.
+A simple web app, where we perform CRUD using express and MongoDB
+
+1. make server.js file
+2. Integrating Mongoose -> move this logic to a separate file
+3. We will have models in our data. Make a separate folder for your models, write the logic there
+    and import the required stuff from there. because in bigger apps, you will have a lot of models
+
+4. Made a product.js file, exporting the Product model from there.
+5. Made a initialData.js file, to add data to start with.
+6. setting up root resource in express
+7. showing all products.
+8. show route - use findById(), why not name? Because there are spaces etc, which can crash our app.
+    To solve this, we need to make a URL slug.
+
+9. Potential errors -> * id does not exist (Mongo can't find it)
+                       * product may not be inserted successfully
+                       * right now, we can't enter floating point numbers in our form
+
+10. Creating products -> form and route (like in crud app)
+
+*** DATA PERSISTENCE ✨✨

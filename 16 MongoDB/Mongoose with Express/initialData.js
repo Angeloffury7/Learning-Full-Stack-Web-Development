@@ -1,30 +1,31 @@
-/* To get some new data into our database, for now it's only a one time thing */
 const mongoose = require("mongoose");
-const Product = require("./models/product");
 
+const Product = require("./models/product.js");
+
+/* Connecting to MongoDB to just insert data */
 mongoose
-  .connect("mongodb://127.0.0.1/farmStand", {
+  .connect("mongodb://127.0.0.1/farmerShop", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.log("MongoDB connection error"));
+  .then((m) => console.log("Connected to MongoDB"))
+  .catch((e) => console.log("Connection Error"));
 
 // const p = new Product({
-//   name: "Ruby Grapefruits",
+//   name: "Ruby Grapefruit",
 //   price: 1.99,
-//   category: "Fruit",
+//   category: "fruit",
 // });
 
 // p.save()
 //   .then((p) => console.log(p))
-//   .catch((err) => console.log(err));
+//   .catch((e) => console.log(e));
 
-const seedProducts = [
+const seeds = [
   {
     name: "Fairy Eggplant",
     price: 1.0,
-    category: "Vegetable",
+    category: "vegetable",
   },
   {
     name: "Organic Goddess Melon",
@@ -48,6 +49,7 @@ const seedProducts = [
   },
 ];
 
-Product.insertMany(seedProducts) //If even one thing doesn't pass validation, nothing will be inserted
+Product.insertMany(seeds)
   .then((res) => console.log(res))
   .catch((err) => console.log(err));
+//If even one object fails validation, NOTHING is inserted.
