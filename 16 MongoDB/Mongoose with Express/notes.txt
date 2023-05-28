@@ -19,3 +19,16 @@ A simple web app, where we perform CRUD using express and MongoDB
 10. Creating products -> form and route (like in crud app)
 
 *** DATA PERSISTENCE ✨✨
+
+11. Updating
+    use value="" to display the current information and edit
+    We will use a patch route, and when updating with id, set runValidators: true!!
+
+    But how do we set existing category on the edit form.
+    "selected" attribute
+    Our logic is to compare the category with the options
+    <option value="fruit" <%= product.category === "fruit" ? "selected": "" %>>fruit</option>
+    <option value="vegetable" <%= product.category === "vegetable" ? "selected": "" %>>vegetable</option>
+    <option value="dairy" <%= product.category === "dairy" ? "selected": "" %>>dairy</option>
+        
+    But it is tedious and not scalable, optimised approach in newProduct.ejs

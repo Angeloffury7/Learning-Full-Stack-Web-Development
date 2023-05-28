@@ -3,9 +3,13 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
+const methodOverride = require("method-override");
 
 const Product = require("./models/product.js");
 
+const categories = ["fruit", "vegetable", "dairy"];
+
+/* Connecting to Mongoose */
 mongoose
   .connect("mongodb://127.0.0.1/farmerShop", {
     useNewUrlParser: true,
@@ -16,6 +20,7 @@ mongoose
 
 /* Setting up middleware */
 app.use(express.urlencoded({ extended: true }))
+app.use(methodOverride("_method"));
 
 /* Setting up Views */
 app.set("view engine", "ejs");
@@ -37,7 +42,7 @@ app.get("/products/details/:id", async (req, res) => {
 
 app.get("/products/new", (req, res) => {
     console.log("New Product")
-    res.render("newProduct.ejs");
+    res.render("newProduct.ejs", {categories});
 })
 
 app.post("/products", async (req, res) => {
@@ -45,6 +50,20 @@ app.post("/products", async (req, res) => {
     const newProduct = new Product(req.body);
     await newProduct.save();
     res.redirect(`/products/details/${newProduct._id}`);
+})
+
+app.get("/products/:id/edit", async (req, res) => {
+  const { id } = req.params;
+  const product = await Product.findById(id);
+  res.render("edit.ejs", { product, categories });
+})
+
+app.put("/products/:id", async (req, res) => {
+  const { id } = req.params;
+  const updatedProd = await Product.findByIdAndUpdate(id, req.body, { runValidators: true, new: true });
+  console.log(updatedProd);
+  // res.send("PUT REQUEST!");
+  res.redirect(`/products/details/${updatedProd._id}`);
 })
 
 /* Setting up server */
