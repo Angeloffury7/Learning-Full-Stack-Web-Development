@@ -53,8 +53,7 @@ const bike = new product({
 //   })
 //   .catch((err) => console.log(err));
 
-/* product.findOneAndUpdate({name: "Bike Seat"}, {price: -19.99}, {new: true}).then(r
-es => console.log(res))  -> accepted (wtf??) */
+/* product.findOneAndUpdate({name: "Bike Seat"}, {price: -19.99}, {new: true}).then(res => console.log(res))  -> accepted (wtf??) */
 
 product.findOneAndUpdate({ name: "Tire Pump"}, {price: -10}, {new: true, runValidators: true})
   .then((data) => {

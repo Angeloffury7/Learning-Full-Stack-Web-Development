@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a new item</title>
+</head>
+<body>
+
+    <form action="/products/home" method="post">
+        <label for="input">Enter name of product</label>
+        <input type="text" id="input" name="name">
+        <br>
+
+        <label for="price">Enter the price</label>
+        <input type="number" name="price" id="price">
+        <br>
+
+        <input type="checkbox" name="categories" value="Outdoor">Outdoor
+        <br>
+        <input type="checkbox" name="categories" value="Cycling">Cycling 
+        <br>
+        <input type="checkbox" name="categories" value="Indoor">Indoor
+        <br>
+        <input type="checkbox" name="categories" value="Martial Arts">Martial Arts
+        <br>
+        <input type="checkbox" name="categories" value="Utilities">Utilities
+        <br>
+        <input type="checkbox" name="categories" value="Safety">Safety
+        <br>
+
+        <button>Submit data</button>
+    </form>
+    
+</body>
+</html>

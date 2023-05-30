@@ -2,7 +2,7 @@ To add complicated validations, set property to an object, and we can add built-
 eg, required
 
 If you find a field which isn't in the schema, it will just ignore that filed and add the fields that 
-ARE in the schema
+are in the schema
 
 > There are options for your schema. required, default, immutable.
 > Things you can apply to strings -> lowercase, uppercase, trim, minLength, maxLength, enum

@@ -1,6 +1,6 @@
 MongoDB is used with Node
 
-We are only covering CRUD, not everything, EXPLORE MONGODB ON YOUR OWN
+We are only covering CRUD, which is enough for MERN stack.
 
 Why use a database instead of just saving to a file?
 - Data persistence
@@ -12,8 +12,8 @@ Why use a database instead of just saving to a file?
 MySQL vs SQL
 
 SQL------------------
-eg, mysql, postgres, oracle
-Relational databases, consist of a pre-defined table/schema.
+eg, mysql, postgresql, oracle
+Relational databases, they consist of a pre-defined table/schema.
 
 NoSQL----------------
 eg, MongoDB, Cassandra, CouchDB
@@ -30,7 +30,7 @@ It's easy to get started with (though it's difficult to truly master)
 It plays really well with JavaScript
 Strong community of developers.
 
-*LEARN AN SQL DATABASE IN THE FUTURE, POSTGRES!!
+*LEARN AN SQL DATABASE IN THE FUTURE, POSTGRESQL!!
 
 
                         MONGO SYNTAX
@@ -72,7 +72,7 @@ FINDING DATA
 
 UPDATING DATA
 > Kinda annoying lol
-> finding what to update it + updating it
+> finding what to update + updating it
 updateOne, updateMany
 
 db.collection.updateMany({name: 'idk'}, {$set: {<category>: new_value}})
@@ -85,14 +85,14 @@ $currentDate -> sets a value to the current date.
 replaceOne -> completely changes everything about a value, while keeping the _id same.
 
 DELETING DATA
-db.collectiondeleteOne({}) -> pass some criteria
+db.collection.deleteOne({}) -> pass some criteria
 
 db.collection.deleteMany({}) -> clears the collection if you don't pass anything.
 
 *** ADDITIONAL MONGO OPERATORS
 
 > If we have a property which is an object as well, to access the nested property, use
-db.dogs.find({'personality.childFriendly': true})
+db.dogs.find({"personality.childFriendly": true})
 
 > There are a lot of operators, read the docs
 

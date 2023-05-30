@@ -5,6 +5,8 @@ A simple web app, where we perform CRUD using express and MongoDB
 3. We will have models in our data. Make a separate folder for your models, write the logic there
     and import the required stuff from there. because in bigger apps, you will have a lot of models
 
+* Jis jis file mein Database se interact karoge, wahan mongoose.connect() karo
+
 4. Made a product.js file, exporting the Product model from there.
 5. Made a initialData.js file, to add data to start with.
 6. setting up root resource in express
