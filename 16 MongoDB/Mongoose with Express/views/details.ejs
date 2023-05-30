@@ -10,9 +10,13 @@
 
     <h1><%= found.name %></h1>
     <h3>Price: $<%= found.price %></h3>
-    <h3>Category: <%= found.category %></h3>
+    <h3>Category: <a href="/products?category=<%= found.category %>"><%= found.category %></a></h3>
     <a href="/products/<%= found._id %>/edit">Edit Product</a>
-    
     <a href="/products">Go to Home</a>
+
+    <form action="/products/<%= found._id %>?_method=DELETE" method="post">
+        <button>Delete</button>
+    </form>
+
 </body>
 </html>

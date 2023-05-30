@@ -34,3 +34,13 @@ A simple web app, where we perform CRUD using express and MongoDB
     <option value="dairy" <%= product.category === "dairy" ? "selected": "" %>>dairy</option>
         
     But it is tedious and not scalable, optimised approach in newProduct.ejs
+
+12. DELETING
+    We will create a delete route
+    .findByIdAndDelete()
+
+13. BONUS: filtering by category
+    How?
+    /categories/fruit      it's used to navigate to a route/endpoint
+    or 
+    /products?category=fruit ✅ (it's used to apply filters etc)
