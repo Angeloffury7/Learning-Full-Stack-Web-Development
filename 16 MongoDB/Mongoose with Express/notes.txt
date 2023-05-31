@@ -44,3 +44,5 @@ A simple web app, where we perform CRUD using express and MongoDB
     /categories/fruit      it's used to navigate to a route/endpoint
     or 
     /products?category=fruit ✅ (it's used to apply filters etc)
+
+    This is a test commit
