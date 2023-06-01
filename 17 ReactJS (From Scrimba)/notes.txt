@@ -1,0 +1,23 @@
+REACT!!! :DDD
+
+To get the most out of this course ->
+1. Learn by doing!! You learn React by using React
+2. Watch the lessons actively.
+3. This isn't school
+4. Participate in communities, learn well
+5. Spaced learning and repetition
+6. Take breaks often, get to the end with some honestly good React skills.
+
+STATIC PAGES USING REACT
+    Learn to think in React
+
+First page -> 'Fun Facts about React'
+
+What we'll learn in this section
+1. Why do we care about React?
+2. JSX
+3. Custom Components
+4. Styling
+
+Easy way to set up React vs Correct way
+for now, the easy way -> use their CDN
