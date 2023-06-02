@@ -1,0 +1,31 @@
+Make sure you are comfortable with arrow functions, spread, destructuring
+etc.
+
+React basics, Vite, props, events, hooks, forms, material UI, component designs, react patterns
+
+        REACT
+Front-end library that helps us build UI. VERY popular
+UI from components -> small individual pieces that we assemble to build a website.
+
+react.dev -> official docs
+
+Component -> function that combines logic, HTML etc
+
+You can nest components inside each other, package it together and use this inside another component
+
+React is more of an ecosystem, so we want a server, webpack, babel etc
+For now, use code sandbox
+
+public directory -> don't touch this file, it has index.html which is our main file. We render all our React
+                    code in the empty div.
+src -> we write our code here
+
+How are we writing HTML inside JavaScript?
+
+function Header() { 
+    return (html)
+}
+This function knows how to render itself
+
+> JSX syntax extension for JS, allows to write HTML-like markup inside JS which must be transpiled.
+> Babel transpiles JSX and turns it into real JS.
