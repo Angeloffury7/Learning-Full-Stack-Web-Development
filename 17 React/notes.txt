@@ -7,6 +7,8 @@ React basics, Vite, props, events, hooks, forms, material UI, component designs,
 Front-end library that helps us build UI. VERY popular
 UI from components -> small individual pieces that we assemble to build a website.
 
+use codesandbox.io for now
+
 react.dev -> official docs
 
 Component -> function that combines logic, HTML etc
@@ -25,7 +27,53 @@ How are we writing HTML inside JavaScript?
 function Header() { 
     return (html)
 }
-This function knows how to render itself
+This function "knows" how to render itself
 
 > JSX syntax extension for JS, allows to write HTML-like markup inside JS which must be transpiled.
-> Babel transpiles JSX and turns it into real JS.
+It's not legal JS
+> Babel transpiles JSX and turns it into real JS. It will take our JSX and transpiles it into actual JS.
+
+
+REACT APP STRUCTURE
+1. highest level component called App
+2. index.js, where our App component is called and our website is assembled.
+    selects the root div and renders App component here.
+3. index.html, our main file.
+
+FIRST COMPONENT
+The first letter should be uppercase, and should return some JSX
+You need to call your component somewhere to see it. To render it, create a sort-of self-closing html tag.
+
+YOU CAN ONLY RETURN A SIMPLE HTML ELEMENT FROM A COMPONENT
+
+                        IMPORTING AND EXPORTING COMPONENTS
+One component per file.
+like import App from "./App",
+Greeter.js -> either export function ...
+              export default function...  (most common)
+
+We can also do export {Dog} exporting individual elements
+import { Dog } from "./Dogs.js" -> has to absolutely match
+
+With export default, we can change the name while importing, but bad idea!!!
+
+1. Name of component should match the name of file, and export default.
+
+JSX RULES
+1. You must explicitly close self-closing tags, eg. <br/>
+    export default function Form() {
+        return <input type="password"> //error
+    }
+
+2. components can only return a single top element
+    If you want to return more than one, wrap them in a div.
+
+But, this may clutter the DOM. To avoid unnecessary wrapper elements, we can use React fragments
+
+<> empty tag, this satisfies the rules of React, but in the document, the elements inside will be rendered as stand-alone
+elements
+
+ADDING DYNAMIC VALUES
+Like string template literals
+use curly braces, this escapes the jsx content and is treated like pure js (variables)
+
