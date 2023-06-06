@@ -77,3 +77,24 @@ ADDING DYNAMIC VALUES
 Like string template literals
 use curly braces, this escapes the jsx content and is treated like pure js (variables)
 
+COMPOSING REACT COMPONENTS
+Instead of rendering 3 separate die components, it's better to take multiple die comps and add them to a dice comp.
+
+How to style components?
+conventional way -> take top level element, and give it a class which matches the name of comp. But, class is a keyword in JS
+                    use className
+                    and make a stylesheet
+                    import "./styles.css"
+You could write all your styles in a single stylesheet, but then it would become very complicated to change anything
+
+
+CREATING LOCAL REACT APPS
+We ususally do npx create-react-app nameofApp
+We will use Vite (veet), helps us quickly set up Vue, Svelte, React, Typescript variants, or Vanilla
+To use, npm create vite@latest
+
+It is VERY quick 
+After installation, run "npm run dev"
+Even though it says App.jsx it doesn't matter
+
+** NOTE -> create-react-app is a way of getting a basic React setup. It used to be standard, but much slower and outdated

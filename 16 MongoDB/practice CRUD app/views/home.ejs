@@ -13,8 +13,13 @@
     <ul>
         <% for(let product of allProducts) { %>
             <li><%= product.name %></li>
+            <a href="/products/<%= product._id %>/details">Show details</a>
         <% } %>
     </ul>
+
+    <form action="/products/new">
+        <button>Add a new product</button>
+    </form>
     
 </body>
 </html>

@@ -16,5 +16,15 @@
         <%= category %>
     <% } %>
 
+    <form action="/products/<%= product._id %>/edit" method="post">
+        <button type="submit">Edit product</button>
+    </form>
+
+    <form action="/products/<%= product._id %>?_method=DELETE" method="post">
+        <button type="submit">Delete product</button>
+    </form>
+
+    <a href="/products/home">Go home</a>
+
 </body>
 </html>
