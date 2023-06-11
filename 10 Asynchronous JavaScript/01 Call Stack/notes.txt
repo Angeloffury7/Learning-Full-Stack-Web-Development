@@ -5,7 +5,7 @@
     No
 
 3. The browser does the task. Browsers are typically written in C++. JavaScript hands the task to the browser.
-    Browsers have WebAPIs whic are built for these tasks.
+    Browsers have WebAPIs which are built for these tasks.
 
 4. JavaScript call stack recognizes these WebAPI functions and passes them off to the browser.
     Once the browser finishes those tasks, they are returned to JS.

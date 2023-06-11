@@ -17,8 +17,8 @@ async function() {
     or throw (string)
 
 > AWAIT 
-    Helps us to write asynchronous code.
-    - It will pause execution of our async function and waits for promise to be resolved
+    Helps us to write synchronous code.
+    - It will pause execution of our async function and wait for promise to be resolved
 
     async function rainbow() {
     delayedColorChange("red", 1000)

@@ -15,4 +15,10 @@
 
                         ARROW FUNCTIONS AND 'THIS'
 
-'this' behaves differently in arrow functions (bas rat lo abhi ke liye)
+If you are using arrow functions in an object, they won't automatically bind "this" to the object, whereas function will
+By default, this refers to the Window object. There are some workarounds to this, like explicitly binding it to the object
+
+    which is commonly done in React.
+
+
+but for now, don't use arrow functions with this, use regular functions instead.

@@ -12,7 +12,7 @@
 > Solution: promises 
 
 > Imagine you are a child and you want to eat candy. Your parents will tell you,
-    "if you eat all your vegetables, THEN you will get candy" i.e. hopefull resolution/failure
+    "if you eat all your vegetables, THEN you will get candy" i.e. hopeful resolution/failure
     of a promise.
 
 > We return a Promise object, ya to wo reject hoga ya to wo fullfill hoga

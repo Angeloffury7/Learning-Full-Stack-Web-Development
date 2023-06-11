@@ -18,8 +18,7 @@ You can nest components inside each other, package it together and use this insi
 React is more of an ecosystem, so we want a server, webpack, babel etc
 For now, use code sandbox
 
-public directory -> don't touch this file, it has index.html which is our main file. We render all our React
-                    code in the empty div.
+public directory -> don't touch this folder, it has index.html which is our main file. We render all our React code in the empty div.
 src -> we write our code here
 
 How are we writing HTML inside JavaScript?
@@ -44,7 +43,7 @@ FIRST COMPONENT
 The first letter should be uppercase, and should return some JSX
 You need to call your component somewhere to see it. To render it, create a sort-of self-closing html tag.
 
-YOU CAN ONLY RETURN A SIMPLE HTML ELEMENT FROM A COMPONENT
+YOU CAN ONLY RETURN A SINGLE HTML ELEMENT FROM A COMPONENT
 
                         IMPORTING AND EXPORTING COMPONENTS
 One component per file.
@@ -98,3 +97,28 @@ After installation, run "npm run dev"
 Even though it says App.jsx it doesn't matter
 
 ** NOTE -> create-react-app is a way of getting a basic React setup. It used to be standard, but much slower and outdated
+
+Even though you can write React in .js, .jsx makes it clear that the project definitely contains React components
+
+    PROPS -> VERY IMPORTANT
+They are like arguments we can provide to our components. Maybe we want to add some custom text to our components.
+<comp_name value="something"> , think of it as executing a function. To plug it in JSX, use {}
+Use destructuring, to get this "something", use props.value.
+
+> To add multiple props, add them space-separated
+
+> To add non-string arguments, pass them in curly brackets numSides={20}, because curly brackets mean evaluate as JS
+
+> Default values in props, just add value=default in function argument
+
+> To pass arrays, use the curly-brace syntax. In the curly brace syntax, you can pass variables etc. If you directly
+ render an array, it will squeeze all the elements together and print.
+
+> If you pass an object, you have to pass the object in curly braces as well.
+    {{a: 1, b:2}}
+
+> How to add conditional logic to JSX?
+
+                        REACT DEVELOPER TOOLS    
+Add the chrome extensions and it will automatically detect whether React is running or not
+It will show you the component hierarchy, etc.

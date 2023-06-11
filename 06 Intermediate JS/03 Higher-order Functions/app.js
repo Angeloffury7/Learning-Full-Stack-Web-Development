@@ -60,7 +60,7 @@ function makeBetweenFunc(min, max) {
 //testRange(9) // true                      running that function
 //testRange(19) //false
 
-//  METHDOS
+//  METHODS
 
 const myMath = {
     PI: 3.14159,

@@ -32,10 +32,11 @@
     -> let variableName = value;
     
 6. const & var 
-    -> constant variable, you can't change it later on in the code. 
+    -> CONST
+        constant variable, you can't change it later on in the code. 
 
     -> VAR 
-        It is the old way to declare variables, but there's no reason 
-        to use it now.
+        It is the old way to declare variables, but there's no reason to use it now.
+        Does not have block scope.
 
 ** IN JAVASCRIPT, VARIABLES CAN CHANGE TYPES.

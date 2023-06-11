@@ -1,4 +1,4 @@
-Callback funtions accept functions as arguments
+Callback functions accept functions as arguments
 
                         FOR-EACH
 
