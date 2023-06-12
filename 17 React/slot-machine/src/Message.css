@@ -1,0 +1,13 @@
+.Message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.winner {
+    color: green;
+}
+
+.loser {
+    color: red;
+}
