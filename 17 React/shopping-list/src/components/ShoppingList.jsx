@@ -8,7 +8,7 @@ function ShoppingList({ items }) {
       quantity={i.quantity}
       completed={i.completed}
 
-    // {...i} //spread operator! an alternative
+      // {...i} //spread operator! an alternative
     />
   ));
 

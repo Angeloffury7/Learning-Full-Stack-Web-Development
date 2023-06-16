@@ -1,5 +1,6 @@
 import "./App.css";
 import ShoppingList from "./components/ShoppingList";
+import PropertyListing from "./components/PropertyListing";
 
 //Imagine this is coming from a database
 
@@ -10,11 +11,20 @@ const data = [
   {_id: 4, name: "carrots", quantity: 6, completed: true},
 ]
 
+const vacationData = [
+  {_id: 129031, name: "Desert Yurt", rating: 4.9, price: 150},
+  {_id: 129331, name: "Lone Mountain Cabin", rating: 4.8, price: 250},
+  {_id: 129032, name: "Cactus Retreat", rating: 4.75, price: 300},
+  {_id: 129033, name: "Redwood Treehouse Escape", rating: 4.9, price: 120},
+  {_id: 129034, name: "Oceanview Condo", rating: 4.7, price: 140},
+  {_id: 129035, name: "Gold Miner Campground", rating: 4.69, price: 96}, 
+]
+
 function App() {
   return (
     <div>
       {/* <ShoppingList items={data} /> */}
-      
+      <PropertyListing properties={vacationData}/>
     </div>
   );
 }
