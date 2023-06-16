@@ -122,3 +122,20 @@ Use destructuring, to get this "something", use props.value.
                         REACT DEVELOPER TOOLS    
 Add the chrome extensions and it will automatically detect whether React is running or not
 It will show you the component hierarchy, etc.
+
+
+                STYLING COMPONENTS
+Till now, we were styling our components with an external stylesheet. How do we add dynamic styling?
+We can provide inline styles, and provide a JS object. (check Game.jsx)
+The first bracket escapes the JSX, and the second bracket is an object.
+
+You can provide the styles object to every element in the component.
+
+> Put all your regular styles inside an external stylesheet. If you want to add something that may change, use dynamic styles.
+
+                WORKING WITH LOOPS
+Supppose we have an array of values, and we want to loop through the values, how?
+When we directly pass our array in JSX, it renders all of the elements one-by-one. The cool thing is, we can use and render HTML elements
+by MAKING AN ARRAY OF JSX ELEMENTS
+
+    const arr = [<h1>hello</h1>, <div>This is a div</div>]
