@@ -1,0 +1,17 @@
+    "Missing "key" prop for element in iterator"
+    Basically, we need to add a unique identifier for each element so that React can track it.
+    If we fetch data from db, we will have an _id field, for now, add your own key
+    You can even use the name as the key, use a library for a unique id etc.    
+    
+                            EVENTS
+Setting up event-handlers
+> With Vanilla JS, we use a ton of querySelectors
+
+In React, what if we want to add an eventListener for click? Use inline eventListener
+> You can use any of the DOM events, just be sure that EVERY TRIGGER IS CAMEL-CASED
+
+What if we need to access to the event object?
+> As in JS, submitting a form refreshes the page
+> Our event handler is automatically passed the event object
+
+Working with forms is much more complicated, there's going to be a dedicated section to them later on.
