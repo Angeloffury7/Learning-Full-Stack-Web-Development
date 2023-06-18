@@ -15,3 +15,29 @@ What if we need to access to the event object?
 > Our event handler is automatically passed the event object
 
 Working with forms is much more complicated, there's going to be a dedicated section to them later on.
+
+
+                            STATE
+A component is just a function. React has to know when to render the function again to see the updated value.
+        React has no idea anything has changed. We have to tell it to re-render the component when "num" changes.
+        This is achieved using STATE.
+
+Data passed to a component (props) is IMMUTABLE!
+State is data specific to any instance of a component, and it can change the data.
+
+eg, Data fetched from an API, Counter!, 
+Whenever we want data to refresh, we need to re-render the component.
+
+*** RULE OF THUMB -> Is the data in this component going to change? if yes, it should probably go in a state.
+
+useState() hook
+
+const [count, setCount] = useState(0); 0 is the initial value
+    returns an array of 2 values  -> the piece of state and a function to change the piece of state.
+    useState() must be used INSIDE a component.
+
+So basically, jo bhi hamare variables hain, unki initial value is one "state". When we update them using events, we are 
+changing the value but we are not making changes to the State. useState() hook se we are making changes in the STATE, which will
+force React to re-render the component with the new state (and values)
+
+useState() array ki jo pehli value hai, that is the current state of the variable, the function is used to change that same state.
