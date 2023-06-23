@@ -41,3 +41,24 @@ changing the value but we are not making changes to the State. useState() hook s
 force React to re-render the component with the new state (and values)
 
 useState() array ki jo pehli value hai, that is the current state of the variable, the function is used to change that same state.
+
+> You can use any type of value in useState()
+
+Can we use 2 pieces of State in one component? YES! (see ToggleCounter.jsx)
+    Use it as many times as you want.
+
+
+                        useState() AND RENDERING
+
+A component is just a function. The first time a comp is rendered, we get a piece of state (num) that is set to 5. As soon as setNum is called, React knows to re-render
+the component. But isn't useState() running each time and setting our num to 5 each time? After all, that line is going to be run, right?
+
+NO!
+React knows that the default value should only be used on the initial render, after that it ignores. So the hook acts like a "memory."
+So when the useState() line runs again, it will retrieve the new value of num. 
+
+Important -> the only way we get a new value for num is when useState() runs again.
+            We might think when we write setNum(10), it updates the  num. It doesn't. console.log(num) in the event handler function to see.
+            It just updates the state, and on the next render, useState gets that new value and sets num to that.
+
+So, inside the event-handler, you will get the old value of the variable, not the new one.

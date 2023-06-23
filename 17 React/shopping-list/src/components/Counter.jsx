@@ -25,10 +25,15 @@ import { useState } from "react";
 
 function Counter() {
   const [num, incrementNum] = useState(0);
+  console.log("Rendering component...");
+  console.log(`num: ${num}`);
 
-    const changeNum = () => {
-        incrementNum(num + 1);
-    }
+  const changeNum = () => {
+    incrementNum(num + 1);
+    console.log("INSIDE EVENT-HANDLER!");
+    console.log(`num: ${num}`);
+    // This is not the optimal way to do this, we'll see the optimal way later
+  };
 
   return (
     <div>
