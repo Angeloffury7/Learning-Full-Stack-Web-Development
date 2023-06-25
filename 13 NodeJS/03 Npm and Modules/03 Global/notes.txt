@@ -1,7 +1,0 @@
-- When we run npm install ..., we are installing it in the local directory, we can't use it outside
-of the directory.
-
-- To solve this, we install packages globally using -g flag
-eg. cowsay
-
-- If you try to require cowsay in a file, it will show you an error. To solve this, "npm link cowsay"

@@ -11,3 +11,13 @@
 npm install <name of package> or npm i <package>
 - It will install some dependencies for the desired package in a folder called node_modules.
 - Don't really touch node_modules and package-lock.json
+
+                            INSTALLING PACKAGES GLOBALLY
+
+- When we run npm install ..., we are installing it in the local directory, we can't use it outside
+of the directory.
+
+- To solve this, we install packages globally using -g flag
+eg. npm i -g <package_name>
+
+- If you try to use a globally installed package and it gives an error, run "npm link <package_name>"
