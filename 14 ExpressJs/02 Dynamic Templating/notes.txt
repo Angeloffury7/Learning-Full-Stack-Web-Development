@@ -28,10 +28,15 @@ we can create a template.
 
 9. EJS takes our template and runs all the logic and spits out HTML.
 
-10. *** EJS will look for the views folder from where we run the script, not where the script is located.
+*** IMPORTANT
+    We should be able to run our index.js from anywhere, as long as we specify the relative path, and it does!
+    But we won't see our EJS files, why? Node will look for views directory inside the directory we are running the command from.
 
-11. If you want to be able the code from anywhere, you should change the views directory. Right now, views directory is process.cwd()
-    We want whereourfileislocated/views 
+    For example, if we are in the home folder, it will look for C:\Users\gurdi\views, but we want the directory where our index.js is located.
+
+    pathofindex.js/views
+
+    app.set("views", path.join(__dirname, "/views"));
 
 12. path -> built-in module in express
 

@@ -36,7 +36,7 @@ Strong community of developers.
                         MONGO SYNTAX
 
 > The Mongo Shell is a REPL
-> You have to have mongod running in the background
+> You need to have mongod running in the background
 > It mostly uses JavaScript syntax
 > You can have multiple databases
 

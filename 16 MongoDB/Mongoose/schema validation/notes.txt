@@ -13,3 +13,5 @@ are in the schema
 Maybe we want our products to have an array of categories ["Outdoors" , "Cycling"]
 
 BUT OUR SCHEMA WON'T VALIDATE UPDATES, we need to explicitly tell mongoose to validate it, {runValidators: true}
+
+* If you want the new object printed out after updating, {new: true}

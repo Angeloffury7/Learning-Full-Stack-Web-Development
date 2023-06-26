@@ -12,7 +12,7 @@ A simple web app, where we perform CRUD using express and MongoDB
 6. setting up root resource in express
 7. showing all products.
 8. show route - use findById(), why not name? Because there are spaces etc, which can crash our app.
-    To solve this, we need to make a URL slug.
+    To solve this, we need to make a URL slug. (/what-is-a-url-slug/)
 
 9. Potential errors -> * id does not exist (Mongo can't find it)
                        * product may not be inserted successfully
@@ -33,7 +33,7 @@ A simple web app, where we perform CRUD using express and MongoDB
     <option value="vegetable" <%= product.category === "vegetable" ? "selected": "" %>>vegetable</option>
     <option value="dairy" <%= product.category === "dairy" ? "selected": "" %>>dairy</option>
         
-    But it is tedious and not scalable, optimised approach in newProduct.ejs
+    But it is tedious and not scalable, optimised approach in edit.ejs
 
 12. DELETING
     We will create a delete route
@@ -44,5 +44,3 @@ A simple web app, where we perform CRUD using express and MongoDB
     /categories/fruit      it's used to navigate to a route/endpoint
     or 
     /products?category=fruit ✅ (it's used to apply filters etc)
-
-    This is a test commit
