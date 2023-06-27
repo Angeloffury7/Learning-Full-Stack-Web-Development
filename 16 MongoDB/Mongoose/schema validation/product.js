@@ -17,7 +17,7 @@ const productSchema = new mongoose.Schema({
   price: {
     type: Number,
     required: true,
-    min: 0,
+    min: [0, "Price must be positive -_-"],
   },
   onSale: {
     type: Boolean,
@@ -34,15 +34,41 @@ const productSchema = new mongoose.Schema({
       default: 0,
     },
   },
+  size: {
+    type: String,
+    enum: ["S", "M", "L"],
+  },
 });
+
+//Instance methods
+productSchema.methods.greet = function () {
+  console.log("HELLO!!!!");
+  console.log(`- from ${this.name}`);
+};
+
+productSchema.methods.toggleOnSale = function () {
+  console.log(this);
+  this.onSale = !this.onSale;
+  return this.save(); //returning a promise
+};
+
+productSchema.methods.addCategory = function (newCat) {
+  this.categories.push(newCat);
+  return this.save();
+};
+
+productSchema.statics.fireSale = function () {
+  return this.updateMany({}, { onSale: true, price: 0 }); //this refers to the product model
+};
 
 const product = new mongoose.model("Product", productSchema);
 
 const bike = new product({
-  name: "Bike Seat",
-  price: 15,
+  name: "Cycling Jersey",
+  price: 28.5,
   //   price: "HELLO!",
   categories: ["Cycling"],
+  size: "S",
 });
 
 // bike
@@ -55,11 +81,32 @@ const bike = new product({
 
 /* product.findOneAndUpdate({name: "Bike Seat"}, {price: -19.99}, {new: true}).then(res => console.log(res))  -> accepted (wtf??) */
 
-product.findOneAndUpdate({ name: "Tire Pump"}, {price: -10}, {new: true, runValidators: true})
-  .then((data) => {
-    console.log("Updated Successfully");
-    console.log(data);
-  })
-  .catch((err) => console.log(err));
+// product
+//   .findOneAndUpdate(
+//     { name: "Tire Pump" },
+//     { price: -10 },
+//     { new: true, runValidators: true }
+//   )
+//   .then((data) => {
+//     console.log("Updated Successfully");
+//     console.log(data);
+//   })
+//   .catch((err) => console.log(err));
 
 /* Now you will get a validation error */
+
+//Instance methods
+const findProduct = async () => {
+  const found = await product.findOne({ name: "Cycling Jersey" });
+  found.greet();
+  await found.toggleOnSale();
+  console.log(found);
+  await found.addCategory("Outdoors!!!!");
+  console.log(found);
+};
+
+
+findProduct();
+
+product.fireSale().then((res) => console.log(res));
+// CALLING IT ON THE MODEL, NOT ON A PRODUCT!!!

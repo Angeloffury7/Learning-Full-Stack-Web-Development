@@ -15,3 +15,34 @@ Maybe we want our products to have an array of categories ["Outdoors" , "Cycling
 BUT OUR SCHEMA WON'T VALIDATE UPDATES, we need to explicitly tell mongoose to validate it, {runValidators: true}
 
 * If you want the new object printed out after updating, {new: true}
+
+
+                    MONGOOSE VALIDATION ERRORS
+We can make custom validation errors when we are using built-in validators.
+min: [0, "Price must be positive -_-"]
+
+* Enum -> allows us to provide an array to make sure the value we enter is in a set of acceptable values
+
+                    ADDING CUSTOM METHODS TO SCHEMA
+Instance methods: Method that is available on every single methods
+Class methods: all methods that start with Product. ...
+
+const p = new product({name: "Bike Bag", price: 12}) 
+p.greet() // HELLO!!!
+
+We have access to greet in every instance of product.
+
+Instance methods are methods that are executed on individual model instances. They have access to the instance's data
+and can perform operations specific to that instance.
+
+
+                        STATIC METHODS
+Static methods are attached to the model itself and can be called directlyon the model without creating an instance.
+"This" here, refers to the class itself, not individual instances.
+
+eg, productSchema.statics.method = function () {}
+
+We make this to do fancy updates, removal. Adding to the CLASS.
+
+eg, let animals = await Animal.findByName("fido");  our own function. 
+    let dogs = Animal.findByBreed("Chihuahua");
