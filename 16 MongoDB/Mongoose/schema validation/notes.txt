@@ -46,3 +46,28 @@ We make this to do fancy updates, removal. Adding to the CLASS.
 
 eg, let animals = await Animal.findByName("fido");  our own function. 
     let dogs = Animal.findByBreed("Chihuahua");
+
+
+                            VIRTUALS
+Add properties in schema that actually don't exist in database.
+
+person.js
+We could just write an instance method, getFullName() but here, it will behave like an
+actual property, even though it isn't (virtual)
+
+* mongo pluralized person to people not persons (demn)
+This property doesn't exist in the database, only on the javascript side of things.
+Used for things which we access quite frequently and don't want to take up extra space in the database.
+
+setter-----
+person.fullName = "ABC", this won't change it
+
+
+
+                        MONGOOSE MIDDLEWARE
+We can run code before/after certain mongoose commands. 
+pre and post middleware.
+
+You can do a lot of stuff with middleware.
+Let's say you have a review model. Whenever you post a review, you want to update the average.
+So we can simply set up some middleware to do that.

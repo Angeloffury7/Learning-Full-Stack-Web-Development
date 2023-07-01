@@ -1,0 +1,17 @@
+                        MIDDLEWARE
+What is Middleware?
+They are functions that run during the request/response lifecycle. Run between the time request enters Express
+and the Response leaves express.
+
+Each MW object has access to req/res objects. When a request comes in and we hit the first middleware, that MW
+can end the cycle by res.send(), or it can call the next MW.
+
+                    MORGAN - AN EXTERNAL MIDDLEWARE
+Helps us log https request info to our terminal. To use Morgan as a MW, we have to tell our middleware.
+It waits until the response goes before it logs the details, comes at the end.
+
+                    DEFINING OUR OWN MIDDLEWARE
+
+app.get("/", function(req, res, NEXT) {
+    next(); refers to the next middleware and executes it.
+})
