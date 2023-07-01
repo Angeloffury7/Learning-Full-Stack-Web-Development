@@ -7,10 +7,15 @@
   </head>
   <body>
     <h1>All Campgrounds!</h1>
+
+    <div>
+      <a href="/campgrounds/new" target="_blank">Add new Campground</a>
+    </div>
+
     <ul>
       <% for(let campground of allCamps) { %>
       <li>
-        <a href="/campgrounds/<%= campground._id %>"><%= campground.title %></a>
+        <a href="/campgrounds/<%= campground._id %>" target="_blank"><%= campground.title %></a>
       </li>
       <% } %>
     </ul>
