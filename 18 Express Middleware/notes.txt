@@ -15,3 +15,21 @@ It waits until the response goes before it logs the details, comes at the end.
 app.get("/", function(req, res, NEXT) {
     next(); refers to the next middleware and executes it.
 })
+
+
+* We can add data to request bodies before any of your route handlers are executed.
+for eg, check if user is authenticated.
+
+If you place your middleware between/after routes, the routes which are written before can run.
+And if you add some properties in your middleware and the route runs before the MW, it can crash the program.
+
+
+We can also pass a route in our MW
+
+
+We also app.use() to set up 404 routes as a last resort. The other MW will run tho.
+
+                    FAKE AUTHENTICATION DEMO
+We are sending password as a query string, but you should NEVER do this
+
+You can pass multiple callbacks to your routes which can behave as middleware
