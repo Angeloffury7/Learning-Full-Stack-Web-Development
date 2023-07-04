@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Campground</title>
-</head>
-<body>
-
+<% layout("layouts/boilerplate.ejs") %>
     <h1>Edit Campground</h1>
     <form action="/campgrounds/<%= campground._id %>?method=PUT" method="post">
         <div>
@@ -22,9 +14,4 @@
         <button type="submit">Save Changes</button>
     </form>
 
-    <footer>
-        <a href="/campgrounds/<%= campground._id %>">Cancel</a>
-    </footer>
-    
-</body>
-</html>
+    <a href="/campgrounds/<%= campground._id %>">Cancel</a>

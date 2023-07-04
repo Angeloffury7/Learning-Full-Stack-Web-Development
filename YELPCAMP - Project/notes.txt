@@ -1,0 +1,5 @@
+ejs-mate -> an npm package that allows us to add some useful functionlality.
+layout -> allows us to define boilerplate and allows us to insert it.
+
+
+So, we only need to import partials, styles in one sheet

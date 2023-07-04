@@ -11,6 +11,7 @@ const mongoose = require("mongoose");
 const Campground = require("./models/campground");
 const methodOverride = require("method-override");
 const campground = require("./models/campground");
+const ejsMate = require("ejs-mate");
 
 /* Setting up middleware*/
 app.use(express.urlencoded({ extended: true }));
@@ -30,6 +31,8 @@ mongoose
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
+app.engine("ejs", ejsMate);
+
 
 /* Setting up routes */
 app.get("/campgrounds", async (req, res) => {
