@@ -3,6 +3,9 @@
     <h1><%= found.title %></h1>
     <h2><%= found.location %></h2>
 
+    <img src="<%= found.image %>" alt="">
+    <p><%= found.description %></p>
+
     <footer>
         <a href="/campgrounds/<%= found._id %>/edit">Edit</a>
         <form action="/campgrounds/<%= found._id %>?method=DELETE" method="post">

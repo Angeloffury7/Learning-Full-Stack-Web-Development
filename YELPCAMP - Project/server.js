@@ -52,14 +52,10 @@ app.get("/campgrounds/:id", async (req, res) => {
 });
 
 app.post("/campgrounds", async (req, res) => {
-  // res.send(req.body);
-  const { title, location } = req.body.campground;
+  // res.send(req.body)
+  const campground = new Campground({...req.body.campground});
 
-  const campground = new Campground({
-    title: title,
-    location: location,
-  });
-
+  console.log(campground); 
   await campground.save();
   res.redirect(`/campgrounds/${campground._id}`);
 });

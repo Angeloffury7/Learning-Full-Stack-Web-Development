@@ -3,3 +3,6 @@ layout -> allows us to define boilerplate and allows us to insert it.
 
 
 So, we only need to import partials, styles in one sheet
+
+                    ADDING IMAGES
+Make a request to Unsplash's API
