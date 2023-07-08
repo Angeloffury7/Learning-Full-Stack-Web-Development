@@ -22,7 +22,7 @@ Throughout the course we cover tons of tools and technologies including:
     Authentication
     PassportJS
     Authorization
-    React
+    React.js
 
 This course is also unique in the way that it is structured and presented. Many online courses are just a long series of "watch as I code" videos.  This course is different. I've incorporated everything I learned in my years of teaching to make this course not only more effective but more engaging. The course includes:
 
