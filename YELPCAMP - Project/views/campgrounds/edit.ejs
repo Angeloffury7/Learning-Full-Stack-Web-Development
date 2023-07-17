@@ -1,17 +1,73 @@
 <% layout("layouts/boilerplate.ejs") %>
-    <h1>Edit Campground</h1>
-    <form action="/campgrounds/<%= campground._id %>?method=PUT" method="post">
-        <div>
-            <label for="title">Name</label>
-            <input type="text" name="campground[title]" id="title" value="<%= campground.title %>">
-            <!-- When our data is sent via post request, everything in req.body is stored in
-                campground -->
-        </div>
-        <div>
-            <label for="location">Location</label>
-            <input type="text" name="campground[location]" id="location" value="<%= campground.location %>">
-        </div>
-        <button type="submit">Save Changes</button>
-    </form>
 
+<div class="row">
+  <h1 class="text-center">Edit Campground</h1>
+  <div class="col-6 offset-3">
+    <form action="/campgrounds/<%= campground._id %>?method=PUT" method="post">
+      <div class="mb-3">
+        <label class="form-label" for="title">Name</label>
+        <input
+          class="form-control"
+          type="text"
+          name="campground[title]"
+          id="title"
+          value="<%= campground.title %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="location">Location</label>
+        <input
+          class="form-control"
+          type="text"
+          name="campground[location]"
+          id="location"
+          value="<%= campground.location %>"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="img" class="form-label">Image URL</label>
+        <input
+          class="form-control"
+          type="url"
+          id="img"
+          name="campground[image]"
+          id="img"
+          value="<%= campground.image %>"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          type="text"
+          class="form-control"
+          id="description"
+          name="campground[description]"
+        >
+        <%= campground.description %></textarea
+        >
+      </div>
+
+      <div class="mb-3">
+        <label for="price" class="form-label">Campground Price</label>
+        <div class="input-group">
+          <span class="input-group-text">$</span>
+          <input
+            type="text"
+            id="price"
+            placeholder="0.00"
+            class="form-control"
+            name="campground[price]"
+            value="<%= campground.price %>"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <button class="btn btn-success" type="submit">Save Changes</button>
+      </div>
+    </form>
     <a href="/campgrounds/<%= campground._id %>">Cancel</a>
+  </div>
+</div>

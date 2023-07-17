@@ -1,0 +1,35 @@
+With transition, we can only do something when an external event happens (hover, click etc)
+
+What if we want something to go on perpetually?
+keyframes - what state an element will have during its animation
+
+@keyframes name {
+    0% { //0% of the time pe kya karna hai
+
+    }
+
+    25% { //what to do at t = 25%
+
+    }
+
+    50% { ...
+
+    }
+
+    75% {
+
+    }
+}
+
+animation-name, animation-duration, animation-delay, animation-iteration-count
+
+animation-direction -> start and finish define
+                    reverse: reverse direction
+                    alternate: normal reverse normal reverse...
+                    alternate-reverse: starts from reverse
+
+animation-timing-function -> ease-in, ease-in-out
+
+animation-fill-mode -> specifies styles for element when the animation is not playing (before start, after end etc)
+                    forwards: end point pe
+                    backwards: start point pe

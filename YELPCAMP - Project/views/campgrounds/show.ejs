@@ -1,16 +1,35 @@
 <% layout("layouts/boilerplate.ejs") %>
 
-    <h1><%= found.title %></h1>
-    <h2><%= found.location %></h2>
-
-    <img src="<%= found.image %>" alt="">
-    <p><%= found.description %></p>
-
-    <footer>
-        <a href="/campgrounds/<%= found._id %>/edit">Edit</a>
-        <form action="/campgrounds/<%= found._id %>?method=DELETE" method="post">
-          <button type="submit">Delete</button>
+<div class="row">
+  <div class="col-6 offset-3">
+    <div class="card my-3">
+      <img src="<%= found.image %>" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title"><%= found.title %></h5>
+        <p class="card-text"><%= found.description %></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item text-secondary"><%= found.location %></li>
+        <li class="list-group-item">$<%= found.price %>/night</li>
+      </ul>
+      <div class="card-body">
+        <a
+          class="card-link btn btn-info"
+          href="/campgrounds/<%= found._id %>/edit"
+          >Edit</a
+        >
+        <form
+          action="/campgrounds/<%= found._id %>?method=DELETE"
+          method="post"
+          class="d-inline"
+        >
+          <button type="submit" class="btn btn-danger">Delete</button>
         </form>
-        <br>
-        <a href="/campgrounds">Go to Home</a>
-    </footer>
+      </div>
+      <div class="card-footer text-secondary">
+        17 days ago
+      </div>
+    </div>
+  </div>
+</div>
+

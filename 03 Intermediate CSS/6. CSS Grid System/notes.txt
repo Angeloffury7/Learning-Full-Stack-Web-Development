@@ -1,0 +1,22 @@
+                        CSS Grid
+
+A grid-based layout system, with grids and columns, for eg, a layout like Excel.
+Everything is wrapped inside a grid container. Grid track is space between 2 row/column lines.
+
+Grid lines - the row and column lines. Grid-items are direct descendants of the container.
+
+How do we make one item span 2 rows/columns?
+by giving grid-column-start and grid-column-end (it considers the grid lines as endpoints)
+
+How to change height of 1 row? see
+
+We will see after adding so much text, our content is still in a grid-item. Would be difficult to implement
+using flex-box etc
+
+justify-items, align-items, justify-self, align-self ✅
+
+place-self, items: center; places in center duh
+
+
+    Grid vs Inline-Grid -> like block vs inline
+Agar grid kisi layout mein ghusani hai, to use the appropriate property

@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: slategray;
+  height: 700px;
+  /* width: 900px; */
+  display: grid; /* turning on grid */
+
+  /* grid-template-rows: 133px 133px 133px; /* kitne rows*/
+  /* grid-template-columns: 133px 133px 133px; kitne columns */ 
+
+  /* jitni bhi space hai, use it all and give me 3 columns */
+  /* fr is a unit which stands for "fraction" */
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(3, 1fr);      */
+  grid-template-rows: 1fr 1fr 1fr; /* same thing as above*/
+  grid-template-rows: 143px 1fr 43px; /* divide the reamaining space in 1:1 b/w 2 elements*/
+
+  row-gap: 12px;
+  column-gap: 13px;
+
+  justify-items: start;
+  /* They will align the items to the start inside their cell*/
+  justify-items: center;
+  align-items: center;
+}
+
+.item {
+  background-color: aqua;
+  height: 122px;
+  width: 122px;
+  /* don't need to specify height and width after giving 1fr*/
+  
+}
+
+.item-1 {
+  /* grid-column-start: 1;
+  grid-column-end: 4; */
+  grid-column: 1 / span 3; /* better way of writing */
+  background: #000;
+  color: #fff;
+  justify-self: start;
+  width: 100vw;
+  /* aligning one particular element to the start only */
+}
+
+.item:nth-child(3) {
+  align-self: end;
+}
+
+.footer {
+  /* background-color: #fff; */
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background: #000;
+  width: 100vw;
+}
