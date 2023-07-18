@@ -7,7 +7,7 @@ Each MW object has access to req/res objects. When a request comes in and we hit
 can end the cycle by res.send(), or it can call the next MW.
 
                     MORGAN - AN EXTERNAL MIDDLEWARE
-Helps us log https request info to our terminal. To use Morgan as a MW, we have to tell our middleware.
+Helps us log https request info to our terminal. To use Morgan as a MW, we have to tell express to run it as a middleware using app.use()
 It waits until the response goes before it logs the details, comes at the end.
 
                     DEFINING OUR OWN MIDDLEWARE
@@ -23,6 +23,8 @@ for eg, check if user is authenticated.
 If you place your middleware between/after routes, the routes which are written before can run.
 And if you add some properties in your middleware and the route runs before the MW, it can crash the program.
 
+SO DEFINE THE APPROPRIATE MIDDLEWARE BEFORE YOUR ROUTES
+
 
 We can also pass a route in our MW
 
@@ -32,4 +34,8 @@ We also app.use() to set up 404 routes as a last resort. The other MW will run t
                     FAKE AUTHENTICATION DEMO
 We are sending password as a query string, but you should NEVER do this
 
-You can pass multiple callbacks to your routes which can behave as middleware
+                    PROTECTING SPECIFIC ROUTES
+In a get request, we can actually pass multiple callback funtions. You can pass multiple callbacks to your 
+routes which can behave as middleware.
+
+This is better because it promotes reusability and it's more clear than just (req, res, next) => {}

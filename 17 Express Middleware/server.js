@@ -6,29 +6,29 @@ const app = express();
 // If you don't explicitly end the cycle or call the next middleware
 //the browser will say timeout because we aren't sending anything.
 
-app.use(morgan("tiny")); //logs every single request. Runs and tells express to move onto the next thing
+app.use(morgan("dev")); //logs every single request. Runs and tells express to move onto the next thing
 /*
     GET / 200 9 - 2.413 ms
     GET /dogs 200 9 - 0.824 ms
  */
 
-// app.use((req, res, next) => {
-//     console.log("THIS IS MY FIRST MIDDLEWARE");
-//     next(); //this time we do get WOOF WOOF as a response
-//             //there could be another middleware after it.
-// })
-
-// app.use((req, res, next) => {
-//     console.log("THIS IS MY SECOND MIDDLEWARE");
-//     return next(); //to make sure nothing happens after this
-
-//     console.log("THIS IS AFTER CALLING SECOND MIDDLEWARE");
-//     //after first log, we run next, then the 2nd log is run.
-// })
+app.use((req, res, next) => {
+    console.log("THIS IS MY FIRST MIDDLEWARE");
+    next(); //this time we do get WOOF WOOF as a response
+            //there could be another middleware after it.
+})
 
 app.use((req, res, next) => {
-  // req.method = "DELETE" //hehe
-  // req.method = "GET";
+    console.log("THIS IS MY SECOND MIDDLEWARE");
+    return next(); //to make sure nothing happens after this
+
+    console.log("THIS IS AFTER CALLING SECOND MIDDLEWARE");
+    //after first log, we run next, then the 2nd log is run, unless we re executing next and returning.
+})
+
+app.use((req, res, next) => {
+  req.method = "GET";
+  req.method = "DELETE" //hehe
   req.requestTime = Date.now();
   console.log(req.method, req.path); //logs HTTP verb and the endpoint /dogs, /cats etc
   next();
@@ -41,7 +41,7 @@ app.use("/dogs", (req, res, next) => {
 });
 
 
-const verifyPwd = (req, res, next) => {
+const verifyPwd = (req, res, next) => { //this is a middleware function
   const { password } = req.query;
   if (password === "lospolloshermanos") {
     next();
@@ -64,7 +64,7 @@ app.get("/dogs", (req, res) => {
 
 /* Protecting a specific route */
 app.get("/kfcrecipe", verifyPwd, (req, res) => { //verifyPwd should have at least one next()
-  //if it calls next, the second callback will be executed.
+  //if it calls next, the second callback will be executed i.e. this GET route
   res.send("season chicken and fry 😀👍");
 })
 
