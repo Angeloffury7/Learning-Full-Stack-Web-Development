@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 
+const AppError = require("./AppError");
+
 app.use(morgan("dev"));
 
 app.use((req, res, next) => {
@@ -20,8 +22,12 @@ const verifyPassword = (req, res, next) => {
   if (password === "chickennuggets") {
     next();
   }
-  //   res.send("PASSWORD NEEDED");
-  throw new Error("password required!"); //sending our own error message!
+  // res.status(401);
+  // throw new Error("password required!"); //sending our own error message!
+
+  // throw new AppError(401, "Password Required!");
+
+  throw new AppError("gib password bitch", 401);
 };
 
 app.get("/", (req, res) => {
@@ -31,6 +37,7 @@ app.get("/", (req, res) => {
 
 app.get("/error", (req, res) => {
   doesntExist.fly();
+  //We aren't throwing an AppError here.
 });
 
 app.get("/dogs", (req, res) => {
@@ -42,18 +49,28 @@ app.get("/secret", verifyPassword, (req, res) => {
   res.send("THIS IS A SECRET AHHH");
 });
 
+app.get("/admin", (req, res) => {
+  throw new AppError("YOU ARE NOT AN ADMIN STOP!", 403);
+})
+
 app.use((req, res) => {
   res.status(404).send("NOT FOUND");
 });
 
 /* Error handling route */
+// app.use((err, req, res, next) => {
+//   console.log("*******************");
+//   console.log("*******ERROR*******");
+//   console.log("*******************");
+//   //   console.log(err); //this logs the error but doesn't send it back
+//   //   res.status(404).send("THIS IS AN ERROR 🔥🔥🔥🔥");
+//   next(err); //passing this off to the built-in error handler
+// });
+
 app.use((err, req, res, next) => {
-  console.log("*******************");
-  console.log("*******ERROR*******");
-  console.log("*******************");
-//   console.log(err); //this logs the error but doesn't send it back
-  //   res.status(404).send("THIS IS AN ERROR 🔥🔥🔥🔥");
-  next(err); //passing this off to the built-in error handler
+  const { status = 500, message = "something went wrong idk man XDDD" } = err;
+  // res.status(status).send("Error");
+  res.status(status).send(message);
 });
 
 app.listen(3000, () => console.log("Running on localhost:3000"));

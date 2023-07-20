@@ -1,0 +1,55 @@
+                        HANDLING ERRORS IN EXPRESS APPS
+
+Types of errors ->
+    Dev errors, syntax errors, runtime errors.
+    API being down, mongoose validation errors, incomplete data from a form.
+
+Right now, if an error is generated, we ARE getting a response, but we didn't specify what status code
+to respond with, what content to respond with.
+
+This is the default express error handling. It looks for an error object, looks for statusCode and statusMessage in that 
+error object.
+
+                        DEFINING CUSTOM ERROR HANDLERS
+A middleware function, an error-handling function must have (err, req, res, next)
+Put this in the last, after your middlewares and API routes.
+
+If we go to /error, or /secret w/o password, we will get the error message.
+
+
+*** WHEN WE DO NEXT(ERR), WE ARE PASSING THIS TO THE NEXT ERROR-HANDLING MW.
+    NEXT() CALLS THE NEXT NON-ERROR HANDLING ERROR
+
+
+                            CUSTOM ERROR CLASS
+Why an error class? Maybe we want to respond to an error with a different status code, different error message.
+500 - server error (very generic)
+401 - unauthorized access
+404 - can't find the resource
+
+When you have a lot of errors, it will get really annoying to write res.status() a lot of times.
+
+So we will make a generic error, like MongooseError(), AppError()...
+It would work like, AppError(401, message)
+
+We will define our class in a separate file. 
+
+*IMPORTANT
+    -> Express looks for a property of err object called status or statusCode so that it can respond with it.
+
+    -> The default Error in Express.js doesn't have a status code
+    -> You can specify your headers in err.headers
+    -> You can add in your own error handler, like we did with (err, req, res, next)
+
+    Take out the status code and message and do res.status(status).send(msg)
+
+    But if we run into a syntax error, or any other type of error where we aren't throwing our custom error,
+    we will run into a problem. The default JavaScript error object doesn't have a status code and the error message will
+    instead say statusCode is undefined. So just give it a default value to status just to be safe.
+
+
+    You can also make nice templates to send 404 errors, unauthorized errors.
+
+
+                                ERRORS IN ASYNC FUNCTIONS
+

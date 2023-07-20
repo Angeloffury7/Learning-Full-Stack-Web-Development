@@ -1,0 +1,7 @@
+                        ASYNC ERRORS!
+
+What if we get errors in Mongoose errors? What if we leave our newProduct from blank? That will crash the app.
+
+All model methods take time and are async. If we look for a product that doesn't exist, Mongoose won't throw an error.
+
+We can simply add an if-else block.
