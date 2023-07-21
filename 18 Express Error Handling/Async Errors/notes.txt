@@ -5,3 +5,34 @@ What if we get errors in Mongoose errors? What if we leave our newProduct from b
 All model methods take time and are async. If we look for a product that doesn't exist, Mongoose won't throw an error.
 
 We can simply add an if-else block.
+
+What about errors from Mongoose? for eg, a required attribute wasn't provided (Product validation failed: Path `name` is required)
+
+We didn't throw that error, so how do we tackle it? using a try-catch block. We handled the error by doing next(err)
+
+SO WHENEVER YOU HAVE AN ASYNC FUNCTION, WRAP IT IN A TRY-CATCH
+
+
+**********************************
+
+It does get annoying to wrap everything in try-catch, as we will have a lot of async errors. 
+
+So we are wrapping our function inside a wrapper function.
+
+⚠️⚠️⚠️
+Basically, you are passing your async function to this outer wrapper function (async wrap), which will return
+a inner-wrapper function. This function will be executed when we hit that route. While executing, you will hit
+an async function (your original function), isme hamne .catch() laga diya because it returns a promise. That way,
+you won't have to write a ton of try-catch blocks. Because, if successful, it will execute, if not, it will go to 
+catch block by itself.
+
+Abhi ke liye ye bas details route pe kiya hai, so that you can look at the try-catch block method as well.
+
+THE PURPOSE OF THIS IS TO JUST CLEAN UP YOUR CODE
+
+
+                                MONGOOSE ERRORS
+Mongoose can give a combination of errors, maybe id is too long AND doesn't exist.
+
+We aren't learning how to handle these errors, we are just seeing how we could do some stuff if it was a 
+validationerror, casterror etc.

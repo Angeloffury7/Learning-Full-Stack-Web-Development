@@ -9,7 +9,7 @@
 <body>
     <h1>Edit product</h1>
 
-    <form action="/products/<%= product._id %>?_method=PUT" method="POST">
+    <form action="/products/details/<%= product._id %>?_method=PUT" method="POST">
         <label for="name">Product Name</label>
         <input type="text" name="name" id="name" value="<%= product.name %>" placeholder="Product Name">
 
