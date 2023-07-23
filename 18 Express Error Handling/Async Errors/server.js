@@ -48,42 +48,53 @@ function asyncWrapper(fn) {
   return function (req, res, next) {
     fn(req, res, next).catch((err) => next(err));
     //Here, we are still passing that error to the error-handling middleware
+    //Yahan agar kisi bhi async fn mein error aya to ye automatically next(err) kar dega, don't need to
+    //write that again and again
   };
 }
 
+//throwing error if product isn't found (v1) ->
+
+// app.get("/products/details/:id", async (req, res, next) => {
+//   const { id } = req.params;
+//   const found = await Product.findById(id);
+
+//   if (!product) {
+//     // throw new AppError("Product not found", 404);
+//     //but, it's not hitting our middleware and not showing our message to the user?
+//     //it's because, in an async function, the error must be passed in next(err)
+
+//     return next(new AppError("Product not found", 404)); //this works!, but add a return statement to it
+//     //so that EJS doesn't render details.ejs with null after returning from this next(err) call
+//   }
+//   res.render("details.ejs", { found });
+// });
+
+//catching mongoose errors (v2) ->
+
+// app.get("/products/details/:id", async (req, res, next) => {
+//   try {
+//     const { id } = req.params;
+//     const found = await Product.findById(id);
+//     if (!product) {
+//       throw new AppError("Product not found", 404);
+//     }
+//     res.render("details.ejs", { found });
+//   } catch (e) {
+//     next(e);
+//   }
+// });
+
+//putting in wrapper function (v3) ->
 app.get(
   "/products/details/:id",
   asyncWrapper(async (req, res, next) => {
     const { id } = req.params;
-    const found = await Product.findById(id);
-    if (!found) {
+    const product = await Product.findById(id);
+    if (!product) {
       throw new AppError("Product not found", 404);
     }
-
     res.render("details.ejs", { found });
-
-    //using try-catch
-
-    // try {
-    //   const { id } = req.params;
-    //   const found = await Product.findById(id);
-
-    //   if (!found) {
-    //     // throw new AppError("Product does not exist", 404);
-    //     //WHY IS THIS NOT RENDERING OUR DESIRED RESPONSE??
-    //     // for errors returned by async functions, you need to pass this error in a next() function.
-
-    //     throw new AppError("Product does not exist", 404);
-    //     //yay working
-    //     // we need to add return because it will still run details.ejs on null
-    //     //but now that we have added try-catch, we don't need to anymore
-    //   }
-
-    //   console.log("Details page");
-    //   res.render("details.ejs", { found });
-    // } catch (err) {
-    //   next(err);
-    // }
   })
 );
 
@@ -92,6 +103,7 @@ app.get("/products/new", (req, res) => {
   res.render("newProduct.ejs", { categories });
 });
 
+//Error handling with try-catch
 app.post("/products", async (req, res, next) => {
   console.log(req.body);
 
@@ -109,16 +121,15 @@ app.get("/products/:id/edit", async (req, res, next) => {
   const product = await Product.findById(id);
   if (!product) {
     return next(new AppError("Product does not exist", 404));
-    //putting return so that Node doesn't render edit.ejs on NULL
   }
   res.render("edit.ejs", { product, categories });
 });
 
-app.put("/products/details/:id", async (req, res, next) => {
-  const { id } = req.params;
-  const newData = req.body;
-
-  try {
+app.put(
+  "/products/details/:id",
+  asyncWrapper(async (req, res, next) => {
+    const { id } = req.params;
+    const newData = req.body;
     const updatedProd = await Product.findByIdAndUpdate(id, newData, {
       runValidators: true,
       new: true,
@@ -126,28 +137,29 @@ app.put("/products/details/:id", async (req, res, next) => {
 
     console.log(updatedProd);
     res.redirect(`/products/details/${updatedProd._id}`);
-  } catch (err) {
-    next(err);
-  }
-});
+  })
+);
 
-app.delete("/products/:id", async (req, res) => {
-  const { id } = req.params;
-  await Product.findByIdAndDelete(id);
-  res.redirect("/products");
-});
+app.delete(
+  "/products/:id",
+  asyncWrapper(async (req, res) => {
+    const { id } = req.params;
+    await Product.findByIdAndDelete(id);
+    res.redirect("/products");
+  })
+);
 
-const handleValidErr = err => {
+const handleValidErr = (err) => {
   console.dir(err);
   return new AppError(`Validation failed... ${err.message}`, 400);
-}
+};
 
 app.use((err, req, res, next) => {
   console.log(err.name);
-  if(err.name === "ValidationError") err = handleValidErr(err);
+  if (err.name === "ValidationError") err = handleValidErr(err);
   // if(err.name === "CastError") err = handleCastErr(err);
   next(err);
-})
+});
 
 app.use((err, req, res, next) => {
   const { status = 500, message = "something went wrong idk XDDD" } = err;

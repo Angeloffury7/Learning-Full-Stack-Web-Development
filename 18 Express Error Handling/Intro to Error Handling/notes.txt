@@ -18,7 +18,7 @@ If we go to /error, or /secret w/o password, we will get the error message.
 
 
 *** WHEN WE DO NEXT(ERR), WE ARE PASSING THIS TO THE NEXT ERROR-HANDLING MW.
-    NEXT() CALLS THE NEXT NON-ERROR HANDLING ERROR
+    NEXT() CALLS THE NEXT NON-ERROR HANDLING MIDDLEWARE
 
 
                             CUSTOM ERROR CLASS
@@ -30,7 +30,7 @@ Why an error class? Maybe we want to respond to an error with a different status
 When you have a lot of errors, it will get really annoying to write res.status() a lot of times.
 
 So we will make a generic error, like MongooseError(), AppError()...
-It would work like, AppError(401, message)
+It would work like, AppError(error_message, status)
 
 We will define our class in a separate file. 
 
@@ -41,7 +41,7 @@ We will define our class in a separate file.
     -> You can specify your headers in err.headers
     -> You can add in your own error handler, like we did with (err, req, res, next)
 
-    Take out the status code and message and do res.status(status).send(msg)
+    destructure the status code and message and do res.status(status).send(msg)
 
     But if we run into a syntax error, or any other type of error where we aren't throwing our custom error,
     we will run into a problem. The default JavaScript error object doesn't have a status code and the error message will

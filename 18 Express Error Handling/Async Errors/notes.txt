@@ -1,17 +1,14 @@
                         ASYNC ERRORS!
 
-What if we get errors in Mongoose errors? What if we leave our newProduct from blank? That will crash the app.
+What if we get errors in Mongoose errors? What if we leave our newProduct form blank? That will crash the app.
 
-All model methods take time and are async. If we look for a product that doesn't exist, Mongoose won't throw an error.
+All model methods take time and are async. If we look for a product that doesn't exist, Mongoose won't throw an error, it will simply return null.
 
-We can simply add an if-else block.
+If there's no product, we pass an AppError inside next() in our async functions.
 
-What about errors from Mongoose? for eg, a required attribute wasn't provided (Product validation failed: Path `name` is required)
+What if errors from mongoose? We leave form blank, price < 0 etc.
 
-We didn't throw that error, so how do we tackle it? using a try-catch block. We handled the error by doing next(err)
-
-SO WHENEVER YOU HAVE AN ASYNC FUNCTION, WRAP IT IN A TRY-CATCH
-
+For now, handle them with try-catch. We can put try-catch in pretty much every async function.
 
 **********************************
 
@@ -21,12 +18,11 @@ So we are wrapping our function inside a wrapper function.
 
 ⚠️⚠️⚠️
 Basically, you are passing your async function to this outer wrapper function (async wrap), which will return
-a inner-wrapper function. This function will be executed when we hit that route. While executing, you will hit
+an inner-wrapper function. This function will be executed when we hit that route. While executing, you will hit
 an async function (your original function), isme hamne .catch() laga diya because it returns a promise. That way,
 you won't have to write a ton of try-catch blocks. Because, if successful, it will execute, if not, it will go to 
 catch block by itself.
 
-Abhi ke liye ye bas details route pe kiya hai, so that you can look at the try-catch block method as well.
 
 THE PURPOSE OF THIS IS TO JUST CLEAN UP YOUR CODE
 
@@ -35,4 +31,4 @@ THE PURPOSE OF THIS IS TO JUST CLEAN UP YOUR CODE
 Mongoose can give a combination of errors, maybe id is too long AND doesn't exist.
 
 We aren't learning how to handle these errors, we are just seeing how we could do some stuff if it was a 
-validationerror, casterror etc.
+ValidationError, CastError etc.

@@ -20,12 +20,10 @@ app.use("/dogs", (req, res, next) => {
 const verifyPassword = (req, res, next) => {
   const { password } = req.query;
   if (password === "chickennuggets") {
-    next();
+    return next();
   }
   // res.status(401);
   // throw new Error("password required!"); //sending our own error message!
-
-  // throw new AppError(401, "Password Required!");
 
   throw new AppError("gib password bitch", 401);
 };
@@ -37,7 +35,8 @@ app.get("/", (req, res) => {
 
 app.get("/error", (req, res) => {
   doesntExist.fly();
-  //We aren't throwing an AppError here.
+  //We aren't throwing an AppError here, so it will create an error object and automatically hit the
+  //error-handling middleware
 });
 
 app.get("/dogs", (req, res) => {
