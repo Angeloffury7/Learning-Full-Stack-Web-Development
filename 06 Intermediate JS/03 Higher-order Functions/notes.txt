@@ -1,5 +1,5 @@
 1. HIGHER-ORDER FUNCTIONS 
-    They can accept other functions as arguments
+    They can accept other functions as 
             return a function
 
 
