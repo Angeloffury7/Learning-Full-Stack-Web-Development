@@ -32,12 +32,12 @@
   background-color: aqua;
   height: 122px;
   width: 122px;
-  /* don't need to specify height and width after giving 1fr*/
+  /* don't need to specify height and width after giving 1fr in parent container*/
   
 }
 
 .item-1 {
-  /* grid-column-start: 1;
+  /* grid-column-start: 1; /* starts at 1st grid line and spans area till 4th grid line
   grid-column-end: 4; */
   grid-column: 1 / span 3; /* better way of writing */
   background: #000;

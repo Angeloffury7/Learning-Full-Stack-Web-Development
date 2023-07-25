@@ -5,11 +5,14 @@
 
 2. Background size
     cover, contain, auto
-    - 'contain' scales the image as large as possible without 
-    cropping or stretching
+    
+    "contain" - scales the image as large as possible within its container without cropping 
+    or stretching the image. if the container is large than the image, image will be repeated 
+    unless background-repeat: no-repeat
 
-    - 'cover' scale the image as large as possible without
-        stretching but it will crop it
+    "cover" - 
+
+    https://www.youtube.com/watch?v=dmfCUIbQg5A
 
 
 3. Background repeat

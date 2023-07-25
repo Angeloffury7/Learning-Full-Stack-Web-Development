@@ -24,7 +24,7 @@
     -> 'column' main axis goes from TOP TO BOTTOM
     -> 'column-reverse'
 
-*** FLEXBOX MAKES THE ELEMENTS FIT IN
+*** FLEXBOX MAKES THE ELEMENTS FIT IN A CONTAINER
 
 
 3. JUSTIFY-CONTENT
