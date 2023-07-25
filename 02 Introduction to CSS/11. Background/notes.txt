@@ -1,31 +1,16 @@
-                    BACKGROUND
+background-image: url() or gradient
 
-1. Background image
-    url(*write url*)
+background-size: cover -> if image is smaller than container, it will zoom into the image so that the container
+                            gets covered, but some parts may get cropped out.
 
-2. Background size
-    cover, contain, auto
-    
-    "contain" - scales the image as large as possible within its container without cropping 
-    or stretching the image. if the container is large than the image, image will be repeated 
-    unless background-repeat: no-repeat
+                contain -> fits the entire image in the container (useful if image is very big)
+                auto -> keeps the original size of image and not scaled at all
 
-    "cover" - 
+                In all 3, aspect ratio is maintained
 
-    https://www.youtube.com/watch?v=dmfCUIbQg5A
+                but if we give 200px 150px, they will set width and height
+                    same w/ percentages
 
-
-3. Background repeat
-
-4. Background position
-    - where the background starts
-        is it aligned to the top of the picture, bottom of the picture etc
-
-5. BACKGROUND shorthand
-    order doesn't matter in most cases
-
-** BUT SIZE MUST IMMEDIATELY FOLLOW THE POSITION WITH '/'
-    center/cover
-    otherwise the image won't show
-
-6. You can have multiple images. Comma-separated urls
+background-repeat: repeat -> repeats image horizontally and vertically to fill the element
+                    repeat-x, repeat-y -> only in specified direction
+                    no-repeat -> don't repeat the image, baaki area khali rehne do
