@@ -1,141 +1,27 @@
-Make sure you are comfortable with arrow functions, spread, destructuring
-etc.
+REFER TO THE REACT DOCS, THEY ARE AMAZING
 
-React basics, Vite, props, events, hooks, forms, material UI, component designs, react patterns
+(...Basic React stuff)
 
-        REACT
-Front-end library that helps us build UI. VERY popular
-UI from components -> small individual pieces that we assemble to build a website.
+Components are functions that return UI. In React, you NEED to capitalize your component 
+names.
 
-use codesandbox.io for now
+When exporting multiple things from a single file, pass them as a object and remove "default".
+But it's not preferable to export more than 1 component from one file
 
-react.dev -> official docs
+JSX -> HTML inside your JavaScript
 
-Component -> function that combines logic, HTML etc
+converting HTML to JSX => 
+1. Return a single root element
+    To get around this, use <> </> as a wrapper (these are called fragments)
 
-You can nest components inside each other, package it together and use this inside another component
+2. you can't write "class" to give classes to your HTML elements, use className=""
 
-React is more of an ecosystem, so we want a server, webpack, babel etc
-For now, use code sandbox
+3. Whenever using inline CSS or attributes (onClick), they must be camel-cased.
 
-public directory -> don't touch this folder, it has index.html which is our main file. We render all our React code in the empty div.
-src -> we write our code here
+To use expressions/variables, use {}. to hard-code stuff, use ""
 
-How are we writing HTML inside JavaScript?
+4. style: {{}}, outer bracket means that it must escape jsx, the inner bracket means it's a object.
 
-function Header() { 
-    return (html)
-}
-This function "knows" how to render itself
+IN REACT, YOU MUST PASS STYLES AS AN OBJECT
 
-> JSX syntax extension for JS, allows to write HTML-like markup inside JS which must be transpiled.
-It's not legal JS
-> Babel transpiles JSX and turns it into real JS. It will take our JSX and transpiles it into actual JS.
-
-
-REACT APP STRUCTURE
-1. highest level component called App
-2. index.js, where our App component is called and our website is assembled.
-    selects the root div and renders App component here.
-3. index.html, our main file.
-
-FIRST COMPONENT
-The first letter should be uppercase, and should return some JSX
-You need to call your component somewhere to see it. To render it, create a sort-of self-closing html tag.
-
-YOU CAN ONLY RETURN A SINGLE HTML ELEMENT FROM A COMPONENT
-
-                        IMPORTING AND EXPORTING COMPONENTS
-One component per file.
-like import App from "./App",
-Greeter.js -> either export function ...
-              export default function...  (most common)
-
-We can also do export {Dog} exporting individual elements
-import { Dog } from "./Dogs.js" -> has to absolutely match
-
-With export default, we can change the name while importing, but bad idea!!!
-
-1. Name of component should match the name of file, and export default.
-
-JSX RULES
-1. You must explicitly close self-closing tags, eg. <br/>
-    export default function Form() {
-        return <input type="password"> //error
-    }
-
-2. components can only return a single top element
-    If you want to return more than one, wrap them in a div.
-
-But, this may clutter the DOM. To avoid unnecessary wrapper elements, we can use React fragments
-
-<> empty tag, this satisfies the rules of React, but in the document, the elements inside will be rendered as stand-alone
-elements
-
-ADDING DYNAMIC VALUES
-Like string template literals
-use curly braces, this escapes the jsx content and is treated like pure js (variables)
-
-COMPOSING REACT COMPONENTS
-Instead of rendering 3 separate die components, it's better to take multiple die comps and add them to a dice comp.
-
-How to style components?
-conventional way -> take top level element, and give it a class which matches the name of comp. But, class is a keyword in JS
-                    use className
-                    and make a stylesheet
-                    import "./styles.css"
-You could write all your styles in a single stylesheet, but then it would become very complicated to change anything
-
-
-CREATING LOCAL REACT APPS
-We ususally do npx create-react-app nameofApp
-We will use Vite (veet), helps us quickly set up Vue, Svelte, React, Typescript variants, or Vanilla
-To use, npm create vite@latest
-
-It is VERY quick 
-After installation, run "npm run dev"
-Even though it says App.jsx it doesn't matter
-
-** NOTE -> create-react-app is a way of getting a basic React setup. It used to be standard, but much slower and outdated
-
-Even though you can write React in .js, .jsx makes it clear that the project definitely contains React components
-
-    PROPS -> VERY IMPORTANT
-They are like arguments we can provide to our components. Maybe we want to add some custom text to our components.
-<comp_name value="something"> , think of it as executing a function. To plug it in JSX, use {}
-Use destructuring, to get this "something", use props.value.
-
-> To add multiple props, add them space-separated
-
-> To add non-string arguments, pass them in curly brackets numSides={20}, because curly brackets mean evaluate as JS
-
-> Default values in props, just add value=default in function argument
-
-> To pass arrays, use the curly-brace syntax. In the curly brace syntax, you can pass variables etc. If you directly
- render an array, it will squeeze all the elements together and print.
-
-> If you pass an object, you have to pass the object in curly braces as well.
-    {{a: 1, b:2}}
-
-> How to add conditional logic to JSX?
-
-                        REACT DEVELOPER TOOLS    
-Add the chrome extensions and it will automatically detect whether React is running or not
-It will show you the component hierarchy, etc.
-
-
-                STYLING COMPONENTS
-Till now, we were styling our components with an external stylesheet. How do we add dynamic styling?
-We can provide inline styles, and provide a JS object. (check Game.jsx)
-The first bracket escapes the JSX, and the second bracket is an object.
-
-You can provide the styles object to every element in the component.
-
-> Put all your regular styles inside an external stylesheet. If you want to add something that may change, use dynamic styles.
-
-                WORKING WITH LOOPS
-Supppose we have an array of values, and we want to loop through the values, how?
-When we directly pass our array in JSX, it renders all of the elements one-by-one. The cool thing is, we can use and render HTML elements
-by MAKING AN ARRAY OF JSX ELEMENTS
-
-    const arr = [<h1>hello</h1>, <div>This is a div</div>]
+CONTINUE FROM 1:11:38

@@ -6,3 +6,16 @@ So, we only need to import partials, styles in one sheet
 
                     ADDING IMAGES
 Make a request to Unsplash's API
+
+                    VALIDATION
+So that user can't make a campground without a name, edit out the name of the campground etc.
+
+1) use the required attribute of HTML, but it looks ugly
+2) use Bootstrap's validation -> put "required" in in input labels, but "novalidate" in form tag.
+                                add the javascript in a script tag
+
+
+                    ERRROS
+What if price can't be parsed into a Number? Create an error-handling middleware, like we created before
+
+Creating a custom error class

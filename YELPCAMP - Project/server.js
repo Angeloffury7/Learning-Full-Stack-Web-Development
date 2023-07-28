@@ -12,6 +12,7 @@ const Campground = require("./models/campground");
 const methodOverride = require("method-override");
 const campground = require("./models/campground");
 const ejsMate = require("ejs-mate");
+const asyncWrapper = require("./utils/asyncWrapper.js");
 
 /* Setting up middleware*/
 app.use(express.urlencoded({ extended: true }));
@@ -33,7 +34,6 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.engine("ejs", ejsMate);
 
-
 /* Setting up routes */
 app.get("/campgrounds", async (req, res) => {
   const allCamps = await Campground.find({});
@@ -44,28 +44,27 @@ app.get("/campgrounds/new", (req, res) => {
   res.render("campgrounds/new");
 });
 
-app.get("/campgrounds/:id", async (req, res) => {
+app.get("/campgrounds/:id", asyncWrapper(async (req, res) => {
   const { id } = req.params;
   const found = await Campground.findById(id);
   console.log(found);
   res.render("campgrounds/show", { found });
-});
+}));
 
-app.post("/campgrounds", async (req, res) => {
-  // res.send(req.body)
-  const campground = new Campground({...req.body.campground});
+app.post("/campgrounds", asyncWrapper(async (req, res, next) => {
+    const campground = new Campground({ ...req.body.campground });
 
-  console.log(campground); 
-  await campground.save();
-  res.redirect(`/campgrounds/${campground._id}`);
-});
+    console.log(campground);
+    await campground.save();
+    res.redirect(`/campgrounds/${campground._id}`);
+}));
 
-app.get("/campgrounds/:id/edit", async (req, res) => {
+app.get("/campgrounds/:id/edit", asyncWrapper(async (req, res) => {
   const { id } = req.params;
   const campground = await Campground.findById(id);
   console.log(campground);
   res.render("campgrounds/edit", { campground });
-});
+}));
 
 app.put("/campgrounds/:id", async (req, res) => {
   const { id } = req.params;
@@ -78,10 +77,15 @@ app.put("/campgrounds/:id", async (req, res) => {
   res.redirect(`/campgrounds/${id}`);
 });
 
-app.delete("/campgrounds/:id", async (req, res) => {
+app.delete("/campgrounds/:id", asyncWrapper(async (req, res) => {
   const { id } = req.params;
   await Campground.findByIdAndDelete(id);
   res.redirect("/campgrounds");
+}));
+
+app.use((err, req, res, next) => {
+  // res.send("OOF")
+
 });
 
 /* Setting up PORT */

@@ -13,8 +13,7 @@ We'll only study the important ones because there are 100s of properties and met
     *innerHTML => Shows the HTML under the hood.
 
     You can use += syntax like
-    document.querySelector('h1').innerHTML += '<sup>lol is this working</sup>'
-    as it is an object!!
+    document.querySelector('h1').innerHTML += '<sup>lol is this working</sup>' as it is an object!!
 
 
 2. Working with attributes

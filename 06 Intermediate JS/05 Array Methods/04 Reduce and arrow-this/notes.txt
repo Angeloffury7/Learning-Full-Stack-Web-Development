@@ -15,10 +15,14 @@
 
                         ARROW FUNCTIONS AND 'THIS'
 
-If you are using arrow functions in an object, they won't automatically bind "this" to the object, whereas function will
-By default, this refers to the Window object. There are some workarounds to this, like explicitly binding it to the object
+If you create an object and create a method using normal function, 'this' works normally
+If you replace it with arrow functions, inside an arrow function, 'this' refers to the scope it was created in.
 
-    which is commonly done in React.
+In arrow functions, 'this' depends on how the function is executed.
 
+In the shoutName function, setTimeout is a method on the window object, that's why it's giving an error.
 
-but for now, don't use arrow functions with this, use regular functions instead.
+We can solve that using arrow functions. Since the arrow function was created inside a regular function,
+'this' inside that arrow function will get its context from its outer scope, i.e. the person.
+
+Basically, in most cases use a normal function to create a method.
