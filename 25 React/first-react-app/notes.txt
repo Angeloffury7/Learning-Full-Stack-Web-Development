@@ -18,10 +18,24 @@ converting HTML to JSX =>
 
 3. Whenever using inline CSS or attributes (onClick), they must be camel-cased.
 
+4. All self-closing tags must be explicitly closed (<input />, <br />)
+
 To use expressions/variables, use {}. to hard-code stuff, use ""
 
-4. style: {{}}, outer bracket means that it must escape jsx, the inner bracket means it's a object.
-
+style: {{}}, outer bracket means that it must escape jsx, the inner bracket means it's a object.
 IN REACT, YOU MUST PASS STYLES AS AN OBJECT
 
-CONTINUE FROM 1:11:38
+To pass different arguments to a component so that we can different UI, we pass "props"
+props is an object, so we can destructure values out of it.
+
+Props are read-only, can't change them inside a component using onClick etc,
+
+> To pass numbers, you must pass them as an expression -> example: {45}, don't pass them as a string.
+> You can give a default prop value like regular objects
+> You can store your props as an object in your and pass them in a component using Spread operator
+
+
+                                CONDITIONAL RENDERING
+We only render a component if it satisifies a condition.
+
+1:48:50

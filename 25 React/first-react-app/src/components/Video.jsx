@@ -1,16 +1,24 @@
-import "./Video.css";
+import "./styles/Video.css";
 
-function Video() {
-  let topic = "React.js";
-  let bg = "dark";
+function Video({ title, channel="Channel Name", views, time, thumbnail, verified="false" }) {
+  // console.log(props);
+  // let bg = "dark";
+
   return (
     <>
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbiUm_6lWYxsgn8ixnLEePQdUH8WDdmliVVNK95k4Z1QrilbP_9dlCNO_Gu4N6QhcnuTg&s"
-        alt="Katherine Johnson"
-      />
-      <div className={bg} style={{ color: "red" }}>
-        Gurditt is learning {topic}
+      <div className="container">
+        <div className="pic">
+          <img src={thumbnail} alt="Thumbnail" />
+        </div>
+        <div className="title">Gurditt is learning {title}</div>
+        {verified ? (
+          <div className="channel">{channel}✔️</div>
+        ) : (
+          <div className="channel">{channel}</div>
+        )}
+        <div className="views">
+          {views} views <span>·</span> {time}
+        </div>
       </div>
     </>
   );

@@ -1,0 +1,10 @@
+.Experience {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.exp {
+    display: flex;
+    justify-content: space-between;
+}
