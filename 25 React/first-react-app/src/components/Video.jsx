@@ -1,6 +1,6 @@
 import "./styles/Video.css";
 
-function Video({ title, channel="Channel Name", views, time, thumbnail, verified="false" }) {
+function Video({id, title, channel="Channel Name", views, time, verified="false" }) {
   // console.log(props);
   // let bg = "dark";
 
@@ -8,14 +8,18 @@ function Video({ title, channel="Channel Name", views, time, thumbnail, verified
     <>
       <div className="container">
         <div className="pic">
-          <img src={thumbnail} alt="Thumbnail" />
+          <img src={`https://picsum.photos/id/${id}/160/90`} alt="Thumbnail" />
         </div>
         <div className="title">Gurditt is learning {title}</div>
-        {verified ? (
-          <div className="channel">{channel}✔️</div>
-        ) : (
-          <div className="channel">{channel}</div>
-        )}
+        {/* <div className="channel">
+          {channel} {verified ? "✔️" : null}
+        </div> */}
+
+        <div className="channel">
+          {channel} {verified && "✔️"}
+          {/* But yahan issue hai ki if verified is a number, wo number render ho sakta hai */}
+        </div>
+
         <div className="views">
           {views} views <span>·</span> {time}
         </div>

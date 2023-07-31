@@ -1,3 +1,6 @@
+🔖 2:34:35
+📽️ https://www.youtube.com/watch?v=6l8RWV8D-Yo
+
 REFER TO THE REACT DOCS, THEY ARE AMAZING
 
 (...Basic React stuff)
@@ -36,6 +39,32 @@ Props are read-only, can't change them inside a component using onClick etc,
 
 
                                 CONDITIONAL RENDERING
-We only render a component if it satisifies a condition.
+We only render a component if it satisifies a condition. Most common way is to use ternary operator.
+Another way -> use short circuiting. If LHS is false, right side will never evaluate.
 
-1:48:50
+Try to take out as much common part as you can, change as less content as you can in conditional rendering.
+
+                                LIST-RENDERING
+Use .map()
+
+Moving videos array to another file to clean up.
+
+** REACT HAS A CONCEPT OF VIRTUAL-DOM, WHICH SAYS THAT REACT SHOULD BE ABLE TO UNIQUELY IDENTIFY EACH COMPONENT,
+SO THAT IF IT DOESN'T HAVE ANY CHANGES, REACT WON'T RE-RENDER IT AGAIN AND AGAIN
+
+** WHENEVER YOU ARE WRITING ANY FORM OF JAVASCRIPT IN JSX, USE {}
+
+                                INTERACTIVITY
+
+Events ------------
+Adding a PlayButton. But nothing is happening when we click it? When component is rendering, it's logging it.
+Because we are calling an event-handler function. ONLY DEFINE IT. Either pass a reference to the function, or pass 
+it as an arrow function.
+
+The reason is that, when you execute the function in the attribute, it will run what is returned from the function, which is nothing.
+
+Whenever you pass something in between the tags of a component, it is available as props.children
+🍒READ ABOUT IT FROM DOCS
+
+Right now, we are logging in both. What if we want to do alert on 1 button and log on second? Yes
+You can pass functions as props. 

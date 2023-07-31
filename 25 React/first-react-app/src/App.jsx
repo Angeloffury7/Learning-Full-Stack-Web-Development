@@ -1,19 +1,12 @@
 import Video from "./components/Video";
-import Thumbnail from "./components/Thumbnail";
+// import Thumbnail from "./components/Thumbnail";
+// import Resume from "./assignments/Resume";
+import PlayButton from "./components/PlayButton";
+import videos from "./data/data";
+
 import "./App.css";
-import Resume from "./components/Resume";
 
 function App() {
-  let obj = {
-    title: "Express.js",
-    views: "1.2M",
-    time: "3 months ago",
-    thumbnail:
-      "https://twinsynergy.co.th/wp-content/uploads/2021/06/nodejs-express.png",
-    channel: "gurdittcancode",
-    verified: true,
-  };
-
   const resObj = {
     name: "ABC applicant",
     experience: {
@@ -29,28 +22,36 @@ function App() {
   return (
     <div>
       <h2>Videos</h2>
-      <Video
-        title="MongoDB"
-        views="100k"
-        time="3 hours ago"
-        thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXZPIWevT2KaAZdQ8UqoEHMPAxBRdgwOn9nhk_0PJNLx3Yfwcf17MnE1vKlHa_nXLNWmE&usqp=CAU"
-        channel="gurdittcancode"
-        verified={false}
-      />
+      {videos.map((video) => (
+        <Video
+          key={video.id}
+          id={video.id}
+          title={video.title}
+          views={video.views}
+          time={video.time}
+          channel={video.channel}
+          verified={video.verified}
+        />
+      ))}
 
-      <Video {...obj} />
+      <div style={{ clear: "both" }}>
+        {/* <PlayButton message="play-button" onClick={() => console.log("clicked")}>Play</PlayButton> */}
+        {/* won't work as it will treat onClick as a custom property of your component */}
+        <PlayButton
+          message="play-button"
+          onSmash={() => console.log("playing")}
+          onPause={() => console.log("paused")}>
+          Play
+        </PlayButton>
 
-      <Video
-        title="React.js"
-        views="20k"
-        time="1 year ago"
-        thumbnail="https://shethink.in/wp-content/uploads/2021/07/react.js-img.png"
-        channel="gurdittcancode"
-        verified={true}
-      />
-      {/* <Thumbnail /> */}
-      {/* <Video title="Express.js" bgColor="green"/> */}
+        {/* <PlayButton
+          message="pause-button"
+          onSmash={() => alert("clicked")}>
+          Pause
+        </PlayButton> */}
+      </div>
     </div>
+
     // <div className="App">
     //   <Resume {...resObj} />
     // </div>

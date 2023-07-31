@@ -4,10 +4,9 @@ import Education from "./Education";
 import Skills from "./Skills";
 import Achievements from "./Achievements";
 
-import "./styles/Resume.css"
+import "./styles/Resume.css";
 
 function Resume({ name, experience, education, skills, achievements }) {
-  
   console.log(experience);
   return (
     <div className="Resume">
