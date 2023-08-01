@@ -109,3 +109,11 @@ in the setTimeout version, doesn't matter how many times we click it, number is 
 Wo render ke baad hi update hoti hai.
 
 eg, Liking a post.
+
+Replacing playing variable in PlayButton.jsx with useState, now variable is changing. In React, only that component is re-rendered that is being updated.
+
+
+In App.jsx, where we are trying to add a new video on clicking a button, it's not working because we are directly changing a state variable.
+because uski copy bane aur nayi state bane
+
+Now that we are passing a mutated copy, it's working instantly :D For now, just know that everything will get re-rendered in your app. will tackle this later.

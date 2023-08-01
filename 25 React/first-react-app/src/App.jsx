@@ -2,8 +2,9 @@ import Video from "./components/Video";
 // import Thumbnail from "./components/Thumbnail";
 // import Resume from "./assignments/Resume";
 import PlayButton from "./components/PlayButton";
-import videos from "./data/data";
+import videoDB from "./data/data";
 import Counter from "./components/Counter";
+import { useState } from "react";
 
 import "./App.css";
 
@@ -20,9 +21,26 @@ function App() {
     achievements: ["university gold medalist", "won abc hackathon"],
   };
 
+  const [videos, setVideos] = useState(videoDB);
+
   return (
     <div className="App" onClick={() => console.log("App clicked")}>
       <h2>Videos</h2>
+
+      <button onClick={() => {
+        setVideos([
+          ...videos,
+          {
+            id: videos.length + 1,
+            title: "MongoDB",
+            views: "100k",
+            time: "3 hours ago",
+            channel: "gurdittcancode",
+            verified: false,
+          },
+        ]);
+      }}>Add Videos</button>
+
       {videos.map((video) => (
         <Video
           key={video.id}
