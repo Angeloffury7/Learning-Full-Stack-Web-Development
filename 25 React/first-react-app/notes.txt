@@ -1,9 +1,13 @@
-🔖 2:34:35
+🔖 3:15:45
 📽️ https://www.youtube.com/watch?v=6l8RWV8D-Yo
 
 REFER TO THE REACT DOCS, THEY ARE AMAZING
 
-(...Basic React stuff)
+WHY REACT? 
+> Single-page applications. Things don't reload.
+> Can be used as a part of Multi-page applications.
+
+React is a UI library based on components. Components are reusable, have an easy structure, 
 
 Components are functions that return UI. In React, you NEED to capitalize your component 
 names.
@@ -68,3 +72,40 @@ Whenever you pass something in between the tags of a component, it is available 
 
 Right now, we are logging in both. What if we want to do alert on 1 button and log on second? Yes
 You can pass functions as props. 
+
+> When the video is playing, we want to show "||" and when it's paused, we want to show ">". Our toggle is working in the console. But
+    the sign isn't getting updated? It's because React only updates State variables. This is a feature, not a bug.
+
+    Whenever we want to change something in our UI dynamically, we use State (more later)
+
+Now we are nesting the playbutton inside the Video component as we want a play/pause button with each video. Access it using
+children props.
+
+> We have added an onClick to the App div, and it's showing event bubbling. To stop it, in your play button handleclick, add an 
+event object argument and do evt.stopPropagation(). It's known as event in html, and Synthetic Event in React.
+
+
+                                        STATE HOOK
+
+We aren't able to change the content/state of a component. A post is liked/not-liked. Hooks -> They are external functions which you can
+ access inside your component. Our component "hooks" onto the external function.
+
+To make our component re-render everytime something is changed, we use state variables. The only way we get different output is if function runs again.
+If we increment and manually reload the function, wo wapas 0 ho jayega! That's why we need hook.
+
+const [number, setNumber] = useState(0);
+number is the variable whose initial value is "0", setNumber is a function which updates the number variable and re-renders the component.
+This is a convention, follow it.
+
+** YOU NEVER DIRECTLY UPDATE A STATE VARIABLE
+
+Why isn't React logging the current value of React? We click, initially number is 0. The value of the state variable only changes when the component 
+re-renders and we fetch the updated value from state. We are writing multiple setNumber(number + 1), but it's only incrementing by 1?
+
+Ek render-cycle mein number is 0 hi, baar baar use 1 hi set kar rhe hain, because all calls are batched together in a cycle. All of them are saying the same thing - 
+increment by one.
+
+in the setTimeout version, doesn't matter how many times we click it, number is only incremented by 1, because dono baar number ki value 1 hi rahegi
+Wo render ke baad hi update hoti hai.
+
+eg, Liking a post.

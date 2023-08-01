@@ -3,6 +3,7 @@ import Video from "./components/Video";
 // import Resume from "./assignments/Resume";
 import PlayButton from "./components/PlayButton";
 import videos from "./data/data";
+import Counter from "./components/Counter";
 
 import "./App.css";
 
@@ -20,7 +21,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="App" onClick={() => console.log("App clicked")}>
       <h2>Videos</h2>
       {videos.map((video) => (
         <Video
@@ -30,26 +31,29 @@ function App() {
           views={video.views}
           time={video.time}
           channel={video.channel}
-          verified={video.verified}
-        />
+          verified={video.verified}>
+
+          <PlayButton
+            onSmash={() => console.log("playing ",video.title)}
+            onPause={() => console.log("paused ",video.title)}>
+            {video.title}
+          </PlayButton>
+        </Video>
       ))}
 
-      <div style={{ clear: "both" }}>
+      {/* <div style={{ clear: "both" }}> */}
         {/* <PlayButton message="play-button" onClick={() => console.log("clicked")}>Play</PlayButton> */}
         {/* won't work as it will treat onClick as a custom property of your component */}
-        <PlayButton
-          message="play-button"
-          onSmash={() => console.log("playing")}
-          onPause={() => console.log("paused")}>
-          Play
-        </PlayButton>
 
         {/* <PlayButton
           message="pause-button"
           onSmash={() => alert("clicked")}>
           Pause
         </PlayButton> */}
-      </div>
+      {/* </div> */}
+
+        <Counter />
+
     </div>
 
     // <div className="App">

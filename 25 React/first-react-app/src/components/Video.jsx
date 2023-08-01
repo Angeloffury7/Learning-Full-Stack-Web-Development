@@ -1,6 +1,14 @@
 import "./styles/Video.css";
 
-function Video({id, title, channel="Channel Name", views, time, verified="false" }) {
+function Video({
+  id,
+  title,
+  channel = "Channel Name",
+  views,
+  time,
+  verified = "false",
+  children,
+}) {
   // console.log(props);
   // let bg = "dark";
 
@@ -23,6 +31,8 @@ function Video({id, title, channel="Channel Name", views, time, verified="false"
         <div className="views">
           {views} views <span>·</span> {time}
         </div>
+
+        <div>{children}</div>
       </div>
     </>
   );
