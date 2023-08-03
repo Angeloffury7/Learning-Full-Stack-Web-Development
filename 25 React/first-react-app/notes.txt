@@ -55,6 +55,7 @@ Moving videos array to another file to clean up.
 
 ** REACT HAS A CONCEPT OF VIRTUAL-DOM, WHICH SAYS THAT REACT SHOULD BE ABLE TO UNIQUELY IDENTIFY EACH COMPONENT,
 SO THAT IF IT DOESN'T HAVE ANY CHANGES, REACT WON'T RE-RENDER IT AGAIN AND AGAIN
+That's why it's important to give a key to your props. When you fetch data from a database, use it's _id as 
 
 ** WHENEVER YOU ARE WRITING ANY FORM OF JAVASCRIPT IN JSX, USE {}
 
@@ -73,13 +74,12 @@ Whenever you pass something in between the tags of a component, it is available 
 Right now, we are logging in both. What if we want to do alert on 1 button and log on second? Yes
 You can pass functions as props. 
 
-> When the video is playing, we want to show "||" and when it's paused, we want to show ">". Our toggle is working in the console. But
-    the sign isn't getting updated? It's because React only updates State variables. This is a feature, not a bug.
+> When the video is playing, we want to show "||" and when it's paused, we want to show ">". Our toggle is working in the console. But 
+the sign isn't getting updated? It's because React only updates State variables. This is a feature, not a bug.
 
     Whenever we want to change something in our UI dynamically, we use State (more later)
 
-Now we are nesting the playbutton inside the Video component as we want a play/pause button with each video. Access it using
-children props.
+
 
 > We have added an onClick to the App div, and it's showing event bubbling. To stop it, in your play button handleclick, add an 
 event object argument and do evt.stopPropagation(). It's known as event in html, and Synthetic Event in React.
@@ -99,10 +99,19 @@ This is a convention, follow it.
 
 ** YOU NEVER DIRECTLY UPDATE A STATE VARIABLE
 
+🔴🔴 REASONS TO USE STATE HOOK ->
+    1. Directly updating variables won't trigger a re-render of the component, which is necessary to see changes 
+    in the variable.
+
+    2. React relies on immutability. Directly modifying variables could cause unexpected behaviour 
+
+    3. CONSISTENCY
+
 Why isn't React logging the current value of React? We click, initially number is 0. The value of the state variable only changes when the component 
 re-renders and we fetch the updated value from state. We are writing multiple setNumber(number + 1), but it's only incrementing by 1?
 
-Ek render-cycle mein number is 0 hi, baar baar use 1 hi set kar rhe hain, because all calls are batched together in a cycle. All of them are saying the same thing - 
+Ek render-cycle mein number is 0 hi, baar baar use 1 hi set kar rhe hain, because all calls are batched together in a cycle. All of them are saying the 
+same thing - 
 increment by one.
 
 in the setTimeout version, doesn't matter how many times we click it, number is only incremented by 1, because dono baar number ki value 1 hi rahegi
@@ -116,4 +125,5 @@ Replacing playing variable in PlayButton.jsx with useState, now variable is chan
 In App.jsx, where we are trying to add a new video on clicking a button, it's not working because we are directly changing a state variable.
 because uski copy bane aur nayi state bane
 
-Now that we are passing a mutated copy, it's working instantly :D For now, just know that everything will get re-rendered in your app. will tackle this later.
+Now that we are passing a mutated copy, it's working instantly :D Everything will get re-rendered in your app, because you are re-rendering the 
+top-most component: App

@@ -9,75 +9,82 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const resObj = {
-    name: "ABC applicant",
-    experience: {
-      year: "2019 - 2023",
-      company: "Microsoft",
-      role: "Staff Engineer 2",
-    },
-    education: { college: "BVCOE", degree: "BTech", duration: "2015-2019" },
-    skills: ["react.js", "node.js", "express.js", "dsa", "mongodb"],
-    achievements: ["university gold medalist", "won abc hackathon"],
-  };
+    const resObj = {
+        name: "ABC applicant",
+        experience: {
+            year: "2019 - 2023",
+            company: "Microsoft",
+            role: "Staff Engineer 2",
+        },
+        education: { college: "BVCOE", degree: "BTech", duration: "2015-2019" },
+        skills: ["react.js", "node.js", "express.js", "dsa", "mongodb"],
+        achievements: ["university gold medalist", "won abc hackathon"],
+    };
 
-  const [videos, setVideos] = useState(videoDB);
+    const [videos, setVideos] = useState(videoDB);
 
-  return (
-    <div className="App" onClick={() => console.log("App clicked")}>
-      <h2>Videos</h2>
+    return (
+        <div className="App" onClick={() => console.log("App clicked")}>
+            <h2>Videos</h2>
 
-      <button onClick={() => {
-        setVideos([
-          ...videos,
-          {
-            id: videos.length + 1,
-            title: "MongoDB",
-            views: "100k",
-            time: "3 hours ago",
-            channel: "gurdittcancode",
-            verified: false,
-          },
-        ]);
-      }}>Add Videos</button>
+            <button
+                onClick={() => {
+                    setVideos([
+                        ...videos,
+                        {
+                            id: videos.length + 1,
+                            title: "MongoDB",
+                            views: "100k",
+                            time: "3 hours ago",
+                            channel: "gurdittcancode",
+                            verified: false,
+                        },
+                    ]);
+                }}
+            >
+                Add Videos
+            </button>
 
-      {videos.map((video) => (
-        <Video
-          key={video.id}
-          id={video.id}
-          title={video.title}
-          views={video.views}
-          time={video.time}
-          channel={video.channel}
-          verified={video.verified}>
+            {videos.map((video) => (
+                <Video
+                    key={video.id}
+                    id={video.id}
+                    title={video.title}
+                    views={video.views}
+                    time={video.time}
+                    channel={video.channel}
+                    verified={video.verified}
+                >
+                    <PlayButton
+                        onSmash={() => console.log("playing ", video.title)}
+                        onPause={() => console.log("paused ", video.title)}
+                    >
+                        {video.title}
+                    </PlayButton>
+                    {/* Now we are nesting the playbutton inside the Video component as 
+                  we want a play/pause button with each video. Access it using
+                  children props. */}
+                </Video>
+            ))}
 
-          <PlayButton
-            onSmash={() => console.log("playing ",video.title)}
-            onPause={() => console.log("paused ",video.title)}>
-            {video.title}
-          </PlayButton>
-        </Video>
-      ))}
+            {/* <div style={{ clear: "both" }}> */}
+            {/* <PlayButton message="play-button" onClick={() => console.log("clicked")}>Play</PlayButton> */}
+            {/* won't work as it will treat onClick as a custom property of your component */}
 
-      {/* <div style={{ clear: "both" }}> */}
-        {/* <PlayButton message="play-button" onClick={() => console.log("clicked")}>Play</PlayButton> */}
-        {/* won't work as it will treat onClick as a custom property of your component */}
-
-        {/* <PlayButton
+            {/* <PlayButton
           message="pause-button"
           onSmash={() => alert("clicked")}>
           Pause
         </PlayButton> */}
-      {/* </div> */}
+            {/* </div> */}
 
-        <Counter />
+            <Counter />
+        </div>
 
-    </div>
-
-    // <div className="App">
-    //   <Resume {...resObj} />
-    // </div>
-  );
+        // <div className="App">
+        //   <Resume {...resObj} />
+        // </div>
+    );
 }
 
 export default App;

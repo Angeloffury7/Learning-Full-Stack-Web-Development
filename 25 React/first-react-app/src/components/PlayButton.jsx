@@ -7,13 +7,13 @@ function PlayButton({ children, onSmash, onPause }) {
 
   function handleClick(evt) {
     // console.log(evt);
-    evt.stopPropagation();
+    evt.stopPropagation(); //stop event-bubbling
 
     // evt.preventDefault(); //stops default behaviour of an HTML element after an event is fired.
 
     playing ? onPause() : onSmash();
     // playing = !playing;
-
+    
     setPlaying(playing => !playing);
   }
 
