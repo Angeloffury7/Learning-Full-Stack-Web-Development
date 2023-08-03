@@ -7,15 +7,26 @@ So, we only need to import partials, styles in one sheet
                     ADDING IMAGES
 Make a request to Unsplash's API
 
-                    VALIDATION
-So that user can't make a campground without a name, edit out the name of the campground etc.
+                            FORM VALIDATION
+Right now, we can submit an empty form and a campground will be created, how do we prevent that?
+1. Use HTML5's "required" attribute, but it doesn't look good and isn't standardized across browsers
+2. use bootstrap's form validation
+        > set required on appropriate fields
+        > set novalidate on form so that bootstrap can take the reins
+        > add the javascript section in
 
-1) use the required attribute of HTML, but it looks ugly
-2) use Bootstrap's validation -> put "required" in in input labels, but "novalidate" in form tag.
-                                add the javascript in a script tag
+If we get an async error, our entire application crashes. So we add error-handling mw and try-catch
 
+                            SETTING UP ERROR CLASS
+Made a basic class
 
-                    ERRROS
-What if price can't be parsed into a Number? Create an error-handling middleware, like we created before
+Right now, if we directly send an empty POST request through postman, it will still make an empty campground.
 
-Creating a custom error class
+                            ERROR PAGE
+Setting up a simple EJS template, with the error's details.
+
+                            JOI VALIDATION
+Validating using JOI. We are doing client-side validation. But if we send a post request through postman and leave out
+some data in, it will create a faulty campground. javascript validator called 'Joi'
+
+In Joi, we make a schema and pass our data to it (req.body), and extract message from it and show it.
