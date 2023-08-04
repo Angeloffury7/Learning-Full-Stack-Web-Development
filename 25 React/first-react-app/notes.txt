@@ -1,4 +1,4 @@
-🔖 3:15:45
+🔖 4:07:00
 📽️ https://www.youtube.com/watch?v=6l8RWV8D-Yo
 
 REFER TO THE REACT DOCS, THEY ARE AMAZING
@@ -127,3 +127,23 @@ because uski copy bane aur nayi state bane
 
 Now that we are passing a mutated copy, it's working instantly :D Everything will get re-rendered in your app, because you are re-rendering the 
 top-most component: App
+
+                                RENDERING FORMS & MANAGING STATE
+login, signup, event Object, lifting State.
+
+> You can pass props downards, but you may need to send State to a parent, or to another sibling through the parent.
+
+(cleaning up App.jsx a little)
+
+Adding name of video and views fields in our form
+
+How do we extract values from our inputs in the form? Add an eventListener to your input and log the event object. 
+How do we differentiate ki konse input ka value hai? give a name to your input.
+
+We are successfully getting the final object on submit. But how do we send a state variable to its parent.
+
+                                LIFTING A STATE UP
+You can only pass data downards. You will send the parent state function as a prop. But we also need the videos array.
+Better way -> Create a function in App.jsx and assume it expects a new video, and it will update the videos array.
+
+Now pass this function to your child, and in the child call this function and pass the new video as an argument.

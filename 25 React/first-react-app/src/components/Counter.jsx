@@ -11,6 +11,8 @@ function Counter() {
     // }, 2000)
     // No matter how many times we click it, it only increments by one??
 
+    //This is called an updater function
+
     setNumber(number => number + 1);
     //here, you are returning number + 1 i.e. 0 + 1 = 1
     setNumber(number => number + 1);

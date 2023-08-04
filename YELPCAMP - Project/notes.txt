@@ -1,5 +1,5 @@
 ejs-mate -> an npm package that allows us to add some useful functionlality.
-layout -> allows us to define boilerplate and allows us to insert it.
+layout -> allows us to define boilerplate and allows us to insert data inside it.
 
 
 So, we only need to import partials, styles in one sheet
@@ -30,3 +30,8 @@ Validating using JOI. We are doing client-side validation. But if we send a post
 some data in, it will create a faulty campground. javascript validator called 'Joi'
 
 In Joi, we make a schema and pass our data to it (req.body), and extract message from it and show it.
+
+Why we are using Joi when we have Mongoose validation?
+> https://stackoverflow.com/questions/60801039/do-i-need-to-use-hapi-joi-with-mongoose/60802635#60802635
+
+Joi is not related to mongoose, it's just a template for a normal JavaScript object.
