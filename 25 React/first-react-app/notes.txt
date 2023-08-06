@@ -1,4 +1,4 @@
-🔖 4:07:00
+🔖 4:26:03
 📽️ https://www.youtube.com/watch?v=6l8RWV8D-Yo
 
 REFER TO THE REACT DOCS, THEY ARE AMAZING
@@ -146,4 +146,30 @@ We are successfully getting the final object on submit. But how do we send a sta
 You can only pass data downards. You will send the parent state function as a prop. But we also need the videos array.
 Better way -> Create a function in App.jsx and assume it expects a new video, and it will update the videos array.
 
-Now pass this function to your child, and in the child call this function and pass the new video as an argument.
+Now pass this function to your child, and in the child call this function and pass the new video as an argument. 
+Now, in your parent component, the function will update the videos array and the new video will get rendered.
+
+Clearing input after submit -> 1. use old-fashioned DOM manipulation
+
+2. Use controlled forms.
+    To understand controlled components, read this
+https://react.dev/learn/sharing-state-between-components#controlled-and-uncontrolled-components
+
+uncontrolled is somewhat bad, because it means the component is autonomous
+
+ABSOLUTELY AMAZING WAY OF EXPLAINING
+
+> We didn't have title and views initially, so are setting the input value to undefined, which isn't good.
+ So give some initial value
+
+Also, moving our video list to its own component to make our App.jsx cleaner.
+
+How to move state to sibling? pass it to parent using functional props, then pass to other child of parent.
+
+This can get quite complicated, that's why we have Context API and Redux, more about them later.
+
+ASSIGNMENT ->
+
+AFTER THIS, ADVANCED REACT STARTS, DO NOT START DOING THAT UNTIL AND UNLESS YOU UNDERSTAND EACH AND EVERYTHING TILL NOW!
+
+🔴🔴🔴 COMPLETE ALL YOUR ASSIGNMENTS TILL NOW!!
