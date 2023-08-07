@@ -1,0 +1,50 @@
+                                    MONGO RELATIONSHIPS
+
+How we store related data using Mongo.
+eg, you comment on a blog post, a user creates that blog post. Basically, things are dependent on each other.
+
+We structure our database to capture those relationships.
+Nothing exists in isolation - comments are associated to a user, upvotes are associated to a user, posts, subreddits etc.
+
+Relational databases -> Data exists in tables, but we can relate tables by referencing data from another table. If we have a reddit post, it has information like link, subreddit and user.
+We could have another table for users, and we could reference that table and find other information about the user (think about joins in SQL)
+
+ONE-TO-MANY RELATIONSHIP -> One user can have many comments/posts
+MANY-TO-MANY RELATIONSHIP -> If we have one table of movies and another table of actors, one movie can have many actors
+and one actor can be in many movies.
+
+This approach isn't wrong, but there are better approaches.
+
+> In Mongo, we have a LOT of options to structure our data. 
+
+                                    ONE-TO-FEW
+A couple of addresses associated to an account. Directly store them in the same document as the user, as a use can't 
+have a lot of addresses.
+
+We can directly embed addresses in the User schema in Mongo. In SQL, you would need a minimum of 2 tables.
+
+Used with data where we have a small set of data for an instance
+
+                                    ONE-TO-MANY
+Store your data separately, but then store references to document ID's somewhere inside the parent.
+
+address: [
+    ObjectID(1),
+    ObjectID(2),
+    ObjectID(3),
+]
+
+We are successfully storing ID's, but how do we retrieve those items? The "ref" parameter does this for us.
+
+populate() -> mongoose will take the ID in that array, and replace them with the corresponding data.
+
+                                    ONE-TO-BAJILLIONS
+When you have a LOT of data. for eg, a user could have tens of thousands of tweets. You only see 50/100 on a page, until you go to the page 2.
+
+In this, the child(tweet) stores a reference to the parent (user).
+
+> You can populate specific fields of a reference, by passing the field in the .populate()
+
+When to embed documents, when to store references? (you can go both ways btw, store references on parent & child).
+
+Mongo Schema conventions -> https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design

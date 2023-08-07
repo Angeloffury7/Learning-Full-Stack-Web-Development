@@ -7,13 +7,11 @@ WHY REACT?
 > Single-page applications. Things don't reload.
 > Can be used as a part of Multi-page applications.
 
-React is a UI library based on components. Components are reusable, have an easy structure, 
-
-Components are functions that return UI. In React, you NEED to capitalize your component 
-names.
+React is a UI library based on components. Components are reusable, have an easy structure
+Components are functions that return UI. In React, you NEED to capitalize your component names.
 
 When exporting multiple things from a single file, pass them as a object and remove "default".
-But it's not preferable to export more than 1 component from one file
+It's not preferable to export more than 1 component from one file
 
 JSX -> HTML inside your JavaScript
 
@@ -32,19 +30,20 @@ To use expressions/variables, use {}. to hard-code stuff, use ""
 style: {{}}, outer bracket means that it must escape jsx, the inner bracket means it's a object.
 IN REACT, YOU MUST PASS STYLES AS AN OBJECT
 
-To pass different arguments to a component so that we can different UI, we pass "props"
-props is an object, so we can destructure values out of it.
+To pass different arguments to a component so that we can different UI, we pass "props". Props is an object, so we can destructure values out of it.
 
 Props are read-only, can't change them inside a component using onClick etc,
 
 > To pass numbers, you must pass them as an expression -> example: {45}, don't pass them as a string.
 > You can give a default prop value like regular objects
-> You can store your props as an object in your and pass them in a component using Spread operator
+> You can store your props as an object in your parent component and pass them in a component using Spread operator
 
 
                                 CONDITIONAL RENDERING
-We only render a component if it satisifies a condition. Most common way is to use ternary operator.
+We only render a component if it satisfies a condition. Most common way is to use ternary operator.
 Another way -> use short circuiting. If LHS is false, right side will never evaluate.
+
+eg, if verified && showTickMark().
 
 Try to take out as much common part as you can, change as less content as you can in conditional rendering.
 
@@ -53,32 +52,29 @@ Use .map()
 
 Moving videos array to another file to clean up.
 
-** REACT HAS A CONCEPT OF VIRTUAL-DOM, WHICH SAYS THAT REACT SHOULD BE ABLE TO UNIQUELY IDENTIFY EACH COMPONENT,
-SO THAT IF IT DOESN'T HAVE ANY CHANGES, REACT WON'T RE-RENDER IT AGAIN AND AGAIN
-That's why it's important to give a key to your props. When you fetch data from a database, use it's _id as 
+** REACT HAS A CONCEPT OF VIRTUAL-DOM, WHICH SAYS THAT REACT SHOULD BE ABLE TO UNIQUELY IDENTIFY EACH COMPONENT, SO THAT IF IT DOESN'T HAVE ANY CHANGES, 
+REACT WON'T RE-RENDER IT AGAIN AND AGAIN
+That's why it's important to give a key to your props. When you fetch data from a database, use it's _id as key, or generate on on your own.
 
-** WHENEVER YOU ARE WRITING ANY FORM OF JAVASCRIPT IN JSX, USE {}
+*** WHENEVER YOU ARE WRITING ANY FORM OF JAVASCRIPT IN JSX, USE {}
 
-                                INTERACTIVITY
+                                INTERACTIVITY & EVENTS
 
-Events ------------
 Adding a PlayButton. But nothing is happening when we click it? When component is rendering, it's logging it.
 Because we are calling an event-handler function. ONLY DEFINE IT. Either pass a reference to the function, or pass 
 it as an arrow function.
 
 The reason is that, when you execute the function in the attribute, it will run what is returned from the function, which is nothing.
 
-Whenever you pass something in between the tags of a component, it is available as props.children
-🍒READ ABOUT IT FROM DOCS
+Whenever you pass something in between the tags of a component, it is available in your props object under "children"
+🔴READ ABOUT IT FROM DOCS
 
-Right now, we are logging in both. What if we want to do alert on 1 button and log on second? Yes
-You can pass functions as props. 
+Right now, we are logging in both. What if we want to do alert on 1 button and log on second? Yes, you can pass functions as props.
 
 > When the video is playing, we want to show "||" and when it's paused, we want to show ">". Our toggle is working in the console. But 
-the sign isn't getting updated? It's because React only updates State variables. This is a feature, not a bug.
+the sign isn't getting updated? It's because React only re-renders when State variables are updated. This is a feature, not a bug.
 
     Whenever we want to change something in our UI dynamically, we use State (more later)
-
 
 
 > We have added an onClick to the App div, and it's showing event bubbling. To stop it, in your play button handleclick, add an 
@@ -97,7 +93,7 @@ const [number, setNumber] = useState(0);
 number is the variable whose initial value is "0", setNumber is a function which updates the number variable and re-renders the component.
 This is a convention, follow it.
 
-** YOU NEVER DIRECTLY UPDATE A STATE VARIABLE
+*** YOU NEVER DIRECTLY UPDATE A STATE VARIABLE
 
 🔴🔴 REASONS TO USE STATE HOOK ->
     1. Directly updating variables won't trigger a re-render of the component, which is necessary to see changes 
@@ -107,12 +103,11 @@ This is a convention, follow it.
 
     3. CONSISTENCY
 
-Why isn't React logging the current value of React? We click, initially number is 0. The value of the state variable only changes when the component 
+Why isn't React logging the current value of number? We click, initially number is 0. The value of the state variable only changes when the component 
 re-renders and we fetch the updated value from state. We are writing multiple setNumber(number + 1), but it's only incrementing by 1?
 
 Ek render-cycle mein number is 0 hi, baar baar use 1 hi set kar rhe hain, because all calls are batched together in a cycle. All of them are saying the 
-same thing - 
-increment by one.
+same thing - increment by one.
 
 in the setTimeout version, doesn't matter how many times we click it, number is only incremented by 1, because dono baar number ki value 1 hi rahegi
 Wo render ke baad hi update hoti hai.
@@ -157,8 +152,6 @@ https://react.dev/learn/sharing-state-between-components#controlled-and-uncontro
 
 uncontrolled is somewhat bad, because it means the component is autonomous
 
-ABSOLUTELY AMAZING WAY OF EXPLAINING
-
 > We didn't have title and views initially, so are setting the input value to undefined, which isn't good.
  So give some initial value
 
@@ -168,8 +161,6 @@ How to move state to sibling? pass it to parent using functional props, then pas
 
 This can get quite complicated, that's why we have Context API and Redux, more about them later.
 
-ASSIGNMENT ->
-
-AFTER THIS, ADVANCED REACT STARTS, DO NOT START DOING THAT UNTIL AND UNLESS YOU UNDERSTAND EACH AND EVERYTHING TILL NOW!
+AFTER THIS, ADVANCED REACT STARTS, DO NOT START DOING THAT UNTIL AND UNLESS YOU UNDERSTAND EACH AND EVERYTHING TAUGHT TILL NOW!
 
 🔴🔴🔴 COMPLETE ALL YOUR ASSIGNMENTS TILL NOW!!
