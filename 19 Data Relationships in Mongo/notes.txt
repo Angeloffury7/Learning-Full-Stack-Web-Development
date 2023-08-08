@@ -18,9 +18,7 @@ This approach isn't wrong, but there are better approaches.
 > In Mongo, we have a LOT of options to structure our data. 
 
                                     ONE-TO-FEW
-A couple of addresses associated to an account. Directly store them in the same document as the user, as a use can't 
-have a lot of addresses.
-
+A couple of addresses associated to an account. Directly store them in the same document as the user, as a user can't have a lot of addresses.
 We can directly embed addresses in the User schema in Mongo. In SQL, you would need a minimum of 2 tables.
 
 Used with data where we have a small set of data for an instance

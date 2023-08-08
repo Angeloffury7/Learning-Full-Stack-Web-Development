@@ -1,0 +1,9 @@
+associating each product to a farm to this farmerShop clone
+
+1. embedding products is a no-no, because we may want a page where we can see all
+ products
+
+2. We will have a 2-way relationship, we want to see a farm's products, and on products we want
+    to see on which farm it is available.
+
+Just adding functionality to create a farm, nothing new...
