@@ -5,9 +5,9 @@ import Resume from "./resume + border/Resume";
 
 function App() {
     return (
-        <div className="App">
+        <Border>
             <Resume />
-        </div>
+        </Border>
     );
 }
 
