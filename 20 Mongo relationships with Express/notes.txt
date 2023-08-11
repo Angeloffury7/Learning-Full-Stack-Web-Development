@@ -7,3 +7,18 @@ associating each product to a farm to this farmerShop clone
     to see on which farm it is available.
 
 Just adding functionality to create a farm, nothing new...
+
+We can make a new product as we do normally, but how do we associate it to a farm? Link to add new product from a farm's page.
+/farms/:farm_id/products/new
+post request to /farms/:farm_id/products
+
+How do we delete farms? Depends on what we want to happen to products. Either delete the related products or let them be.
+We'll be deleting the products as well.
+
+1) manually write the deletion code yourself
+2) use mongoose middleware
+
+findByIdAndDelete triggers a middleware called findOneAndDelete
+checks farm.js and server.js
+
+WATCH THE MONGOOSE MIDDLEWARE SECTION AGAIN

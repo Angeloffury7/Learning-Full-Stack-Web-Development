@@ -3,6 +3,7 @@ import Education from "./Education";
 import Experience from "./Experience";
 import Skills from "./Skills";
 import resumeData from "./data";
+import Print from "./Print";
 
 import "./styles/Resume.css"
 

@@ -1,0 +1,26 @@
+                                WHAT ARE COOKIES?
+Cookies are little bits of information that are stores in a user's browser when browsing a particular
+website.
+
+Once a cookie is set, a user's browser will send the cookie on every subsequent request to the site.
+
+Let's say, "color": "teal". The user's browser is going to take that info and store. on subsequent requests, when 
+the browser sees that color: teal, it's going to include that information.
+
+Cookies are just a name: value pair
+
+Session management (we're going to talk about it.)
+Personalisation (tracking whether user wants dark mode or light mode)
+
+Using this, we make HTTP 'stateful'
+To see your cookies, go to Applications tab in Inspect, and click on Cookies.
+
+You can see these cookies in Postman as well.
+
+You can give properties to your cookies -> domain, expires, encode...
+
+You can manually add a cookie from the Applications tab as well
+
+                                SETTING AND PARSING COOKIES
+We have set a cookie. Now, to retrieve this cookie, we need to use a cookie parser.
+In Node.js, we use an npm package called cookie-parser and we find it in req.cookies

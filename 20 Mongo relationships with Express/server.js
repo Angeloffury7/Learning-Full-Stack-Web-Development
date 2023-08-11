@@ -49,8 +49,32 @@ app.post("/farms", async (req, res) => {
 });
 
 app.get("/farms/:id", async (req, res) => {
-    const farm = await Farm.findById(req.params.id);
+    const farm = await Farm.findById(req.params.id).populate("products");
+    console.log(farm);
     res.render("farms/details", { farm });
+});
+
+app.get("/farms/:id/products/new", async (req, res) => {
+    const { id } = req.params;
+    const farm = await Farm.findById(id);
+    res.render("newProduct", { categories, farm });
+});
+
+app.post("/farms/:id/products", async (req, res) => {
+    const { id } = req.params;
+    const f = await Farm.findById(id);
+    const p = new Product(req.body);
+    f.products.push(p);
+    p.farm = f;
+    await f.save();
+    await p.save();
+    res.redirect(`/farms/${f._id}`);
+});
+
+app.delete("/farms/:id", async (req, res) => {
+    console.log("deleting");
+    const idk = await Farm.findByIdAndDelete(req.params.id);
+    res.redirect("/farms");
 });
 
 //Products routes
@@ -67,8 +91,8 @@ app.get("/products", async (req, res) => {
 
 app.get("/products/details/:id", async (req, res) => {
     const { id } = req.params;
-    const found = await Product.findById(id);
-    console.log("Details page");
+    const found = await Product.findById(id).populate("farm", "name");
+    console.log(found);
     res.render("details.ejs", { found });
 });
 

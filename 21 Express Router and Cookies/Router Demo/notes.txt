@@ -1,0 +1,14 @@
+                                    EXPRESS ROUTES
+We can write routes like we have been, but what if we have a lot of routes or a lot of nested routes? Use Express Router
+
+We can essentially move our routes to different files.
+
+We have made a routes folder, added a shelters.js file, which will handle all routes matching /shelters
+> We have to create an Express router object, then attach all our routes to it. Then export it.
+
+in app.js, require this file. Then we have to explicitly tell express to use this router.
+
+app.use("/shelter", router) -> specifies the prefix of the routes, router specifies which router to use.
+
+> You can add in your own middleware! How do you make sure your middleware only works on a specific route?
+Do router.use() in your admin.js, it will protect every route.
