@@ -1,0 +1,8 @@
+                                    ROUTER
+We can put all our routes in a single file, like we have been doing till now. But in a huge app, it 
+gets very complicated to find routes.
+
+Router is an in-built feature. A router is an object and a mini-application.
+We may want to group similar routes together, /shelters/:id, /shelters/:id/edit, /shelters - all these could go in a "shelters" route.
+
+How to add our own middleware?

@@ -1,26 +1,33 @@
-                                WHAT ARE COOKIES?
-Cookies are little bits of information that are stores in a user's browser when browsing a particular
-website.
+They are tiny bits of information we store in a user's browsers. Used in Session management, authentication. They act as flags to identify a particular user.
 
-Once a cookie is set, a user's browser will send the cookie on every subsequent request to the site.
+Dev tools > Application > Storage > Cookies
 
-Let's say, "color": "teal". The user's browser is going to take that info and store. on subsequent requests, when 
-the browser sees that color: teal, it's going to include that information.
+name: value pairs
 
-Cookies are just a name: value pair
+After sending a cookie, on every route of localhost, we have access to this cookie. We can send domain, encode, expiry date, path etc
 
-Session management (we're going to talk about it.)
-Personalisation (tracking whether user wants dark mode or light mode)
+We use cookies to add statefulness to our requests.
 
-Using this, we make HTTP 'stateful'
-To see your cookies, go to Applications tab in Inspect, and click on Cookies.
+                                        SIGNED COOKIES
+What are signed cookies? Signing something refers to a cryptographic signature. It is done to verify its integrity, think of it like a wax seal, a seal of a bottle.
 
-You can see these cookies in Postman as well.
+Signing a cookie means to send it with a secret code. On the client side, the cookie looks normal.
+But on the server-side, cookie parser can tell
+if the cookie has been modified/tampered.
 
-You can give properties to your cookies -> domain, expires, encode...
+We aren't hiding the data (we can see the data inside the string), we are just tagging it. We can find these cookies under req.signedCookies.
+The reason they aren't available in req.cookies is to make it clear that they are signed cookies.
 
-You can manually add a cookie from the Applications tab as well
+If we manually update the signed cookie fruit, it's not in req.signedCookies because cookie-parser isn't verifying it anymore.
 
-                                SETTING AND PARSING COOKIES
-We have set a cookie. Now, to retrieve this cookie, we need to use a cookie parser.
-In Node.js, we use an npm package called cookie-parser and we find it in req.cookies
+If it still recognizes the cookie format, but the value has been changed, the value of the name is set to false.
+
+                                        HMAC SIGNING (not related to Express.js)
+HMAC -> hash-based message authentication code.
+Signing is use in crypo currency as well (bitcoin, ethereum)
+
+https://github.com/tj/node-cookie-signature/blob/master/index.js
+https://www.freeformatter.com/hmac-generator.html -> hmac testing tool
+
+.sign() -> signs the cookies
+.unsign() -> we feed it the supposedly tampered cookie value. It extracts the value from it, signs it again, and compares the 2 values. If the 2 strings aren't equal, the cookie has been modified, otherwise not.

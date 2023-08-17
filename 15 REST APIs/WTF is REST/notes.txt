@@ -57,6 +57,3 @@ Delete ✅
 > We need to use methodOverride again
 > change 'comments' array to "let"  Why? It's a good practice to not mutate an array. 
     Eg, In React, we don't change the original array, we make a new one
-
-
-                        REVISE & MAKE 1-2 CRUD APPS YOURSELF (POSTS, AIRBNB LISTINGS, TWEETS)

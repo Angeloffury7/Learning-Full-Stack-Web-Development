@@ -12,7 +12,7 @@ The code pauses until the function finishes running
 To make files
 > fs.writeFileSync(name of file, default data inside file)
 
-> It will make the file from where you run the script, not where the script is located
+> It will make the file from where you run the script in the CLI, not where the javascript file is located
 
 boilerplate.js is a project which takes the name of a folder from us and creates a folder 
 with that name, and adds 3 files in that folder.

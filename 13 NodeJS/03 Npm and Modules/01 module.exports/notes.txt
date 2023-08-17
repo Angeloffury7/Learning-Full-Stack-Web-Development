@@ -21,6 +21,8 @@
     it won't be referencing module.exports anymore.
 
 
+*** THIS IS OUTDATED. THANKS TO ES6, YOU CAN USE IMPORT/EXPORT BY SETTING "type": "module" in your package.json
+
                         REQUIRING DIRECTORIES
 
 > When you require a directory from outside the directory, you must have a single index.js.

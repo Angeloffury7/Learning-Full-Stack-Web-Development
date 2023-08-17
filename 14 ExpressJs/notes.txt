@@ -16,3 +16,5 @@ where to use them in your own code. eg. Axios, ASCII art library
 
 With a framework, the framework controls how the code works, and we just follow the rules. Libraries do smaller things
 frameworks have broader ambitions, like making web apps
+
+Framework gives you an entire development environment

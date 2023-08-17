@@ -1,8 +1,0 @@
-h1:nth-child(1) {
-    text-transform: uppercase;
-    text-align: center;
-}
-
-h1 + div {
-    text-align: center;
-}
