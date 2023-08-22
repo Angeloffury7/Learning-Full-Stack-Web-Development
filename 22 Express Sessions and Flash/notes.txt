@@ -1,0 +1,42 @@
+                                    SESSIONS
+Persisting data across requests -> checking the user who's logged in, storing the user's shopping cart
+
+Maintaining statefulness across Requests
+
+Cookies have a maximum size and limit on the number of cookies.
+
+Using Sessions, we store information on the server-side, and we send a cookie back to the client.
+
+We store sessions datas in a Data Store (not a database!) like Redis.
+We use the express-session library.
+* Sessions are not unique to Express, they are present across HTTP
+
+We're going to use express-sessions to implement sessions.
+
+Now, on any incoming request, we will have a "session" property. There is a new cookie called connect.sid, 
+which is automatically a signed cookie.
+It's an automatic ID that the browser generates. Now, as long as you have this cookie, it will be able to associate 
+a user with some space in some memory, to store data. Now EXPRESS CAN REMEMBER YOU ACROSS SESSIONS.
+
+You can store any key:value pair in the req.session object.
+
+The place where this is being stored is MemoryStore. It's not designed for production environments, only for 
+one session at a time.
+
+Flow of things ->
+There is a cookie sent to your browser, but it doesn't contain details of your session. It only has the session id.
+That id is sent on every subsequent request. Express 
+takes that cookies, validates that cookie (signed), looks in MemoryStore and fetches details of that session.
+
+                                    
+                                    DEPRECATION WARNING
+What is "resave"? It is a value that defaults to true.
+It forces the session to be stored back to the session store, even if it wasnt changed. Read about it.
+Right now, just set it to false.
+
+saveUninitialized - set it to false
+
+These options depend on your use-case, but for now just set them to false.
+* Every time our server restarts, the MemoryStore gets cleared, because it's not a persisting data storage.
+
+You can have multiple sessions at once (obviously)

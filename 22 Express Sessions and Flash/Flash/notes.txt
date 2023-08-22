@@ -1,0 +1,19 @@
+                                    FLASH
+connect-flash
+A place in the session to flash a message to a user. A confirmation message, a failure message. 
+It goes away after that. 
+We don't want it to add it to a template. For example, after a user creates a form, we can display a message 
+called "successfully created message."
+
+All requests have a req.flash() function now.
+req.flash(category, message) category -> info, danger etc
+
+When we submit a post request after making a new farm, we can create a new flash message with a category of 
+"success" and then the message. Then wherever you redirect to, you pass 
+{messages: "success"} to the template. 
+Then you render <%= messages %> in your template.
+
+It's kind of annoying to do {messages: "success"} on every route. If we were updating, deleting, we would have to do that a lot of times.
+1. Add a middleware that will help every template have access to the messages variable. res.locals = an object that 
+contains response local variables scoped to the request, and therefore available only to the views rendered during that 
+request/response cycle.
