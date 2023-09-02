@@ -35,3 +35,19 @@ Why we are using Joi when we have Mongoose validation?
 > https://stackoverflow.com/questions/60801039/do-i-need-to-use-hapi-joi-with-mongoose/60802635#60802635
 
 Joi is not related to mongoose, it's just a template for a normal JavaScript object.
+
+                        REVIEWS MODEL
+Creating a reviews model
+
+To make a review, we need to know which campground, so we include it's id
+POST /campgrounds/:id/rev, one-to-many relationship with the campgrounds.
+Adding a form to write a review.
+
+Adding functionality to create reviews by creating a simple form and adding Joi validation. Then we just styled the reviews.
+Now for deleting a review, we need the review id and the campground id to delete that id from the reviews[]
+
+Google what the $pull operator does in MongoDB.
+
+What happens when we delete a campground? We should delete all the reviews as well from the database
+
+findByIdAndDelete() triggers findOneAndDelete() middleware. 

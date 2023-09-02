@@ -1,7 +1,7 @@
 <% layout("layouts/boilerplate.ejs") %>
 
 <div class="row">
-  <div class="col-6 offset-3">
+  <div class="col-6">
     <div class="card my-3">
       <img src="<%= found.image %>" class="card-img-top" alt="..." />
       <div class="card-body">
@@ -26,10 +26,56 @@
           <button type="submit" class="btn btn-danger">Delete</button>
         </form>
       </div>
-      <div class="card-footer text-secondary">
-        17 days ago
-      </div>
+      <div class="card-footer text-secondary">17 days ago</div>
     </div>
   </div>
-</div>
+  <div class="col-6">
+    <h2>Leave a Review</h2>
+    <form
+      action="/campgrounds/<%= found._id %>/reviews"
+      class="mb-3 needs-validation"
+      method="POST"
+      novalidate
+    >
+      <div class="mb-3">
+        <label for="rating" class="form-label">Rating</label>
+        <input
+          class="form-range"
+          type="range"
+          name="review[rating]"
+          id="rating"
+          min="1"
+          max="5"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="body">Review</label>
+        <textarea
+          class="form-control"
+          name="review[body]"
+          id="body"
+          cols="30"
+          rows="3"
+          required
+        ></textarea>
+        <div class="valid-feedback">Looks Good!</div>
+      </div>
 
+      <button class="btn btn-success">Submit</button>
+    </form>
+    <% for(let review of found.reviews) { %>
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">
+          <% for(let i = 1; i<= review.rating; i++) {%>⭐<% } %>
+        </h5>
+        <p class="card-text"><%= review.body %></p>
+        <form action="/campgrounds/<%= found._id %>/reviews/<%= review._id %>?method=DELETE" method="POST">
+          <button class="btn btn-danger" type="submit">Delete review</button>
+        </form>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>
