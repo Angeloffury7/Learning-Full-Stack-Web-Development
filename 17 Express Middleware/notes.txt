@@ -3,7 +3,7 @@ What is Middleware?
 They are functions that run during the request/response lifecycle. Run between the time request enters Express
 and the Response leaves express.
 
-Each MW object has access to req/res objects. When a request comes in and we hit the first middleware, that MW
+Each MW has access to req/res objects. When a request comes in and we hit the first middleware, that MW
 can end the cycle by res.send(), or it can call the next MW.
 
                     MORGAN - AN EXTERNAL MIDDLEWARE
@@ -25,9 +25,7 @@ And if you add some properties in your middleware and the route runs before the 
 
 SO DEFINE THE APPROPRIATE MIDDLEWARE BEFORE YOUR ROUTES
 
-
 We can also pass a route in our MW
-
 
 We also app.use() to set up 404 routes as a last resort. The other MW will run tho.
 

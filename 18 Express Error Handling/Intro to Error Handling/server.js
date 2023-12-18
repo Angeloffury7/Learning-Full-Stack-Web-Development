@@ -22,10 +22,9 @@ const verifyPassword = (req, res, next) => {
   if (password === "chickennuggets") {
     return next();
   }
-  // res.status(401);
-  // throw new Error("password required!"); //sending our own error message!
+  // throw new Error("password required!"); //using Express's default error handler
 
-  throw new AppError("gib password bitch", 401);
+  throw new AppError("password required", 401);
 };
 
 app.get("/", (req, res) => {
@@ -50,7 +49,8 @@ app.get("/secret", verifyPassword, (req, res) => {
 
 app.get("/admin", (req, res) => {
   throw new AppError("YOU ARE NOT AN ADMIN STOP!", 403);
-})
+  //will hit the error-handling middleware
+});
 
 app.use((req, res) => {
   res.status(404).send("NOT FOUND");
@@ -67,8 +67,7 @@ app.use((req, res) => {
 // });
 
 app.use((err, req, res, next) => {
-  const { status = 500, message = "something went wrong idk man XDDD" } = err;
-  // res.status(status).send("Error");
+  const { status = 500, message = "something went wrong" } = err;
   res.status(status).send(message);
 });
 

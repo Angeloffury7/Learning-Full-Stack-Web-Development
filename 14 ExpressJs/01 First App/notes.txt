@@ -1,5 +1,3 @@
-> We need to get a server up and running.
-> First, we need to 'require' express
 > We need to execute express by calling the function express() and save the return value in a variable called app.
 > app.listen(port, callback) -> listens for http requests and needs a port to listen to http requests. put 3000 for now or 8080
                 -> accepts a callback function and runs just when the server has started running.
@@ -8,18 +6,8 @@
     https://localhost:portnumber
     It's running locally on our machine only.
 
-> But it will show error. We are only listening for something, but we aren't sending a response.
-
-app.use(callback) -> any time a request is sent, this will run.
-                    Doesn't matter what type of request it is(get/post), or where the request is made(/dogs, /cats), this callback will run.
-
-**EVERY TIME YOU MAKE A CHANGE TO YOUR CODE, STOP AND RESTART THE SERVER!!
-
-> ctrl + c to stop server
-
                                 REQUESTS AND RESPONSES
 
-> So till now, we have started a server, but we aren't responding with anything
 > To respond with content -> request and response are objects made by express and they are automatically passed in the callback 
 
     app.use((req, res) => {
@@ -33,26 +21,18 @@ app.use(callback) -> any time a request is sent, this will run.
     eg, res.send("This is a response!");
     eg, res.send("<h1>This is a response</h1>");
 
-    We can respond with text, a js object (turns it into JSON)
-
-** For now, don't send more than one type of reponse in one request. For eg, don't send a string and an object together
-    otherwise it will give an error
+    We can respond with text/a js object (turns it into JSON)
 
 > You can send a status code with your response, res.status(404).send('this page does not exist XP');
 
                                     ROUTING
-
-> Taking incoming request and a path that is requested and directing it to the appropriate response
 > app.get('/cats', (req, res) => {})            runs when a request matching /cats comes in
 
-** TURN OFF APP.USE(), BECAUSE RES.SEND() ONLY RUNS ONCE PER REQUEST. JAVASCRIPT WON'T GET TO THE ROUTES, IT WILL RETURN FROM HERE
-
-> These only match 'get' requests.
+> This will only match 'get' requests.
 
 app.post() -> post requests 
 
-> If we want to have a generic response, use app.get("*") (matches everything)
-    INCLUDE THIS IN THE LAST, WARNA SABSE PEHLE YAHI RUN HO JAYEGA
+> If we want to have a generic response, use app.get("*") (matches everything). Put this at the bottom of your routes as a hail mary
 
                                 GENERIC PATTERN
 
@@ -62,28 +42,14 @@ app.post() -> post requests
 
 They use a pattern, reddit.com/r/something -> 'something' would be a variable 
 > In express we use : to denote that it's a variable app.get('reddit.com/r/:subreddit')
-> To use the subreddit variable, we can find it in the req.params object. Use destructuring to get it const { subreddit } = req.params;
+> To use the subreddit variable, we can find it in the req.params object.
 > If we chain requests, r/subreddit/postId this is completely different.
                         r/:subreddit/:postId -> postId is inside the same object. 
 
 > This may seem useless now, but we can use this with databases to construct a web page and send it back!
 
-
-
-                                        AUTO-RESTART WITH NODEMON
-
-We have to restart our server anytime we change something in our code (ugh)
-> We can automate this process by using Nodemon
-> Install it globally (best)
-
-> run files with nodemon index.js
-> nodemon only watches for changes in js, mjs and json files.
-
-
                                         QUERY STRINGS 
                                         
 > /search?q=coding 
 > Here, q is a query string.
-> The query in an incoming HTTP request is found in req.query object 
-    const { q } = req.query
-> If no query string is present, it defaults to null
+> The query in an incoming HTTP request is found in req.query object

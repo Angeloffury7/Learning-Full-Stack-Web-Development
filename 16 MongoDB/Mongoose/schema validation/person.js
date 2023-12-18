@@ -30,7 +30,7 @@ personSchema.pre("save", async function () {
   // we have access to instances of Person here.
   this.first = "YO ";
   this.last = "MAMA";
-  console.log("CHANGED NAME XDDDDDD");
+  console.log("CHANGED NAME");
   console.log("ABOUT TO SAVE!!");
 });
 

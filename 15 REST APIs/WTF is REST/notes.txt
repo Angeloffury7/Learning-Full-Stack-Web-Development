@@ -2,9 +2,7 @@
 
 REpresentational State Transfer
 > It's a set of guidelines/principles how clients and servers should interact.
-
 > Soon we will create APIs and routes which will be RESTful
-
 > Create content, Read content, Update content, Delete content 
     CRUD
 
@@ -29,10 +27,7 @@ Create ✅
 Read ✅
 
 /comments/:id
-
 > We need to create distinct ids, otherwise there can be ID conflicts
-    NPM package - UUID (unique id something something)
-    Calling that function generates a new id
 
 Update ✅
 
@@ -42,8 +37,7 @@ PUT and PATCH are similar, but PUT completely changes the content, PATCH can als
 but res.patch() doesn't exist directly
 PATCH requests can have payloads (it can have a req.body)
 > There is a problem. We are looking to update our comments using a form. But, the thing is, HTML forms can
- only send get or post requests, not patch,put etc.
-How to fake it?
+ only send get or post requests, not patch,put etc. How to fake it?
 There's a package called method-override. We can use HTTP verbs where the client doesn't support them.
 
 1. send a http header, specifying the type of request
@@ -53,7 +47,4 @@ There's a package called method-override. We can use HTTP verbs where the client
     Even though it's a post request, express will treat it as a PATCH request
 
 Delete ✅
-
 > We need to use methodOverride again
-> change 'comments' array to "let"  Why? It's a good practice to not mutate an array. 
-    Eg, In React, we don't change the original array, we make a new one

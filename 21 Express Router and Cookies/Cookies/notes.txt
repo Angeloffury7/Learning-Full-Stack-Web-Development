@@ -9,11 +9,9 @@ After sending a cookie, on every route of localhost, we have access to this cook
 We use cookies to add statefulness to our requests.
 
                                         SIGNED COOKIES
-What are signed cookies? Signing something refers to a cryptographic signature. It is done to verify its integrity, think of it like a wax seal, a seal of a bottle.
-
+What are signed cookies? Signing something refers to a cryptographic signature.
 Signing a cookie means to send it with a secret code. On the client side, the cookie looks normal.
-But on the server-side, cookie parser can tell
-if the cookie has been modified/tampered.
+But on the server-side, cookie parser can tell if the cookie has been modified/tampered.
 
 We aren't hiding the data (we can see the data inside the string), we are just tagging it. We can find these cookies under req.signedCookies.
 The reason they aren't available in req.cookies is to make it clear that they are signed cookies.
@@ -30,4 +28,5 @@ https://github.com/tj/node-cookie-signature/blob/master/index.js
 https://www.freeformatter.com/hmac-generator.html -> hmac testing tool
 
 .sign() -> signs the cookies
-.unsign() -> we feed it the supposedly tampered cookie value. It extracts the value from it, signs it again, and compares the 2 values. If the 2 strings aren't equal, the cookie has been modified, otherwise not.
+.unsign() -> we feed it the supposedly tampered cookie value. It extracts the value from it, signs it again, and compares the 2 values. 
+If the 2 strings aren't equal, the cookie has been modified, otherwise not.

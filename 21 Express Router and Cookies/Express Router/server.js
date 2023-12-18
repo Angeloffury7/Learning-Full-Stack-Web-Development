@@ -7,7 +7,6 @@ import adminRouter from "./routes/admin.js";
 
 app.use("/shelters", shelterRouter);
 app.use("/dogs", dogRouter);
-//first argument specifies the prefix for the routes
 
 // app.use((req, res, next) => {
 //     if (req.query.isAdmin) next();

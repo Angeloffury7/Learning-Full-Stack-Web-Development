@@ -20,8 +20,7 @@ eg, MongoDB, Cassandra, CouchDB
 Newer, very diverse group, not much can be generalised about them.
 
 Document Oriented Database (NoSQL db)-> They store information in JSON, XML, YAML etc
-You don't have to follow some pre-defined schema, you can just take the information 
-and store it.
+You don't have to follow some pre-defined schema, you can just take the information and store it.
 
                         BUT WHY MONGO??
 
@@ -29,9 +28,6 @@ Commonly used with Node and Express (MERN and MEAN)
 It's easy to get started with (though it's difficult to truly master)
 It plays really well with JavaScript
 Strong community of developers.
-
-*LEARN AN SQL DATABASE IN THE FUTURE, POSTGRESQL!!
-
 
                         MONGO SYNTAX
 
@@ -51,7 +47,7 @@ The data in a database is completely hidden from the other databases
 
 INSERTING DATA
 > You insert into a collection (a grouping of data.) Instead of our data floating around in the database.
-    show collections
+    show collections;
 > If collection doesn't exist, mongo creates one and inserts data. 
 insertOne, insertMany or insert (generalized, but soon may be deprecated)
 
@@ -71,7 +67,6 @@ FINDING DATA
     returns an object
 
 UPDATING DATA
-> Kinda annoying lol
 > finding what to update + updating it
 updateOne, updateMany
 

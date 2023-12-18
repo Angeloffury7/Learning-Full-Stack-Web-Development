@@ -1,7 +1,7 @@
 To add complicated validations, set property to an object, and we can add built-in validations
 eg, required
 
-If you find a field which isn't in the schema, it will just ignore that filed and add the fields that 
+If you find a field which isn't in the schema, it will just ignore that field and add the fields that 
 are in the schema
 
 > There are options for your schema. required, default, immutable.
@@ -14,17 +14,14 @@ Maybe we want our products to have an array of categories ["Outdoors" , "Cycling
 
 BUT OUR SCHEMA WON'T VALIDATE UPDATES, we need to explicitly tell mongoose to validate it, {runValidators: true}
 
-* If you want the new object printed out after updating, {new: true}
-
-
                     MONGOOSE VALIDATION ERRORS
 We can make custom validation errors when we are using built-in validators.
-min: [0, "Price must be positive -_-"]
+min: [0, "Price must be positive"]
 
 * Enum -> allows us to provide an array to make sure the value we enter is in a set of acceptable values
 
                     ADDING CUSTOM METHODS TO SCHEMA
-Instance methods: Method that is available on every single methods
+Instance methods: Method that is available on every single instance of the model
 Class methods: all methods that start with Product. ...
 
 const p = new product({name: "Bike Bag", price: 12}) 
@@ -37,7 +34,7 @@ and can perform operations specific to that instance.
 
 
                         STATIC METHODS
-Static methods are attached to the model itself and can be called directlyon the model without creating an instance.
+Static methods are attached to the model itself and can be called directly on the model without creating an instance.
 "This" here, refers to the class itself, not individual instances.
 
 eg, productSchema.statics.method = function () {}
@@ -54,8 +51,6 @@ Add properties in schema that actually don't exist in database.
 person.js
 We could just write an instance method, getFullName() but here, it will behave like an
 actual property, even though it isn't (virtual)
-
-* mongo pluralized person to people not persons (demn)
 This property doesn't exist in the database, only on the javascript side of things.
 Used for things which we access quite frequently and don't want to take up extra space in the database.
 

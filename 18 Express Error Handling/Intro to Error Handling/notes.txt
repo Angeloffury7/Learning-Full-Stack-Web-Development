@@ -40,8 +40,7 @@ We will define our class in a separate file.
     -> The default Error in Express.js doesn't have a status code
     -> You can specify your headers in err.headers
     -> You can add in your own error handler, like we did with (err, req, res, next)
-
-    destructure the status code and message and do res.status(status).send(msg)
+        do res.status(status).send(msg)
 
     But if we run into a syntax error, or any other type of error where we aren't throwing our custom error,
     we will run into a problem. The default JavaScript error object doesn't have a status code and the error message will
@@ -49,7 +48,3 @@ We will define our class in a separate file.
 
 
     You can also make nice templates to send 404 errors, unauthorized errors.
-
-
-                                ERRORS IN ASYNC FUNCTIONS
-

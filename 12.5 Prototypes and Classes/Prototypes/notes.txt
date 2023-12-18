@@ -1,14 +1,7 @@
-                                OOPS
+                                    PROTOTYPES
+Everything in javascript is an object!
 
-Object Prototypes -> Objects can have a prototype (a template)
+In each array/object we create, we get some additional properties and member functions. What are these?
+These are prototype functions inherited from the parent Object object
 
-* Arrays are objects in JavaScript. But in an array object, we don't see any of the methods listed.
-They are inside the [[Prototype]] property. It's a property that references the template object for arrays (prototype).
- Instead of defining all of these methods everytime we make an array object.
-for eg, the document.body object. It has a reference to the HTMLBodyElement prototype.
-
-> To view the array prototype, Array.prototype
-
-You can add your own function to a prototype. for eg, String.prototype.grumpus = () => alert('idk'). Obviously, this goes away when you refresh the page
-
-[[Prototype]] is the reference to the prototype, Array.prototype is the actual prototype object.
+What if we want name property from obj in obj2?

@@ -16,9 +16,7 @@ const movieSchema = new mongoose.Schema({
 });
 
 /* Making a model using that schema */
-const Movie = new mongoose.model("Movie", movieSchema); /* The name (string) must be singular and capitalized
-  Mongoose will create a mongo collection called "movies", pluralized and lowercased */
-
+const Movie = new mongoose.model("Movie", movieSchema);
 //This creates a class called Movie, and we can create objects
 
 const amadeus = new Movie({
@@ -42,8 +40,6 @@ const amadeus = new Movie({
 //     console.log(data);
 //   })
 //   .catch((err) => console.log(err));
-
-/*FINDING (they take time, use then/catch)*/
 
 /* Movie.find({}).then(data => console.log(data))
   Movie.find({year: {$gte: 2000 }}).then(data => console.log(data))
