@@ -26,7 +26,7 @@ const login = async (pswd, hP) => {
 };
 
 hashPassword("hello123");
-// login(
-//   "hello123",
-//   "$2b$12$8UvV6iJfKsRl0jWggOSrw.o9M/YBlAXDGWI7VDn5KEuSg6UVnK0MS"
-// );
+login(
+  "hello123",
+  "$2b$12$8UvV6iJfKsRl0jWggOSrw.o9M/YBlAXDGWI7VDn5KEuSg6UVnK0MS"
+);
