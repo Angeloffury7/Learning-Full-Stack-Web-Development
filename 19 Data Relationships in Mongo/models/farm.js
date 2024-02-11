@@ -38,7 +38,7 @@ const makeFarm = async () => {
     const farm = new Farm({ name: "Full Belly Farms", city: "Guinda, CA" });
     const melon = await Product.findOne({ name: "Goddess Melon" });
     farm.products.push(melon);
-    //Aren't we pushing an entire object to the products array of the farm?? Yes
+    //Aren't we pushing an entire object to the products array of the farm?? No
     console.log(farm);
     //But this is just mongoose's behaviour
     //If we save the farm and view it in our database, we would only have the object id in the farm document!

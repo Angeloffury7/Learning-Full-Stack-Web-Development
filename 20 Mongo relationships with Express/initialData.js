@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
-
 const Product = require("./models/product.js");
 
-/* Connecting to MongoDB to just insert data */
 mongoose
   .connect("mongodb://127.0.0.1/farmerShop", {
     useNewUrlParser: true,
@@ -10,16 +8,6 @@ mongoose
   })
   .then((m) => console.log("Connected to MongoDB"))
   .catch((e) => console.log("Connection Error"));
-
-// const p = new Product({
-//   name: "Ruby Grapefruit",
-//   price: 1.99,
-//   category: "fruit",
-// });
-
-// p.save()
-//   .then((p) => console.log(p))
-//   .catch((e) => console.log(e));
 
 const seeds = [
   {

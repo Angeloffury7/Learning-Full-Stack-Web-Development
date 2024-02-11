@@ -20,5 +20,3 @@ We'll be deleting the products as well.
 
 findByIdAndDelete triggers a middleware called findOneAndDelete
 checks farm.js and server.js
-
-WATCH THE MONGOOSE MIDDLEWARE SECTION AGAIN

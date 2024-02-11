@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-/* Don't need to connect to MongoDB */
 
 const productSchema = new mongoose.Schema({
     name: {

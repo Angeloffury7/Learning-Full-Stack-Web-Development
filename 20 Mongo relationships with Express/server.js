@@ -7,7 +7,6 @@ const methodOverride = require("method-override");
 
 const Product = require("./models/product.js");
 const Farm = require("./models/farm.js");
-const { log } = require("console");
 
 const categories = ["fruit", "vegetable", "dairy"];
 
